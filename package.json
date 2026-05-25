@@ -1,0 +1,28 @@
+{
+  "name": "fec-kansai-2026",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "prepare": "lefthook install",
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "check": "turbo check",
+    "check:fix": "turbo check:fix"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@workspace/typescript-config": "workspace:*",
+    "lefthook": "^1.13.6",
+    "turbo": "^2.5.8",
+    "typescript": "catalog:"
+  },
+  "packageManager": "pnpm@11.3.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "volta": {
+    "node": "24.2.0",
+    "pnpm": "11.3.0"
+  }
+}
