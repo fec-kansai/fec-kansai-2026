@@ -1,0 +1,14 @@
+﻿.decorLrv::before {
+  content: "";
+  position: absolute;
+  background: url("/lalavel.svg");
+  background-repeat: no-repeat;
+  right: -87px;
+  top: -86px;
+  height: 108px;
+  display: block;
+  width: 110px;
+  background-size: contain;
+  transform: translate(87px, 86px);
+  background-repeat: no-repeat;
+}

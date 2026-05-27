@@ -1,0 +1,13 @@
+﻿.decorVue::before {
+  content: "";
+  position: absolute;
+  background: url("/vue.svg");
+  background-repeat: no-repeat;
+  left: -70px;
+  top: 0;
+  height: 108px;
+  width: 110px;
+  background-size: contain;
+  transform: translate(-124px, 10%);
+  background-repeat: no-repeat;
+}

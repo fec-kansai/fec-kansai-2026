@@ -1,0 +1,25 @@
+﻿.decorMap::before {
+  content: "";
+  position: absolute;
+  background: url("/html.svg");
+  background-repeat: no-repeat;
+  right: -124px;
+  top: -86px;
+  height: 150px;
+  width: 110px;
+  background-size: contain;
+  transform: translate(65%, -5%) rotate(-7deg);
+}
+
+.decorCSS::before {
+  content: "";
+  position: absolute;
+  background: url("/css.svg");
+  left: -87px;
+  top: -110px;
+  height: 112px;
+  width: 110px;
+  background-size: contain;
+  transform: translate(-68px, 110px);
+  background-repeat: no-repeat;
+}
