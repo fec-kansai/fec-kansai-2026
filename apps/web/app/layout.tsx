@@ -1,4 +1,4 @@
-﻿import { Barlow, Noto_Sans_JP } from "next/font/google";
+﻿import { Barlow, Montserrat, Noto_Sans_JP } from "next/font/google";
 
 import "@workspace/ui/globals.css";
 
@@ -16,6 +16,12 @@ const fontNotoSansJp = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
 });
 
+const fontMontserrat = Montserrat({
+  weight: ["400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
+
 export { metadata };
 
 export default function RootLayout({
@@ -26,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang={htmlLang} suppressHydrationWarning>
       <body
-        className={`${fontBarlow.variable} ${fontNotoSansJp.variable} font-sans antialiased`}
+        className={`${fontBarlow.variable} ${fontNotoSansJp.variable} ${fontMontserrat.variable} font-sans antialiased`}
       >
         {children}
       </body>

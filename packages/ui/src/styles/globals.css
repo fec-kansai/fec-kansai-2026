@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;700&display=swap");
 @import "tailwindcss";
 
 @source "../../../../apps/**/*.{ts,tsx}";
@@ -8,10 +6,10 @@
 
 @plugin "tailwindcss-animate";
 
-@custom-variant dark (&:is(.dark *));
-
 :root {
-  --font-sans: "Barlow", "Noto Sans JP", sans-serif;
+  --font-sans: "Noto Sans JP" sans-serif;
+  --font-barlow: "Barlow" sans-serif;
+  --font-montserrat: "Montserrat" sans-serif;
 
   /* Project colors */
   --fk-yellow: #e9bf2c;
@@ -26,35 +24,14 @@
   --fk-white-92: rgb(255 255 255 / 92%);
   --fk-white-90: rgb(255 255 255 / 90%);
   --fk-shadow-header: rgb(3 10 2 / 10%);
-
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --border: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-}
-
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --border: oklch(0.269 0 0);
-  --ring: oklch(0.556 0 0);
 }
 
 @theme inline {
   --font-family-sans: var(--font-sans);
-
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-border: var(--border);
-  --color-ring: var(--ring);
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-
   body {
-    @apply bg-background text-foreground;
+    margin: 0;
   }
 }

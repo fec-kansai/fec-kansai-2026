@@ -169,7 +169,7 @@
   max-width: 904px;
 }
 
-.contentWrapper > div {
+.contentWrapper > div:not([data-unbounded]) {
   padding: 48px 56px;
   background: var(--fk-white);
   border-radius: 10px;
