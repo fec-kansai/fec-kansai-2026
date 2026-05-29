@@ -13,20 +13,20 @@ export function Footer({ infoLinks }: FooterProps) {
       : {};
   const socialLinks = [
     {
-      href: "https://x.com",
+      href: "https://x.com/fec_kansai",
       ariaLabel: "X",
       imageSrc: "/X-icon.svg",
       imageAlt: "X",
     },
     {
-      href: "https://github.com",
+      href: "https://github.com/fec-kansai",
       ariaLabel: "GitHub",
       imageSrc: "/github-icon.svg",
       imageAlt: "GitHub",
     },
     {
-      href: "https://note.com",
-      ariaLabel: "Connpass",
+      href: "https://note.com/fec_kansai",
+      ariaLabel: "Note",
       imageSrc: "/note-icon.svg",
       imageAlt: "Note",
     },
