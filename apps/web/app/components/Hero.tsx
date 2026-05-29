@@ -1,10 +1,9 @@
 import Image from "next/image";
-import styles from "../page.module.css";
 
 export function Hero() {
   return (
-    <section className={styles.hero}>
-      <div className={styles.title}>
+    <section className="w-full max-w-[1140px] mx-auto mt-5 min-h-[420px] sm:min-h-[560px] relative grid place-items-center px-3 pt-6 pb-[150px] sm:pb-[110px]">
+      <div className="m-0 text-center flex flex-col gap-[6px]">
         <Image
           src="/logo_ol.svg"
           alt="Frontend Conference Kansai 2026"
@@ -14,30 +13,36 @@ export function Hero() {
         />
       </div>
 
-      <div className={styles.infoCard}>
-        <p className={styles.infoRow}>
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-fk-white rounded-[10px] px-5 py-3 sm:px-[50px] box-border max-w-[90vw] sm:max-w-none w-max">
+        <p className="m-0 flex flex-wrap items-center gap-x-3 gap-y-1 text-fk-text-main text-sm sm:text-base font-bold leading-[1.4] [&+&]:mt-2">
           <Image
             src="/calendar-regular.svg"
             alt="calendar regular mark"
             width={45}
             height={35}
             priority
+            className="shrink-0"
           />
-          <strong className={styles.infoLabel}>開催日</strong>
+          <strong className="text-fk-text-main min-w-[42px] shrink-0">
+            開催日
+          </strong>
           <span>
-            2026/10/12 (月・<span className={styles.infoLabelRed}>祝</span>)
+            2026/10/12 (月・<span className="text-fk-accent-red">祝</span>)
             10:00〜20:00
           </span>
         </p>
-        <p className={styles.infoRow}>
+        <p className="m-0 flex flex-wrap items-center gap-x-3 gap-y-1 text-fk-text-main text-sm sm:text-base font-bold leading-[1.4] [&+&]:mt-2">
           <Image
             src="/calendar-loc-mark.svg"
             alt="calendar location mark"
             width={45}
             height={35}
             priority
+            className="shrink-0"
           />
-          <strong className={styles.infoLabel}>会場</strong>
+          <strong className="text-fk-text-main min-w-[42px] shrink-0">
+            会場
+          </strong>
           <span>コングレスクエア グラングリーン大阪</span>
         </p>
       </div>

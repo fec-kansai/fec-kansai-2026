@@ -30,12 +30,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang={htmlLang} suppressHydrationWarning className="scroll-smooth">
-      <body
-        className={`${fontBarlow.variable} ${fontNotoSansJp.variable} ${fontMontserrat.variable} font-sans antialiased`}
-      >
-        {children}
-      </body>
+    <html
+      lang={htmlLang}
+      suppressHydrationWarning
+      className={`scroll-smooth ${fontBarlow.variable} ${fontNotoSansJp.variable} ${fontMontserrat.variable}`}
+    >
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }

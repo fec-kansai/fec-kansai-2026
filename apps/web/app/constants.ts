@@ -7,7 +7,8 @@ export const navItems: NavLink[] = [
   { name: "メッセージ", url: "#message" },
   { name: "開催日・アクセス", url: "#access" },
   { name: "プロポーザル", url: "#proposal" },
-  { name: "スポンサー募集", url: "#sponsor" },
+  // TODO: Uncomment this when the sponsor section is ready
+  // { name: "スポンサー募集", url: "#sponsor" },
   { name: "チケット情報", url: "#ticket" },
   { name: "公式キャラクター", url: "#character" },
 ];

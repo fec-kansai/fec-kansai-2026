@@ -9,4 +9,7 @@ export const siteDescription = "フロントエンドカンファレンス関西
 export const metadata: Metadata = {
   title: siteTitle,
   description: siteDescription,
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
