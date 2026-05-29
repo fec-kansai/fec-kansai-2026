@@ -1,4 +1,5 @@
-﻿import styles from "./SponsorSection.module.css";
+﻿import Link from "next/link";
+import styles from "./SponsorSection.module.css";
 
 export function SponsorSection() {
   return (
@@ -25,7 +26,13 @@ export function SponsorSection() {
       </div>
 
       <div className={styles.ctaRow}>
-        <a href="/sponsor-materials" className={styles.ctaOutline}>
+        <Link
+          href="https://fortee.jp/fec-kansai-2026/sponsor/sponsorship-prospectus"
+          className={styles.ctaOutline}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="スポンサー協賛資料を開く"
+        >
           スポンサー協賛資料をみる
           <svg
             width="16"
@@ -40,9 +47,15 @@ export function SponsorSection() {
               fill="currentColor"
             />
           </svg>
-        </a>
+        </Link>
 
-        <a href="/sponsor-apply" className={styles.ctaSolid}>
+        <Link
+          href="https://fortee.jp/fec-kansai-2026/sponsor/inquiry"
+          className={styles.ctaSolid}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="スポンサー協賛申し込みフォームを開く"
+        >
           スポンサー協賛申し込みはこちら
           <svg
             width="16"
@@ -57,7 +70,7 @@ export function SponsorSection() {
               fill="currentColor"
             />
           </svg>
-        </a>
+        </Link>
       </div>
 
       <span className={styles.decorJs} />

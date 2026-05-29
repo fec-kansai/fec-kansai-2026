@@ -1,4 +1,5 @@
 ﻿import Image from "next/image";
+import Link from "next/link";
 import type { NavLink } from "../constants";
 import styles from "../page.module.css";
 
@@ -9,7 +10,7 @@ type HeaderProps = {
 export function Header({ navItems }: HeaderProps) {
   return (
     <header className={styles.header}>
-      <a
+      <Link
         className={styles.logoLink}
         href="/"
         aria-label="Frontend Conference Kansai 2026"
@@ -21,12 +22,12 @@ export function Header({ navItems }: HeaderProps) {
           height={40}
           priority
         />
-      </a>
+      </Link>
       <nav className={styles.nav}>
         {navItems.map((item) => (
-          <a key={item.name} href={item.url} className={styles.navLink}>
+          <Link key={item.name} href={item.url} className={styles.navLink}>
             {item.name}
-          </a>
+          </Link>
         ))}
       </nav>
     </header>

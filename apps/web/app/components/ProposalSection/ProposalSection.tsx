@@ -1,4 +1,5 @@
-﻿import styles from "./ProposalSection.module.css";
+﻿import Link from "next/link";
+import styles from "./ProposalSection.module.css";
 
 export function ProposalSection() {
   return (
@@ -28,7 +29,13 @@ export function ProposalSection() {
       </div>
 
       <div className={styles.ctaWrap}>
-        <a href="/proposal" className={styles.cta}>
+        <Link
+          href="https://fortee.jp/fec-kansai-2026/speaker/proposal/cfp"
+          className={styles.cta}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="プロポーザル募集フォームを開く"
+        >
           プロポーザル募集フォームはこちら
           <svg
             width="16"
@@ -43,7 +50,7 @@ export function ProposalSection() {
               fill="currentColor"
             />
           </svg>
-        </a>
+        </Link>
       </div>
     </div>
   );
