@@ -115,11 +115,11 @@
   position: absolute;
   background: url("/css.svg");
   left: -87px;
-  top: -110px;
+  top: 50%;
   height: 112px;
   width: 110px;
   background-size: contain;
-  transform: translate(-68px, 110px);
+  transform: translate(-68px, -50%);
   background-repeat: no-repeat;
 }
 
