@@ -27,10 +27,8 @@ export function SponsorSection() {
 
       <div className={styles.ctaRow}>
         <Link
-          href="https://fortee.jp/fec-kansai-2026/sponsor/sponsorship-prospectus"
+          href="#"
           className={styles.ctaOutline}
-          target="_blank"
-          rel="noopener noreferrer"
           aria-label="スポンサー協賛資料を開く"
         >
           スポンサー協賛資料をみる
@@ -50,10 +48,8 @@ export function SponsorSection() {
         </Link>
 
         <Link
-          href="https://fortee.jp/fec-kansai-2026/sponsor/inquiry"
+          href="#"
           className={styles.ctaSolid}
-          target="_blank"
-          rel="noopener noreferrer"
           aria-label="スポンサー協賛申し込みフォームを開く"
         >
           スポンサー協賛申し込みはこちら
