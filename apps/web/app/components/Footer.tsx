@@ -1,4 +1,5 @@
 ﻿import Image from "next/image";
+import Link from "next/link";
 import type { FooterLink } from "../constants";
 import styles from "../page.module.css";
 
@@ -8,6 +9,31 @@ type FooterProps = {
 };
 
 export function Footer({ sponsorLinks, infoLinks }: FooterProps) {
+  const getLinkProps = (url: string) =>
+    url.startsWith("http")
+      ? { target: "_blank" as const, rel: "noopener noreferrer" }
+      : {};
+  const socialLinks = [
+    {
+      href: "https://x.com",
+      ariaLabel: "X",
+      imageSrc: "/X-icon.svg",
+      imageAlt: "X",
+    },
+    {
+      href: "https://github.com",
+      ariaLabel: "GitHub",
+      imageSrc: "/github-icon.svg",
+      imageAlt: "GitHub",
+    },
+    {
+      href: "https://note.com",
+      ariaLabel: "Connpass",
+      imageSrc: "/note-icon.svg",
+      imageAlt: "Note",
+    },
+  ];
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footerInner}>
@@ -19,20 +45,21 @@ export function Footer({ sponsorLinks, infoLinks }: FooterProps) {
             height={42}
           />
           <div className={styles.socials}>
-            <a href="https://x.com" aria-label="X">
-              <Image src="/X-icon.svg" alt="X" width={24} height={24} />
-            </a>
-            <a href="https://github.com" aria-label="GitHub">
-              <Image
-                src="/github-icon.svg"
-                alt="GitHub"
-                width={24}
-                height={24}
-              />
-            </a>
-            <a href="https://note.com" aria-label="Connpass">
-              <Image src="/note-icon.svg" alt="Note" width={24} height={24} />
-            </a>
+            {socialLinks.map((item) => (
+              <Link
+                key={item.ariaLabel}
+                href={item.href}
+                aria-label={item.ariaLabel}
+                {...getLinkProps(item.href)}
+              >
+                <Image
+                  src={item.imageSrc}
+                  alt={item.imageAlt}
+                  width={24}
+                  height={24}
+                />
+              </Link>
+            ))}
           </div>
         </div>
 
@@ -40,17 +67,17 @@ export function Footer({ sponsorLinks, infoLinks }: FooterProps) {
           <div>
             <h2>スポンサー募集</h2>
             {sponsorLinks.map((item) => (
-              <a key={item.name} href={item.url}>
+              <Link key={item.name} href={item.url} {...getLinkProps(item.url)}>
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
           <div>
             <h2>お問い合わせ</h2>
             {infoLinks.map((item) => (
-              <a key={item.name} href={item.url}>
+              <Link key={item.name} href={item.url} {...getLinkProps(item.url)}>
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
