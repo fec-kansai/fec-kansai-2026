@@ -5,7 +5,7 @@ import { OfficialCharacterSection } from "./OfficialCharacterSection/OfficialCha
 import { ProposalSection } from "./ProposalSection/ProposalSection";
 import { SponsorSection } from "./SponsorSection/SponsorSection";
 import { TicketSection } from "./TicketSection/TicketSection";
-import { UnboundedSection } from "./UnboundedSection";
+import { UnboundedSection } from "./UnboundedSection/UnboundedSection";
 
 export function ContentSection() {
   return (
