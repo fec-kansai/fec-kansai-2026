@@ -1,9 +1,9 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import styles from "./TicketSection.module.css";
 
 export function TicketSection() {
   return (
-    <div className={styles.ticketSection}>
+    <div id="ticket" className={styles.ticketSection}>
       <header className={styles.header}>
         <h2 className={styles.title}>チケット情報</h2>
         <p className={styles.subtitle}>ticket</p>

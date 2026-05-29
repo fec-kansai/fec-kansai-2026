@@ -2,7 +2,7 @@
 
 export function UnboundedSection() {
   return (
-    <div className={styles.unbounded} data-unbounded>
+    <div id="message" className={styles.unbounded} data-unbounded>
       <div className={styles.left}>
         <h2 className={styles.title}>Frontend, Unbounded.</h2>
         <p className={styles.subtitle}>フロントエンドは、みんなの話やで。</p>

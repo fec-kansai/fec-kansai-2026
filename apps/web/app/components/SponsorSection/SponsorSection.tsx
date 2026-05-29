@@ -1,8 +1,8 @@
-import styles from "./SponsorSection.module.css";
+﻿import styles from "./SponsorSection.module.css";
 
 export function SponsorSection() {
   return (
-    <div className={styles.sponsorSection}>
+    <div id="sponsor" className={styles.sponsorSection}>
       <header className={styles.header}>
         <h2 className={styles.title}>スポンサー募集</h2>
         <p className={styles.subtitle}>sponsor</p>

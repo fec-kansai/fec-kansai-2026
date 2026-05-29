@@ -3,7 +3,7 @@ import styles from "./MapSection.module.css";
 
 export function MapSection() {
   return (
-    <div className={styles.mapSection}>
+    <div id="access" className={styles.mapSection}>
       <span className={styles.decorMap} aria-hidden="true" />
       <span className={styles.decorCSS} aria-hidden="true" />
 

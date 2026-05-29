@@ -2,7 +2,7 @@
 
 export function ProposalSection() {
   return (
-    <div className={styles.proposalSection}>
+    <div id="proposal" className={styles.proposalSection}>
       <span className={styles.decorUnion} aria-hidden="true" />
       <span className={styles.decorReact} aria-hidden="true" />
 

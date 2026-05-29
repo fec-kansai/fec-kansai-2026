@@ -1,9 +1,9 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import styles from "./OfficialCharacterSection.module.css";
 
 export function OfficialCharacterSection() {
   return (
-    <div className={styles.officialCharacterSection}>
+    <div id="character" className={styles.officialCharacterSection}>
       <header className={styles.header}>
         <h2 className={styles.title}>公式キャラクター</h2>
         <p className={styles.subtitle}>official character</p>
