@@ -7,10 +7,6 @@
 @plugin "tailwindcss-animate";
 
 :root {
-  --font-sans: "Noto Sans JP" sans-serif;
-  --font-barlow: "Barlow" sans-serif;
-  --font-montserrat: "Montserrat" sans-serif;
-
   /* Project colors */
   --fk-yellow: #e9bf2c;
   --fk-yellow-soft: #fff9e8;
@@ -24,10 +20,91 @@
   --fk-white-92: rgb(255 255 255 / 92%);
   --fk-white-90: rgb(255 255 255 / 90%);
   --fk-shadow-header: rgb(3 10 2 / 10%);
+
+  /* shadcn/ui design tokens (neutral, Tailwind v4) */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --radius: 0.625rem;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
 }
 
 @theme inline {
-  --font-family-sans: var(--font-sans);
+  --font-sans: var(--font-noto-sans-jp);
+  --font-montserrat: var(--font-montserrat);
+  --font-barlow: var(--font-barlow);
+
+  /* Project color tokens → Tailwind utilities (bg-fk-green, text-fk-text-main, …) */
+  --color-fk-yellow: var(--fk-yellow);
+  --color-fk-yellow-soft: var(--fk-yellow-soft);
+  --color-fk-green: var(--fk-green);
+  --color-fk-accent-red: var(--fk-accent-red);
+  --color-fk-accent-brown: var(--fk-accent-brown);
+  --color-fk-text-main: var(--fk-text-main);
+  --color-fk-text-muted: var(--fk-text-muted);
+  --color-fk-text-olive: var(--fk-text-olive);
+  --color-fk-white: var(--fk-white);
+
+  /* shadcn/ui color tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* shadcn/ui radius tokens */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
 @layer base {
