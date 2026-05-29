@@ -2,6 +2,7 @@
   min-height: 100svh;
   background: var(--fk-yellow-sof);
   overflow: hidden;
+  font-family: var(--font-noto-sans-jp);
 }
 
 .header {
