@@ -47,7 +47,7 @@ export function ProposalSection() {
         <Button
           asChild
           variant="fkSolid"
-          className="px-[34px] py-[16px] text-lg gap-2.5 [&_svg]:size-4"
+          className="h-auto w-full sm:w-auto px-[34px] py-3 sm:py-[24px] text-base sm:text-lg gap-2.5 [&_svg]:size-4"
         >
           <Link
             href="https://fortee.jp/fec-kansai-2026/speaker/proposal/cfp"
