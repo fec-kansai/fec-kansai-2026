@@ -10,7 +10,7 @@ export function MapSection() {
       />
       {/* css.svg 装飾 */}
       <span
-        className="before:content-[''] before:absolute before:bg-[url('/css.svg')] before:bg-contain before:bg-no-repeat before:left-[-87px] before:top-1/2 before:h-[112px] before:w-[110px] before:-translate-x-[68px] before:-translate-y-1/2"
+        className="before:content-[''] before:absolute before:bg-[url('/css.svg')] before:bg-contain before:bg-no-repeat before:left-[-87px] before:top-1/2 before:h-[112px] before:w-[110px] before:-translate-x-[98px] before:-translate-y-1/2"
         aria-hidden="true"
       />
 

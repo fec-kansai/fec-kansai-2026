@@ -11,7 +11,7 @@ export function ProposalSection() {
       />
       {/* react.svg 装飾 */}
       <span
-        className="before:content-[''] before:absolute before:bg-[url('/react.svg')] before:bg-contain before:bg-no-repeat before:left-[-80px] before:top-1/2 before:h-[108px] before:w-[110px] before:-translate-x-20 before:-translate-y-1/2"
+        className="before:content-[''] before:absolute before:bg-[url('/react.svg')] before:bg-contain before:bg-no-repeat before:left-[-80px] before:top-1/2 before:h-[108px] before:w-[110px] before:-translate-x-[110px] before:-translate-y-1/2"
         aria-hidden="true"
       />
 
