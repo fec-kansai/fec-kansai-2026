@@ -23,44 +23,46 @@ export function MapSection() {
         </p>
       </header>
 
-      <div className="mt-[38px] mx-auto w-[min(100%,760px)] items-center">
-        <div className="grid grid-cols-[auto_1fr] items-center gap-[14px]">
-          <span className="min-w-[86px] bg-fk-green text-fk-white rounded-full text-base font-bold grid justify-center px-5 py-[6px] box-border leading-[15px]">
-            開催日
-          </span>
-          <p className="m-0 text-[18px] leading-[1.3] font-bold max-[900px]:text-[22px]">
-            2026/10/12 (月・<span className="text-fk-accent-red">祝</span>)
-            10:00 ～ 20:00{" "}
-            <small className="text-[18px] font-bold max-[900px]:text-[14px]">
-              (予定)
-            </small>
+      <div className="mt-[38px] flex justify-center">
+        <div>
+          <div className="grid grid-cols-[auto_1fr] items-center gap-[14px]">
+            <span className="min-w-[86px] bg-fk-green text-fk-white rounded-full text-base font-bold grid justify-center px-5 py-[6px] box-border leading-[15px]">
+              開催日
+            </span>
+            <p className="m-0 text-[18px] leading-[1.3] font-bold max-[900px]:text-[22px]">
+              2026/10/12 (月・<span className="text-fk-accent-red">祝</span>)
+              10:00 ～ 20:00{" "}
+              <small className="text-[18px] font-bold max-[900px]:text-[14px]">
+                (予定)
+              </small>
+            </p>
+          </div>
+          <div className="grid grid-cols-[auto_1fr] items-center gap-[14px] mt-[14px]">
+            <span className="min-w-[86px] bg-fk-green text-fk-white rounded-full text-base font-bold grid justify-center px-5 py-[6px] box-border leading-[15px]">
+              会場
+            </span>
+            <p className="m-0 text-[18px] leading-[1.3] font-bold inline-flex items-center gap-2 max-[900px]:text-[22px]">
+              コングレスクエア グラングリーン大阪
+              <a
+                href="https://www.google.com/maps?q=%E3%82%B3%E3%83%B3%E3%82%B0%E3%83%AC%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E5%A4%A7%E9%98%AA"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Googleマップで会場を開く"
+              >
+                <Image
+                  src="/Vector.svg"
+                  alt="Google Maps button"
+                  width={18}
+                  height={18}
+                  aria-hidden
+                />
+              </a>
+            </p>
+          </div>
+          <p className="mt-[10px] mb-0 ml-[100px] text-fk-text-main text-xs leading-[1.4] max-[900px]:ml-0 max-[900px]:text-[13px]">
+            JR「大阪駅」直結 <br /> 阪急・阪神・大阪メトロ「梅田駅」から徒歩圏内
           </p>
         </div>
-        <div className="grid grid-cols-[auto_1fr] items-center gap-[14px] mt-[14px]">
-          <span className="min-w-[86px] bg-fk-green text-fk-white rounded-full text-base font-bold grid justify-center px-5 py-[6px] box-border leading-[15px]">
-            会場
-          </span>
-          <p className="m-0 text-[18px] leading-[1.3] font-bold inline-flex items-center gap-2 max-[900px]:text-[22px]">
-            コングレスクエア グラングリーン大阪
-            <a
-              href="https://www.google.com/maps?q=%E3%82%B3%E3%83%B3%E3%82%B0%E3%83%AC%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E5%A4%A7%E9%98%AA"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Googleマップで会場を開く"
-            >
-              <Image
-                src="/Vector.svg"
-                alt="Google Maps button"
-                width={18}
-                height={18}
-                aria-hidden
-              />
-            </a>
-          </p>
-        </div>
-        <p className="mt-[10px] mb-0 ml-[100px] text-fk-text-main text-xs leading-[1.4] max-[900px]:ml-0 max-[900px]:text-[13px]">
-          JR「大阪駅」直結 <br /> 阪急・阪神・大阪メトロ「梅田駅」から徒歩圏内
-        </p>
       </div>
 
       <div className="mt-10 overflow-hidden rounded-[6px] border border-[#dbdbdb]">
