@@ -6,6 +6,10 @@ export const siteTitle = "フロントエンドカンファレンス関西2026";
 
 export const siteDescription = "フロントエンドカンファレンス関西2026";
 
+export const SITE_URL = new URL(
+  process.env.SITE_URL ?? "http://localhost:3000",
+);
+
 export const openGraph = {
   title: siteTitle,
   description: siteDescription,
@@ -13,10 +17,13 @@ export const openGraph = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.SITE_URL ?? "http://localhost:3000"),
+  metadataBase: SITE_URL,
   title: siteTitle,
   description: siteDescription,
-  openGraph,
+  openGraph: {
+    ...openGraph,
+    url: SITE_URL,
+  },
   twitter: {
     ...openGraph,
     card: "summary_large_image",
