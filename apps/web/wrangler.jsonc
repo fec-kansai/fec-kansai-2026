@@ -5,7 +5,6 @@
   "env": {
     "preview": {
       "vars": {
-        "NODE_ENV": "development"
         // "NEXT_PUBLIC_BASE_URL": "TODO: set preview URL"
       }
     },
