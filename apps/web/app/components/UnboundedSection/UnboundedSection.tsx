@@ -21,19 +21,19 @@ export function UnboundedSection() {
         />
 
         <div className="h-full grid gap-auto justify-end">
-          <p className="m-0 text-[#262626] text-lg leading-[1.45] font-bold">
+          <p className="m-0 text-fk-text-dark text-lg leading-[1.45] font-bold">
             UIを描く人。体験を設計する人。
           </p>
-          <p className="m-0 text-[#262626] text-lg leading-[1.45] font-bold">
+          <p className="m-0 text-fk-text-dark text-lg leading-[1.45] font-bold">
             コードを書く人。プロダクトを問う人。
           </p>
-          <p className="m-0 text-[#262626] text-lg leading-[1.45] font-bold">
+          <p className="m-0 text-fk-text-dark text-lg leading-[1.45] font-bold">
             画面の向こうに立つすべての人へ、関西から。
           </p>
         </div>
       </div>
       <div className="flex w-full flex-row items-end justify-end">
-        <p className="mt-2 mb-0 text-[#5e5e5e] text-xs leading-[1.5] text-right">
+        <p className="mt-2 mb-0 text-fk-text-light text-xs leading-[1.5] text-right">
           フロントエンドカンファレンス関西2026
           <br />
           実行委員長 いずりょー

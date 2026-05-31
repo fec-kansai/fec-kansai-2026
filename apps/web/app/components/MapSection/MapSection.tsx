@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function MapSection() {
   return (
@@ -43,7 +44,7 @@ export function MapSection() {
             </span>
             <p className="m-0 text-[18px] leading-[1.3] font-bold inline-flex items-center gap-2 max-[900px]:text-[22px]">
               コングレスクエア グラングリーン大阪
-              <a
+              <Link
                 href="https://www.google.com/maps?q=%E3%82%B3%E3%83%B3%E3%82%B0%E3%83%AC%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%20%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E5%A4%A7%E9%98%AA"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -56,7 +57,7 @@ export function MapSection() {
                   height={18}
                   aria-hidden
                 />
-              </a>
+              </Link>
             </p>
           </div>
           <p className="mt-[10px] mb-0 ml-[100px] text-fk-text-main text-xs leading-[1.4] max-[900px]:ml-0 max-[900px]:text-[13px]">

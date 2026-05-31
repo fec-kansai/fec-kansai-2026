@@ -37,10 +37,7 @@ export function SponsorSection() {
           協賛をご検討いただける皆さま向けに、イベントの概要やスポンサー特典、協賛プランなどをまとめた
           「スポンサー協賛資料」を公開しております。
         </p>
-        <p
-          style={{ marginTop: "26px" }}
-          className="m-0 text-fk-text-main text-base leading-[1.9] font-bold max-[900px]:text-[18px] max-[900px]:leading-[1.65]"
-        >
+        <p className="mt-[26px] m-0 text-fk-text-main text-base leading-[1.9] font-bold max-[900px]:text-[18px] max-[900px]:leading-[1.65]">
           ぜひご一読の上、ご検討いただけますと幸いです。
         </p>
         <p className="m-0 text-fk-text-main text-base leading-[1.9] font-bold max-[900px]:text-[18px] max-[900px]:leading-[1.65]">

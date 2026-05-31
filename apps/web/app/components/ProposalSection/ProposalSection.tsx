@@ -33,10 +33,7 @@ export function ProposalSection() {
           日々の開発で得た知見や挑戦、チームでの工夫、技術やデザインとの連携など、実践的な内容から未来を見据え
           た話題まで幅広く歓迎します。
         </p>
-        <p
-          style={{ marginTop: "30px" }}
-          className="m-0 text-fk-text-main text-base leading-[1.75] font-bold max-[900px]:text-[18px] max-[900px]:leading-[1.65]"
-        >
+        <p className="mt-[30px] m-0 text-fk-text-main text-base leading-[1.75] font-bold max-[900px]:text-[18px] max-[900px]:leading-[1.65]">
           ご自身の経験やアイデアを、関西のコミュニティにシェアしてみませんか？
           <br />
           登壇経験の有無は問いません。初めての方もぜひご応募ください。
