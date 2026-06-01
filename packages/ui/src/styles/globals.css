@@ -8,7 +8,7 @@
 
 :root {
   /* Project colors */
-  --fk-yellow: #e9bf2c;
+  --fk-yellow: #edb512;
   --fk-yellow-soft: #fff9e8;
   --fk-green: #59671e;
   --fk-accent-red: #e54839;
@@ -67,6 +67,8 @@
 }
 
 @theme inline {
+  --breakpoint-xs: 375px;
+
   --font-sans: var(--font-noto-sans-jp);
   --font-montserrat: var(--font-montserrat);
   --font-barlow: var(--font-barlow);
@@ -114,5 +116,15 @@
 @layer base {
   body {
     margin: 0;
+  }
+}
+
+@keyframes scrollGlow {
+  0%,
+  100% {
+    color: var(--fk-accent-brown);
+  }
+  50% {
+    color: #d45b47;
   }
 }

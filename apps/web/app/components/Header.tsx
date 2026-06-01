@@ -8,7 +8,7 @@ type HeaderProps = {
 
 export function Header({ navItems }: HeaderProps) {
   return (
-    <header className="w-full max-w-[1220px] mx-auto flex items-center gap-[14px] py-[10px] px-4 lg:px-12 rounded-full bg-fk-white shadow-[0_2px_0_var(--fk-shadow-header)] relative">
+    <header className="w-full max-w-[1220px] mx-auto flex items-center gap-[14px] py-[10px] px-4 lg:px-12 rounded-none lg:rounded-full bg-fk-white shadow-[0_2px_0_var(--fk-shadow-header)] relative">
       <Link
         className="shrink-0"
         href="/"

@@ -1,4 +1,4 @@
-import { ContentSection } from "./components/ContentSection";
+﻿import { ContentSection } from "./components/ContentSection";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
@@ -9,7 +9,7 @@ export default function Page() {
   return (
     <main className="min-h-svh bg-fk-yellow-soft overflow-hidden font-sans">
       {/* Yellow header band with decorative background SVG */}
-      <div className="bg-fk-yellow pt-[30px] px-3 pb-[34px] relative z-[3] before:content-[''] before:absolute before:inset-0 before:bg-[url('/header-bg.svg')] before:bg-contain before:bg-no-repeat before:bg-center">
+      <div className="pt-0 md:pt-[30px] px-0 md:px-3 pb-[138px] md:pb-0 relative z-[3] before:content-[''] before:absolute before:inset-0 before:top-0 before:bg-[url('/header-bg-mobile.svg')] before:bg-[length:100%_auto] before:bg-no-repeat before:bg-top md:before:bg-[url('/header-bg.svg')] md:before:bg-no-repeat md:before:bg-[length:100%_auto] md:before:bg-[position:0_0]">
         <Header navItems={navItems} />
         <Hero />
       </div>
