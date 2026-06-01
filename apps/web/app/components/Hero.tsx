@@ -14,7 +14,7 @@ export function Hero() {
         />
       </div>
 
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-fk-white rounded-[10px] px-5 py-3 sm:px-[50px] box-border max-w-[90vw] sm:max-w-none w-max">
+      <div className="absolute bottom-[-30px] sm:bottom-0 left-1/2 -translate-x-1/2 bg-fk-white rounded-[10px] px-5 py-3 sm:px-[50px] box-border max-w-[90vw] sm:max-w-none w-max">
         <p className="m-0 flex flex-wrap items-center gap-x-3 gap-y-1 text-fk-text-main text-sm sm:text-base font-bold leading-[1.4] [&+&]:mt-2">
           <Image
             src="/calendar-regular.svg"
