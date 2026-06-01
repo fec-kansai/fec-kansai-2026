@@ -43,7 +43,7 @@ export const infoLinks: FooterLink[] = [
   },
   {
     name: "ロゴ利用ガイドライン",
-    url: "https://docs.google.com/document/d/1wTOrXAN6pgCtEe7DGj5sfMccSk1AaJ1PTQZXuY6TVWU/edit?tab=t.0",
+    url: ":https://docs.google.com/document/d/136MWPcrD4lUasjDi_yY3jWQHXdlt0rg306XBjaZ9pDk/edit?usp=sharing",
   },
   {
     name: "キャンセルポリシー",
