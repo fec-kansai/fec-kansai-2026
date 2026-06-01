@@ -1,8 +1,8 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 
 export function Hero() {
   return (
-    <section className="w-full max-w-[1140px] mx-auto mt-5 min-h-[420px] sm:min-h-[560px] relative grid place-items-center px-3 pt-6 pb-[150px] sm:pb-[110px]">
+    <section className="w-full max-w-[1140px] mx-auto mt-5 min-h-[340px] sm:min-h-[560px] relative grid place-items-center px-3 pt-6 pb-0 sm:pb-[150px]">
       <div className="m-0 text-center flex flex-col gap-[6px]">
         <Image
           src="/logo_ol.svg"
@@ -10,6 +10,7 @@ export function Hero() {
           width={670}
           height={380}
           priority
+          className="w-[340px] h-auto md:w-[670px]"
         />
       </div>
 
@@ -21,9 +22,9 @@ export function Hero() {
             width={45}
             height={35}
             priority
-            className="shrink-0"
+            className="shrink-0 w-[27px] h-[20px] sm:w-[45px] sm:h-[35px]"
           />
-          <strong className="text-fk-text-main min-w-[42px] shrink-0">
+          <strong className="hidden sm:inline text-fk-text-main min-w-[42px] shrink-0">
             開催日
           </strong>
           <span>
@@ -38,12 +39,21 @@ export function Hero() {
             width={45}
             height={35}
             priority
-            className="shrink-0"
+            className="shrink-0 w-[27px] h-[20px] sm:w-[45px] sm:h-[35px]"
           />
-          <strong className="text-fk-text-main min-w-[42px] shrink-0">
+          <strong className="hidden sm:inline text-fk-text-main min-w-[42px] shrink-0">
             会場
           </strong>
           <span>コングレスクエア グラングリーン大阪</span>
+        </p>
+      </div>
+
+      <div className="sm:hidden absolute left-1/2 -translate-x-1/2 bottom-[-124px] text-center text-fk-accent-brown animate-[scrollGlow_1.15s_ease-in-out_infinite]">
+        <p className="m-0 text-[18px] leading-none font-barlow font-black tracking-[-0.03em]">
+          scroll
+        </p>
+        <p className="m-0 mt-[4px] text-[10px] leading-[1.1] font-montserrat font-black">
+          ▼<br />▼<br />▼
         </p>
       </div>
     </section>

@@ -1,4 +1,4 @@
-export function UnboundedSection() {
+﻿export function UnboundedSection() {
   return (
     <div>
       <div
@@ -10,24 +10,24 @@ export function UnboundedSection() {
           <h2 className="m-0 text-fk-text-olive text-[clamp(48px,7.2vw,58px)] leading-[0.95] font-extrabold tracking-[-0.02em] font-montserrat">
             <span className="font-montserrat">Frontend, Unbounded.</span>
           </h2>
-          <p className="m-0 text-fk-text-main text-[22px] leading-[1.4] ">
+          <p className="m-0 text-fk-text-main text-[18px] sm:text-[22px] leading-[1.4]">
             フロントエンドは、みんなの話やで。
           </p>
         </div>
 
         <div
-          className="w-2 h-20 mx-auto bg-fk-yellow rounded-full rotate-[42deg] min-[900px]:mx-0"
+          className="w-[6px] min-[900px]:w-2 h-[40px] sm:h-20 mx-auto bg-fk-yellow rounded-full rotate-[42deg] min-[900px]:mx-0"
           aria-hidden="true"
         />
 
-        <div className="h-full grid gap-auto justify-end">
-          <p className="m-0 text-fk-text-dark text-lg leading-[1.45] font-bold">
+        <div className="h-full grid gap-auto justify-start min-[900px]:justify-end">
+          <p className="m-0 text-fk-text-dark text-[15px] sm:text-lg leading-[1.45] font-bold">
             UIを描く人。体験を設計する人。
           </p>
-          <p className="m-0 text-fk-text-dark text-lg leading-[1.45] font-bold">
+          <p className="m-0 text-fk-text-dark text-[15px] sm:text-lg leading-[1.45] font-bold">
             コードを書く人。プロダクトを問う人。
           </p>
-          <p className="m-0 text-fk-text-dark text-lg leading-[1.45] font-bold">
+          <p className="m-0 text-fk-text-dark text-[15px] sm:text-lg leading-[1.45] font-bold">
             画面の向こうに立つすべての人へ、関西から。
           </p>
         </div>
@@ -36,7 +36,7 @@ export function UnboundedSection() {
         <p className="mt-2 mb-0 text-fk-text-light text-xs leading-[1.5] text-right">
           フロントエンドカンファレンス関西2026
           <br />
-          実行委員長 いずりょー
+          実行委員長 いずりー
         </p>
       </div>
     </div>

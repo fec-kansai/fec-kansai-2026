@@ -1,25 +1,25 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 
 export function TicketSection() {
   return (
     <div id="ticket" className="relative font-sans">
       <header className="text-center">
-        <h2 className="m-0 text-[28px] leading-[1.1] text-fk-text-main font-extrabold max-[900px]:text-[40px]">
+        <h2 className="m-0 text-[24px] sm:text-[28px] leading-[1.1] text-fk-text-main font-extrabold">
           チケット情報
         </h2>
-        <p className="mt-[6px] mb-0 text-fk-yellow text-[18px] font-bold tracking-[0.03em] font-montserrat max-[900px]:text-[24px]">
+        <p className="mt-[6px] mb-0 text-fk-yellow text-[18px] font-bold tracking-[0.03em] font-montserrat">
           ticket
         </p>
       </header>
 
-      <div className="mt-[42px] mx-auto max-w-[560px] flex items-center justify-center gap-7 max-[900px]:flex-col max-[900px]:gap-[18px]">
+      <div className="mt-[42px] mx-auto max-w-[560px] flex items-end justify-center gap-3 md:gap-7">
         <Image
           src="/coming-soon.png"
           alt="coming soon"
           width={384}
           height={165}
           aria-hidden
-          className="w-[min(100%,384px)] h-auto max-[900px]:w-[min(100%,320px)]"
+          className="w-[220px] h-auto md:w-[min(100%,384px)]"
         />
         <Image
           src="/Octopus.svg"
@@ -27,7 +27,7 @@ export function TicketSection() {
           width={164}
           height={164}
           aria-hidden
-          className="w-[min(100%,164px)] h-auto max-[900px]:w-[min(100%,148px)]"
+          className="w-[92px] h-auto md:w-[min(100%,164px)]"
         />
       </div>
 

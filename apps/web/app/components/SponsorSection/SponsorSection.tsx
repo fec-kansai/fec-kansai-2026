@@ -1,4 +1,4 @@
-import { Button } from "@workspace/ui/components/button";
+﻿import { Button } from "@workspace/ui/components/button";
 import Link from "next/link";
 
 const ExternalLinkIcon = () => (
@@ -25,7 +25,7 @@ export function SponsorSection() {
   return (
     <div id="sponsor" className="relative font-sans">
       <header className="text-center">
-        <h2 className="m-0 text-[28px] leading-[1.1] text-fk-text-main font-extrabold max-[900px]:text-[40px]">
+        <h2 className="m-0 text-[24px] sm:text-[28px] leading-[1.1] text-fk-text-main font-extrabold">
           スポンサー募集
         </h2>
         <p className="mt-[6px] mb-0 text-fk-yellow text-[18px] font-bold tracking-[0.03em] font-montserrat max-[900px]:text-[24px]">

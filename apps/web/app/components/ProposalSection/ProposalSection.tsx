@@ -1,4 +1,4 @@
-import { Button } from "@workspace/ui/components/button";
+﻿import { Button } from "@workspace/ui/components/button";
 import Link from "next/link";
 
 export function ProposalSection() {
@@ -16,7 +16,7 @@ export function ProposalSection() {
       />
 
       <header className="text-center">
-        <h2 className="m-0 text-[28px] leading-[1.1] text-fk-text-main font-extrabold max-[900px]:text-[40px]">
+        <h2 className="m-0 text-[24px] sm:text-[28px] leading-[1.1] text-fk-text-main font-extrabold">
           プロポーザル
         </h2>
         <p className="mt-[6px] mb-0 text-fk-yellow text-[18px] font-bold tracking-[0.03em] font-montserrat max-[900px]:text-[24px]">
@@ -25,15 +25,15 @@ export function ProposalSection() {
       </header>
 
       <div className="mt-[38px] grid">
-        <p className="m-0 text-fk-text-main text-base leading-[1.75] font-bold max-[900px]:text-[18px] max-[900px]:leading-[1.65]">
+        <p className="m-0 text-fk-text-main text-[14px] sm:text-base leading-[1.65] sm:leading-[1.75] font-bold">
           フロントエンドカンファレンス関西では、フロントエンドに関わるあらゆるテーマで登壇いただけるセッション
           スピーカーを募集しています。
         </p>
-        <p className="m-0 text-fk-text-main text-base leading-[1.75] font-bold max-[900px]:text-[18px] max-[900px]:leading-[1.65]">
+        <p className="m-0 text-fk-text-main text-[14px] sm:text-base leading-[1.65] sm:leading-[1.75] font-bold">
           日々の開発で得た知見や挑戦、チームでの工夫、技術やデザインとの連携など、実践的な内容から未来を見据え
           た話題まで幅広く歓迎します。
         </p>
-        <p className="mt-[30px] m-0 text-fk-text-main text-base leading-[1.75] font-bold max-[900px]:text-[18px] max-[900px]:leading-[1.65]">
+        <p className="mt-[30px] m-0 text-fk-text-main text-[14px] sm:text-base leading-[1.65] sm:leading-[1.75] font-bold">
           ご自身の経験やアイデアを、関西のコミュニティにシェアしてみませんか？
           <br />
           登壇経験の有無は問いません。初めての方もぜひご応募ください。
@@ -44,13 +44,14 @@ export function ProposalSection() {
         <Button
           asChild
           variant="fkSolid"
-          className="h-auto w-full sm:w-auto px-[34px] py-3  text-base sm:text-lg gap-2.5 [&_svg]:size-4"
+          className="h-auto w-full sm:w-auto px-[34px] py-3 text-[14px] sm:text-lg gap-2.5 [&_svg]:size-4"
         >
           <Link
             href="https://fortee.jp/fec-kansai-2026/speaker/proposal/cfp"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="プロポーザル募集フォームを開く"
+            className="text-[14px] sm:text-lg"
           >
             プロポーザル募集フォームはこちら
             <svg
