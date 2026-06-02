@@ -36,7 +36,7 @@
         <p className="mt-2 mb-0 text-fk-text-light text-xs leading-[1.5] text-right">
           フロントエンドカンファレンス関西2026
           <br />
-          実行委員長 いずりー
+          実行委員長 いずりょー
         </p>
       </div>
     </div>
