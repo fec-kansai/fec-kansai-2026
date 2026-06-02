@@ -41,7 +41,7 @@ export function Header({ navItems }: HeaderProps) {
         ))}
       </nav>
 
-      {/* Mobile hamburger button */}
+      {/* Mobile hamburger button (hidden on lg+, where the inline nav shows instead) */}
       <button
         type="button"
         aria-label="メニュー"
@@ -49,6 +49,12 @@ export function Header({ navItems }: HeaderProps) {
         onClick={() => setOpen((value) => !value)}
         className="ml-auto flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-fk-green transition-opacity duration-200 ease-in-out hover:opacity-90 lg:hidden"
       >
+        {/*
+          Three bars animate into an X when open. They're absolutely positioned
+          inside a fixed-size box so transforms don't shift each other:
+          top/bottom bars meet in the middle (translate-y) and rotate ±45deg,
+          the middle bar fades out.
+        */}
         <span className="relative block h-4 w-[22px]">
           <span
             className={`absolute left-0 top-0 block h-[2px] w-[22px] rounded-full bg-fk-white transition-transform duration-300 ease-in-out ${
@@ -68,7 +74,11 @@ export function Header({ navItems }: HeaderProps) {
         </span>
       </button>
 
-      {/* Mobile dropdown menu */}
+      {/*
+        Mobile dropdown menu. Kept mounted (not conditionally rendered) so the
+        close transition can play; when closed it animates out and is made
+        inert via pointer-events-none / aria-hidden / tabIndex=-1 on the links.
+      */}
       <nav
         aria-hidden={!open}
         className={`absolute left-0 right-0 top-full z-10 mt-2 flex origin-top flex-col rounded-[10px] bg-fk-white py-2 shadow-[0_2px_0_var(--fk-shadow-header)] transition-all duration-300 ease-in-out lg:hidden ${
