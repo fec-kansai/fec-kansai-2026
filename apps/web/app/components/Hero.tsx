@@ -2,7 +2,7 @@
 
 export function Hero() {
   return (
-    <section className="w-full max-w-[1140px] mx-auto mt-5 min-h-[340px] sm:min-h-[560px] relative grid place-items-center px-3 pt-6 pb-0 sm:pb-[150px]">
+    <section className="w-full max-w-[1140px] mx-auto mt-5 min-h-[340px] sm:min-h-[560px] relative top-4 sm:top-0 grid place-items-center px-3 pt-6 pb-0 sm:pb-[150px]">
       <div className="m-0 text-center flex flex-col gap-[6px]">
         <Image
           src="/logo_ol.svg"
