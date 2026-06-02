@@ -9,6 +9,7 @@
 :root {
   /* Project colors */
   --fk-yellow: #edb512;
+  --fk-yellow-band: #e9bf2c;
   --fk-yellow-soft: #fff9e8;
   --fk-green: #59671e;
   --fk-accent-red: #e54839;
@@ -75,6 +76,7 @@
 
   /* Project color tokens → Tailwind utilities (bg-fk-green, text-fk-text-main, …) */
   --color-fk-yellow: var(--fk-yellow);
+  --color-fk-yellow-band: var(--fk-yellow-band);
   --color-fk-yellow-soft: var(--fk-yellow-soft);
   --color-fk-green: var(--fk-green);
   --color-fk-accent-red: var(--fk-accent-red);
