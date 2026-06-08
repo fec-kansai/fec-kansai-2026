@@ -50,3 +50,8 @@ export const infoLinks: FooterLink[] = [
     url: "https://docs.google.com/document/d/1YKUO01ROvD2nnEN8YW37VKkF35HKavWQ9uG4JDJcaco/edit?tab=t.0",
   },
 ];
+
+export const organizationLink: FooterLink = {
+  name: "一般社団法人 関西開発者会議",
+  url: "https://k3jp.org/",
+};
