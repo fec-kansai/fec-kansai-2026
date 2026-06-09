@@ -7,7 +7,7 @@ export const siteTitle = "フロントエンドカンファレンス関西2026";
 export const siteDescription = "フロントエンドカンファレンス関西2026";
 
 export const SITE_URL = new URL(
-  process.env.SITE_URL ?? "http://localhost:3000",
+  process.env.SITE_URL ?? process.env.CF_PAGES_URL ?? "http://localhost:3000",
 );
 
 export const openGraph = {
