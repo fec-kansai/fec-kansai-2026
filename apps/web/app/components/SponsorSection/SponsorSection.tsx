@@ -19,7 +19,7 @@ const ExternalLinkIcon = () => (
 
 const sponsorDocumentLink =
   "https://docs.google.com/document/d/1TwPVy5jlPmXEJyXU1zpz7HiA5dg26OnDSHHCo9Cikbk/edit?usp=sharing";
-const sponsorApplicationFormLink = "";
+// const sponsorApplicationFormLink = "";
 
 export function SponsorSection() {
   return (
@@ -49,7 +49,7 @@ export function SponsorSection() {
         </p>
       </div>
 
-      <div className="mt-[44px] grid grid-cols-2 gap-6 max-[900px]:grid-cols-1">
+      <div className="mt-[44px] flex place-items-center justify-center flex-row gap-6 max-[900px]:grid-cols-1">
         <Button asChild variant="fkOutline" size="fkPill">
           <Link
             href={sponsorDocumentLink}
