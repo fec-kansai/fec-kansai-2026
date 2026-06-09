@@ -1,6 +1,6 @@
 import { MapSection } from "./MapSection/MapSection";
 import { ProposalSection } from "./ProposalSection/ProposalSection";
-// import { SponsorSection } from "./SponsorSection/SponsorSection";
+import { SponsorSection } from "./SponsorSection/SponsorSection";
 import { TicketSection } from "./TicketSection/TicketSection";
 import { UnboundedSection } from "./UnboundedSection/UnboundedSection";
 
@@ -18,10 +18,9 @@ export function ContentSection() {
           <ProposalSection />
         </div>
 
-        {/* TODO: Uncomment this when the sponsor section is ready */}
-        {/* <div className="bg-fk-white rounded-[10px] py-8 px-5 sm:py-[48px] sm:px-[56px] flex-1 relative">
+        <div className="bg-fk-white rounded-[10px] py-8 px-5 sm:py-[48px] sm:px-[56px] flex-1 relative">
           <SponsorSection />
-        </div> */}
+        </div>
 
         <div className="bg-fk-white rounded-[10px] py-8 px-5 sm:py-[48px] sm:px-[56px] flex-1 relative">
           <TicketSection />
