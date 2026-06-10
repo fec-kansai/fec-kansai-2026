@@ -1,7 +1,7 @@
-﻿import { ContentSection } from "./components/ContentSection";
-import { Footer } from "./components/Footer";
+﻿import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
+import { SideEventSection } from "./components/SideEventSection/SideEventSection";
 import { WaveDivider } from "./components/WaveDivider";
 import { infoLinks, navItems } from "./constants";
 
@@ -15,12 +15,12 @@ export default function Page() {
         Desktop (md): the cap switches to the SVG's native 1440x744 and centers it, so the art never scales up past 
         its design size on very wide screens.
       */}
-      <div className="bg-fk-yellow-band pt-0 md:pt-[30px] px-0 md:px-3 pb-[150px] md:pb-0 min-h-[145.6vw] md:min-h-0 relative z-[3] before:content-[''] before:absolute before:inset-0 before:-inset-x-px before:top-0 before:-bottom-px before:bg-[url('/header-bg-mobile.svg')] before:bg-[length:100%_auto] before:bg-no-repeat before:bg-top before:max-w-[375px] before:mx-auto md:before:bg-[url('/header-bg.svg')] md:before:bg-no-repeat md:before:bg-[length:100%_auto] md:before:bg-[position:0_0] md:before:max-w-[1440px] md:before:max-h-[744px] md:before:mx-auto">
+      <div className="bg-fk-yellow-band pt-0 px-0 md:px-3 md:pt-6 md:pb-0 min-h-[25.6vw] md:min-h-0">
         <Header navItems={navItems} />
         <Hero />
       </div>
       <WaveDivider />
-      <ContentSection />
+      <SideEventSection />
       <Footer infoLinks={infoLinks} />
     </main>
   );
