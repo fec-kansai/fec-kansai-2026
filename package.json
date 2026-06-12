@@ -16,7 +16,8 @@
     "@workspace/typescript-config": "workspace:*",
     "lefthook": "^1.13.6",
     "turbo": "^2.5.8",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "wrangler": "^3.90.0"
   },
   "packageManager": "pnpm@11.3.0",
   "engines": {

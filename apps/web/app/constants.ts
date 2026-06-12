@@ -7,8 +7,7 @@ export const navItems: NavLink[] = [
   { name: "メッセージ", url: "#message" },
   { name: "開催日・アクセス", url: "#access" },
   { name: "プロポーザル", url: "#proposal" },
-  // TODO: Uncomment this when the sponsor section is ready
-  // { name: "スポンサー募集", url: "#sponsor" },
+  { name: "スポンサー募集", url: "#sponsor" },
   { name: "チケット情報", url: "#ticket" },
   // TODO: Uncomment this when the official character section is ready
   // { name: "公式キャラクター", url: "#character" },
@@ -43,10 +42,15 @@ export const infoLinks: FooterLink[] = [
   },
   {
     name: "ロゴ利用ガイドライン",
-    url: "https://docs.google.com/document/d/1wTOrXAN6pgCtEe7DGj5sfMccSk1AaJ1PTQZXuY6TVWU/edit?tab=t.0",
+    url: "https://docs.google.com/document/d/136MWPcrD4lUasjDi_yY3jWQHXdlt0rg306XBjaZ9pDk/edit?usp=sharing",
   },
   {
     name: "キャンセルポリシー",
     url: "https://docs.google.com/document/d/1YKUO01ROvD2nnEN8YW37VKkF35HKavWQ9uG4JDJcaco/edit?tab=t.0",
   },
 ];
+
+export const organizationLink: FooterLink = {
+  name: "一般社団法人 関西開発者会議",
+  url: "https://k3jp.org/",
+};

@@ -17,6 +17,10 @@ const ExternalLinkIcon = () => (
   </svg>
 );
 
+const sponsorDocumentLink =
+  "https://docs.google.com/document/d/1TwPVy5jlPmXEJyXU1zpz7HiA5dg26OnDSHHCo9Cikbk/edit?usp=sharing";
+// const sponsorApplicationFormLink = "";
+
 export function SponsorSection() {
   return (
     <div id="sponsor" className="relative font-sans">
@@ -45,20 +49,31 @@ export function SponsorSection() {
         </p>
       </div>
 
-      <div className="mt-[44px] grid grid-cols-2 gap-6 max-[900px]:grid-cols-1">
+      <div className="mt-[44px] flex place-items-center justify-center flex-row gap-6 max-[900px]:grid-cols-1">
         <Button asChild variant="fkOutline" size="fkPill">
-          <Link href="#" aria-label="スポンサー協賛資料を開く">
+          <Link
+            href={sponsorDocumentLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="スポンサー協賛資料を開く"
+          >
             スポンサー協賛資料をみる
             <ExternalLinkIcon />
           </Link>
         </Button>
 
-        <Button asChild variant="fkSolid" size="fkPill">
-          <Link href="#" aria-label="スポンサー協賛申し込みフォームを開く">
+        {/* TODO: Uncomment this when the sponsor application form is ready */}
+        {/* <Button asChild variant="fkSolid" size="fkPill">
+          <Link
+            href={sponsorApplicationFormLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="スポンサー協賛申し込みフォームを開く"
+          >
             スポンサー協賛申し込みはこちら
             <ExternalLinkIcon />
           </Link>
-        </Button>
+        </Button> */}
       </div>
 
       {/* js.svg 装飾 */}
