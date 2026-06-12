@@ -3,7 +3,7 @@ import { Header } from "../components/Header";
 import { SideEventHero } from "../components/SideEventHero";
 import { SideEventSection } from "../components/SideEventSection/SideEventSection";
 import { WaveDivider } from "../components/WaveDivider";
-import { infoLinks, navItems } from "../constants";
+import { infoLinks, navItems, organizationLink } from "../constants";
 
 export default function SideEventsPage() {
   return (
@@ -14,7 +14,7 @@ export default function SideEventsPage() {
       </div>
       <WaveDivider />
       <SideEventSection />
-      <Footer infoLinks={infoLinks} />
+      <Footer infoLinks={infoLinks} organizationLink={organizationLink} />
     </main>
   );
 }

@@ -4,9 +4,10 @@ import type { FooterLink } from "../constants";
 
 type FooterProps = {
   infoLinks: FooterLink[];
+  organizationLink: FooterLink;
 };
 
-export function Footer({ infoLinks }: FooterProps) {
+export function Footer({ infoLinks, organizationLink }: FooterProps) {
   const getLinkProps = (url: string) =>
     url.startsWith("http")
       ? { target: "_blank" as const, rel: "noopener noreferrer" }
@@ -83,10 +84,16 @@ export function Footer({ infoLinks }: FooterProps) {
       </div>
 
       <div className="max-w-[1220px] mx-auto mt-14 grid gap-2 text-center text-[12px] text-[var(--fk-white-90)] sm:text-sm lg:grid-cols-[1fr_auto] lg:items-center lg:text-left">
-        <p className="m-0">
-          <strong className="mr-[10px]">運営団体</strong> 一般社団法人
-          関西経済文化会議
-        </p>
+        <div className="m-0">
+          <strong className="mr-[10px]">運営団体</strong>
+          <Link
+            key={organizationLink.name}
+            href={organizationLink.url}
+            {...getLinkProps(organizationLink.url)}
+          >
+            {organizationLink.name}
+          </Link>
+        </div>
         <p className="m-0 text-[10px] sm:text-sm">
           © 2026 フロントエンドカンファレンス関西実行委員会. All rights
           reserved.
