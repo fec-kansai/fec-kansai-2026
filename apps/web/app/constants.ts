@@ -9,8 +9,7 @@ export const navItems: NavLink[] = [
   { name: "プロポーザル", url: "#proposal" },
   { name: "スポンサー募集", url: "#sponsor" },
   { name: "チケット情報", url: "#ticket" },
-  // TODO: Uncomment this when the official character section is ready
-  // { name: "公式キャラクター", url: "#character" },
+  { name: "公式キャラクター", url: "#character" },
 ];
 
 export type FooterLink = {
