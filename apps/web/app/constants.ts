@@ -31,7 +31,7 @@ export const sponsorLinks: FooterLink[] = [
 export const sideEvents: SideEvent[] = [
   {
     id: "kansai-frontend-meetup-1",
-    status: "ended",
+    status: "upcoming",
     date: { month: 6, day: 22, weekday: "mon" },
     title:
       "Kansai Frontend Meetup #1—プロポーザル締め切り間近！プロポーザルもくもく会",
