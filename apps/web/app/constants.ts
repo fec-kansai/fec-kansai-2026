@@ -36,7 +36,7 @@ export const sideEvents: SideEvent[] = [
     title:
       "Kansai Frontend Meetup #1—プロポーザル締め切り間近！プロポーザルもくもく会",
     hosts:
-      "主催：主催者名が入ります / 主催者名入ります / 主催者名入ります / 主催者名入ります",
+      "主催：フロントエンドカンファレンス関西",
     image: "/side-meetup-event.png",
     description: [
       "フロントエンドカンファレンス関西2026（2026/10/12開催）の CFP に向けて、みんなでプロポーザルを書く会です。",
