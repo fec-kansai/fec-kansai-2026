@@ -1,5 +1,3 @@
-﻿import type { SideEvent } from "./components/SideEventSection/types";
-
 export type NavLink = {
   name: string;
   url: string;
@@ -26,89 +24,6 @@ export type FooterLink = {
 export const sponsorLinks: FooterLink[] = [
   { name: "協賛資料", url: "/sponsor/materials" },
   { name: "スポンサー募集URL", url: "/sponsor" },
-];
-
-export const sideEvents: SideEvent[] = [
-  {
-    id: "kansai-frontend-meetup-1",
-    status: "ended",
-    date: { month: 6, day: 22, weekday: "mon" },
-    title:
-      "Kansai Frontend Meetup #1—プロポーザル締め切り間近！プロポーザルもくもく会",
-    hosts:
-      "主催：主催者名が入ります / 主催者名入ります / 主催者名入ります / 主催者名入ります",
-    image: "/side-meetup-event.png",
-    description: [
-      "フロントエンドカンファレンス関西2026（2026/10/12開催）の CFP に向けて、みんなでプロポーザルを書く会です。",
-      "当日はもくもく会の前にプロポーザルで見られているポイントやネタの見つけ方、プロポーザルを書くコツを可能な範囲でお話しします。もくもく会でもスタッフや他の参加者に相談しながら、実際にプロポーザルを書いていきましょう。",
-      "ぜひ、初めてのプロポーザルを書く場にしてください！",
-    ],
-    tags: ["もくもく会", "CFP", "オフライン開催"],
-    link: {
-      url: "https://fortee.jp/fec-kansai-2026",
-      label: "詳細・参加申し込みはこちら",
-    },
-  },
-  {
-    id: "side-event-2",
-    status: "upcoming",
-    date: { month: 6, day: 1, weekday: "mon" },
-    title: "イベント名が入ります。",
-    hosts:
-      "主催：主催者名入ります / 主催者名入ります / 主催者名入ります / 主催者名入ります",
-    description: [
-      "イベント詳細テキストが入ります。イベント詳細テキストが入ります。イベント詳細テキストが入ります。イベント詳細テキストが入ります。イベント詳細テキストが入ります。イベント詳細テキストが入ります。イベント詳細テキストが入ります。",
-    ],
-    tags: [
-      "タグタグタグ",
-      "タグタグタグタグタグタグタグタグタグタグタグタグ",
-      "タグタグタグ",
-    ],
-    link: {
-      url: "https://fortee.jp/fec-kansai-2026",
-      label: "詳細・参加申し込みはこちら",
-    },
-  },
-  {
-    id: "side-event-3",
-    status: "upcoming",
-    date: { month: 6, day: 1, weekday: "mon" },
-    title: "イベント名が入ります。",
-    hosts:
-      "主催：主催者名入ります / 主催者名入ります / 主催者名入ります / 主催者名入ります",
-    description: [
-      "イベント詳細テキストが入ります。イベント詳細テキストが入ります。イベント詳細テキストが入ります。イベント詳細テキストが入ります。イベント詳細テキストが入ります。イベント詳細テキストが入ります。イベント詳細テキストが入ります。",
-    ],
-    tags: [
-      "タグタグタグ",
-      "タグタグタグタグタグタグタグタグタグタグタグタグ",
-      "タグタグタグ",
-    ],
-    link: {
-      url: "https://fortee.jp/fec-kansai-2026",
-      label: "詳細・参加申し込みはこちら",
-    },
-  },
-  {
-    id: "side-event-4",
-    status: "upcoming",
-    date: { month: 6, day: 1, weekday: "mon" },
-    title: "イベント名が入ります。",
-    hosts:
-      "主催：主催者名入ります / 主催者名入ります / 主催者名入ります / 主催者名入ります",
-    description: [
-      "イベント詳細テキストが入ります。イベント詳細テキストが入ります。イベント詳細テキストが入ります。イベント詳細テキストが入ります。イベント詳細テキストが入ります。イベント詳細テキストが入ります。イベント詳細テキストが入ります。",
-    ],
-    tags: [
-      "タグタグタグ",
-      "タグタグタグタグタグタグタグタグタグタグタグタグ",
-      "タグタグタグ",
-    ],
-    link: {
-      url: "https://fortee.jp/fec-kansai-2026",
-      label: "詳細・参加申し込みはこちら",
-    },
-  },
 ];
 
 export const infoLinks: FooterLink[] = [

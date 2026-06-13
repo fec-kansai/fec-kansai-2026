@@ -1,6 +1,9 @@
 /** Controls the corner ribbon: "ended" shows 終了, "upcoming" shows nothing. */
 export type SideEventStatus = "upcoming" | "ended";
 
+/** Lowercase 3-letter weekday, used as the key into WEEKDAY_LABEL in SideEventCard. */
+export type Weekday = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun";
+
 /**
  * Side event card data. The whole card is driven by this structure so that
  * editing an event (or adding a new one) only means changing data in
@@ -11,9 +14,9 @@ export type SideEvent = {
   id: string;
   status: SideEventStatus;
   /** Date badge, e.g. { month: 6, day: 22, weekday: "mon" }. */
-  date: { month: number; day: number; weekday: string };
+  date: { month: number; day: number; weekday: Weekday };
   title: string;
-  /** Organiser line, rendered under the title (主催: …). */
+  /** Organiser line, rendered under the title. Include the "主催：" prefix in the value. */
   hosts: string;
   /** Event image. When omitted, a "no image" placeholder is shown instead. */
   image?: string;

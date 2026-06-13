@@ -1,9 +1,9 @@
-import { sideEvents } from "../../constants";
 import { SideEventCard } from "./SideEventCard";
+import { sideEvents } from "./sideEvents";
 
 /**
  * Renders the list of side-event cards. The section is purely a loop over
- * `sideEvents` data — to add, remove or edit an event, change constants.ts only.
+ * `sideEvents` data — to add, remove or edit an event, change sideEvents.ts only.
  */
 export function SideEventSection() {
   return (
