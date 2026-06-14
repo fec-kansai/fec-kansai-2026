@@ -19,7 +19,8 @@ const ExternalLinkIcon = () => (
 
 const sponsorDocumentLink =
   "https://docs.google.com/document/d/1TwPVy5jlPmXEJyXU1zpz7HiA5dg26OnDSHHCo9Cikbk/edit?usp=sharing";
-// const sponsorApplicationFormLink = "";
+const sponsorApplicationFormLink =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfDzw2ReylE3al4IAL7D_XjozZx8Cl8CEnR5Pgm4KRkatc6Zw/viewform?usp=header";
 
 export function SponsorSection() {
   return (
@@ -49,7 +50,7 @@ export function SponsorSection() {
         </p>
       </div>
 
-      <div className="mt-[44px] flex place-items-center justify-center flex-row gap-6 max-[900px]:grid-cols-1">
+      <div className="mt-[44px] flex place-items-center justify-center flex-row gap-6 max-[900px]:flex-col">
         <Button asChild variant="fkOutline" size="fkPill">
           <Link
             href={sponsorDocumentLink}
@@ -62,8 +63,7 @@ export function SponsorSection() {
           </Link>
         </Button>
 
-        {/* TODO: Uncomment this when the sponsor application form is ready */}
-        {/* <Button asChild variant="fkSolid" size="fkPill">
+        <Button asChild variant="fkSolid" size="fkPill">
           <Link
             href={sponsorApplicationFormLink}
             target="_blank"
@@ -73,7 +73,7 @@ export function SponsorSection() {
             スポンサー協賛申し込みはこちら
             <ExternalLinkIcon />
           </Link>
-        </Button> */}
+        </Button>
       </div>
 
       {/* js.svg 装飾 */}
