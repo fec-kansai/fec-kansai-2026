@@ -1,9 +1,8 @@
 ﻿import { ContentSection } from "./components/ContentSection";
-import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { WaveDivider } from "./components/WaveDivider";
-import { infoLinks, navItems, organizationLink } from "./constants";
+import { navItems } from "./constants";
 
 export default function Page() {
   return (
@@ -21,7 +20,6 @@ export default function Page() {
       </div>
       <WaveDivider />
       <ContentSection />
-      <Footer infoLinks={infoLinks} organizationLink={organizationLink} />
     </main>
   );
 }

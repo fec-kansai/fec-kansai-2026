@@ -1,15 +1,18 @@
-﻿export type NavLink = {
+export type NavLink = {
   name: string;
   url: string;
 };
 
 export const navItems: NavLink[] = [
-  { name: "メッセージ", url: "#message" },
-  { name: "開催日・アクセス", url: "#access" },
-  { name: "プロポーザル", url: "#proposal" },
-  { name: "スポンサー募集", url: "#sponsor" },
-  { name: "チケット情報", url: "#ticket" },
-  { name: "公式キャラクター", url: "#character" },
+  // Anchors are absolute (/#…) so the menu also works from the /side-events route,
+  // where these sections don't exist — clicking jumps back to the section on the LP.
+  { name: "メッセージ", url: "/#message" },
+  { name: "開催日・アクセス", url: "/#access" },
+  { name: "プロポーザル", url: "/#proposal" },
+  { name: "スポンサー募集", url: "/#sponsor" },
+  { name: "チケット情報", url: "/#ticket" },
+  { name: "公式キャラクター", url: "/#character" },
+  { name: "サイドイベント", url: "/side-events" },
 ];
 
 export type FooterLink = {
