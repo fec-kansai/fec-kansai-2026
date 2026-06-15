@@ -1,4 +1,4 @@
-import { Button } from "@workspace/ui/components/button";
+﻿import { Button } from "@workspace/ui/components/button";
 import Link from "next/link";
 
 const ExternalLinkIcon = () => (
@@ -19,13 +19,14 @@ const ExternalLinkIcon = () => (
 
 const sponsorDocumentLink =
   "https://docs.google.com/document/d/1TwPVy5jlPmXEJyXU1zpz7HiA5dg26OnDSHHCo9Cikbk/edit?usp=sharing";
-// const sponsorApplicationFormLink = "";
+const sponsorApplicationFormLink =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfDzw2ReylE3al4IAL7D_XjozZx8Cl8CEnR5Pgm4KRkatc6Zw/viewform?usp=header";
 
 export function SponsorSection() {
   return (
     <div id="sponsor" className="relative font-sans">
       <header className="text-center">
-        <h2 className="m-0 text-[28px] leading-[1.1] text-fk-text-main font-extrabold max-[900px]:text-[40px]">
+        <h2 className="m-0 text-[24px] sm:text-[28px] leading-[1.1] text-fk-text-main font-extrabold">
           スポンサー募集
         </h2>
         <p className="mt-[6px] mb-0 text-fk-yellow text-[18px] font-bold tracking-[0.03em] font-montserrat max-[900px]:text-[24px]">
@@ -49,7 +50,7 @@ export function SponsorSection() {
         </p>
       </div>
 
-      <div className="mt-[44px] flex place-items-center justify-center flex-row gap-6 max-[900px]:grid-cols-1">
+      <div className="mt-[44px] flex place-items-center justify-center flex-row gap-6 max-[900px]:flex-col">
         <Button asChild variant="fkOutline" size="fkPill">
           <Link
             href={sponsorDocumentLink}
@@ -62,8 +63,7 @@ export function SponsorSection() {
           </Link>
         </Button>
 
-        {/* TODO: Uncomment this when the sponsor application form is ready */}
-        {/* <Button asChild variant="fkSolid" size="fkPill">
+        <Button asChild variant="fkSolid" size="fkPill">
           <Link
             href={sponsorApplicationFormLink}
             target="_blank"
@@ -73,7 +73,7 @@ export function SponsorSection() {
             スポンサー協賛申し込みはこちら
             <ExternalLinkIcon />
           </Link>
-        </Button> */}
+        </Button>
       </div>
 
       {/* js.svg 装飾 */}
