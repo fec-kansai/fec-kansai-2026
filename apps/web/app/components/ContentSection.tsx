@@ -1,4 +1,5 @@
 import { MapSection } from "./MapSection/MapSection";
+import { OfficialCharacterSection } from "./OfficialCharacterSection/OfficialCharacterSection";
 import { ProposalSection } from "./ProposalSection/ProposalSection";
 import { SponsorSection } from "./SponsorSection/SponsorSection";
 import { TicketSection } from "./TicketSection/TicketSection";
@@ -27,9 +28,9 @@ export function ContentSection() {
         </div>
 
         {/* TODO: Uncomment this when the official character section is ready */}
-        {/* <div className="bg-fk-white rounded-[10px] py-8 px-5 sm:py-[48px] sm:px-[56px] flex-1 relative">
+        <div className="bg-fk-white rounded-[10px] py-8 px-5 sm:py-[48px] sm:px-[56px] flex-1 relative">
           <OfficialCharacterSection />
-        </div> */}
+        </div>
       </div>
     </section>
   );
