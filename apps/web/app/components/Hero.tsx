@@ -2,7 +2,7 @@
 
 export function Hero() {
   return (
-    <section className="w-full max-w-[1140px] mx-auto mt-5 min-h-[340px] sm:min-h-[560px] relative grid place-items-center px-3 pt-6 pb-0 sm:pb-[150px]">
+    <section className="w-full max-w-[1140px] mx-auto mt-5 min-h-[340px] sm:min-h-[560px] relative grid place-items-center px-5 pt-6 pb-0 sm:pb-[150px]">
       <div className="m-0 text-center flex flex-col gap-[6px]">
         <Image
           src="/logo_ol.svg"
@@ -10,7 +10,7 @@ export function Hero() {
           width={670}
           height={380}
           priority
-          className="w-[340px] h-auto md:w-[670px]"
+          className="w-full h-auto md:w-[670px]"
         />
       </div>
 

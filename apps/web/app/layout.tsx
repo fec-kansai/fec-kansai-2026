@@ -2,6 +2,8 @@
 
 import "@workspace/ui/globals.css";
 
+import { Footer } from "./components/Footer";
+import { infoLinks, organizationLink } from "./constants";
 import { htmlLang, metadata } from "./layout.constants";
 
 const fontBarlow = Barlow({
@@ -35,7 +37,10 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`scroll-smooth ${fontBarlow.variable} ${fontNotoSansJp.variable} ${fontMontserrat.variable}`}
     >
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        {children}
+        <Footer infoLinks={infoLinks} organizationLink={organizationLink} />
+      </body>
     </html>
   );
 }
