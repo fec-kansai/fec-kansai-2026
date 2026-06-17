@@ -3,7 +3,7 @@
 import "@workspace/ui/globals.css";
 
 import { Footer } from "./components/Footer";
-import { infoLinks, organizationLink } from "./constants";
+import { contactLinks, organizationLink, policyLinks } from "./constants";
 import { htmlLang, metadata } from "./layout.constants";
 
 const fontBarlow = Barlow({
@@ -39,7 +39,11 @@ export default function RootLayout({
     >
       <body className="font-sans antialiased">
         {children}
-        <Footer infoLinks={infoLinks} organizationLink={organizationLink} />
+        <Footer
+          policyLinks={policyLinks}
+          contactLinks={contactLinks}
+          organizationLink={organizationLink}
+        />
       </body>
     </html>
   );
