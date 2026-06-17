@@ -3,11 +3,16 @@ import Link from "next/link";
 import type { FooterLink } from "../constants";
 
 type FooterProps = {
-  infoLinks: FooterLink[];
+  policyLinks: FooterLink[];
+  contactLinks: FooterLink[];
   organizationLink: FooterLink;
 };
 
-export function Footer({ infoLinks, organizationLink }: FooterProps) {
+export function Footer({
+  policyLinks,
+  contactLinks,
+  organizationLink,
+}: FooterProps) {
   const getLinkProps = (url: string) =>
     url.startsWith("http")
       ? { target: "_blank" as const, rel: "noopener noreferrer" }
@@ -64,12 +69,27 @@ export function Footer({ infoLinks, organizationLink }: FooterProps) {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.7fr_1fr] lg:gap-[30px]">
+        <div className="grid grid-cols-1 flex gap-8 lg:grid-cols-[0.7fr_1fr] lg:gap-[30px]">
           <div>
             <h2 className="m-0 mb-[10px] text-lg leading-[1.2] font-semibold">
               お問い合わせ
             </h2>
-            {infoLinks.map((item) => (
+            {contactLinks.map((item) => (
+              <Link
+                key={item.name}
+                href={item.url}
+                className="block text-[var(--fk-white-92)] no-underline text-sm leading-[1.55] mt-[10px] transition-opacity duration-200 ease-in-out hover:opacity-70"
+                {...getLinkProps(item.url)}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+          <div>
+            <h2 className="m-0 mb-[10px] text-lg leading-[1.2] font-semibold">
+              規約・ポリシー
+            </h2>
+            {policyLinks.map((item) => (
               <Link
                 key={item.name}
                 href={item.url}
