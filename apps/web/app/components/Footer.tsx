@@ -41,7 +41,7 @@ export function Footer({
 
   return (
     <footer className="relative bg-fk-green text-fk-white pt-[44px] pb-[53px] px-4 md:px-8 lg:px-12 before:content-[''] before:absolute before:inset-x-0 before:-top-[40px] sm:before:-top-[66px] before:h-[40px] sm:before:h-[70px] before:bg-[url('/footer-wave-tile.svg')] before:bg-[position:73px_0] sm:before:bg-[position:left_-2px_bottom] before:bg-[length:148px_40px] sm:before:bg-[length:220px_70px] before:bg-repeat-x">
-      <div className="max-w-[1220px] mx-auto grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-start">
+      <div className="max-w-[1220px] mx-auto grid lg:grid-cols-[0.4fr_0.4fr] lg:items-start">
         <div className="grid gap-[10px] justify-items-center lg:justify-items-start">
           <Image
             src="/footer-logo.svg"
@@ -69,7 +69,7 @@ export function Footer({
           </div>
         </div>
 
-        <div className="grid grid-cols-1 flex gap-8 lg:grid-cols-[0.7fr_1fr] lg:gap-[30px]">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.7fr_1fr] lg:gap-[30px]">
           <div>
             <h2 className="m-0 mb-[10px] text-lg leading-[1.2] font-semibold">
               お問い合わせ
