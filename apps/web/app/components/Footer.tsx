@@ -3,11 +3,16 @@ import Link from "next/link";
 import type { FooterLink } from "../constants";
 
 type FooterProps = {
-  infoLinks: FooterLink[];
+  policyLinks: FooterLink[];
+  contactLinks: FooterLink[];
   organizationLink: FooterLink;
 };
 
-export function Footer({ infoLinks, organizationLink }: FooterProps) {
+export function Footer({
+  policyLinks,
+  contactLinks,
+  organizationLink,
+}: FooterProps) {
   const getLinkProps = (url: string) =>
     url.startsWith("http")
       ? { target: "_blank" as const, rel: "noopener noreferrer" }
@@ -36,7 +41,7 @@ export function Footer({ infoLinks, organizationLink }: FooterProps) {
 
   return (
     <footer className="relative bg-fk-green text-fk-white pt-[44px] pb-[53px] px-4 md:px-8 lg:px-12 before:content-[''] before:absolute before:inset-x-0 before:-top-[40px] sm:before:-top-[66px] before:h-[40px] sm:before:h-[70px] before:bg-[url('/footer-wave-tile.svg')] before:bg-[position:73px_0] sm:before:bg-[position:left_-2px_bottom] before:bg-[length:148px_40px] sm:before:bg-[length:220px_70px] before:bg-repeat-x">
-      <div className="max-w-[1220px] mx-auto grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-start">
+      <div className="max-w-[1220px] mx-auto grid lg:grid-cols-[0.35fr_0.4fr] lg:items-start">
         <div className="grid gap-[10px] justify-items-center lg:justify-items-start">
           <Image
             src="/footer-logo.svg"
@@ -64,12 +69,27 @@ export function Footer({ infoLinks, organizationLink }: FooterProps) {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.7fr_1fr] lg:gap-[30px]">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1fr] lg:gap-[0px]">
           <div>
             <h2 className="m-0 mb-[10px] text-lg leading-[1.2] font-semibold">
               お問い合わせ
             </h2>
-            {infoLinks.map((item) => (
+            {contactLinks.map((item) => (
+              <Link
+                key={item.name}
+                href={item.url}
+                className="block text-[var(--fk-white-92)] no-underline text-sm leading-[1.55] mt-[10px] transition-opacity duration-200 ease-in-out hover:opacity-70"
+                {...getLinkProps(item.url)}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+          <div>
+            <h2 className="m-0 mb-[10px] text-lg leading-[1.2] font-semibold">
+              規約・ポリシー
+            </h2>
+            {policyLinks.map((item) => (
               <Link
                 key={item.name}
                 href={item.url}

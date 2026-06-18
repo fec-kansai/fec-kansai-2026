@@ -1,15 +1,18 @@
-﻿export type NavLink = {
+export type NavLink = {
   name: string;
   url: string;
 };
 
 export const navItems: NavLink[] = [
-  { name: "メッセージ", url: "#message" },
-  { name: "開催日・アクセス", url: "#access" },
-  { name: "プロポーザル", url: "#proposal" },
-  { name: "スポンサー募集", url: "#sponsor" },
-  { name: "チケット情報", url: "#ticket" },
-  { name: "公式キャラクター", url: "#character" },
+  // Anchors are absolute (/#…) so the menu also works from the /side-events route,
+  // where these sections don't exist — clicking jumps back to the section on the LP.
+  { name: "メッセージ", url: "/#message" },
+  { name: "開催日・アクセス", url: "/#access" },
+  { name: "プロポーザル", url: "/#proposal" },
+  { name: "スポンサー募集", url: "/#sponsor" },
+  { name: "チケット情報", url: "/#ticket" },
+  { name: "公式キャラクター", url: "/#character" },
+  { name: "サイドイベント", url: "/side-events" },
 ];
 
 export type FooterLink = {
@@ -22,7 +25,7 @@ export const sponsorLinks: FooterLink[] = [
   { name: "スポンサー募集URL", url: "/sponsor" },
 ];
 
-export const infoLinks: FooterLink[] = [
+export const policyLinks: FooterLink[] = [
   {
     name: "行動規範",
     url: "https://docs.google.com/document/d/1ehwr1skJ_HS0Ef2VL18Hoka1WSB_Qvi5WYOOrRP_zSA/edit?tab=t.0",
@@ -46,6 +49,13 @@ export const infoLinks: FooterLink[] = [
   {
     name: "キャンセルポリシー",
     url: "https://docs.google.com/document/d/1YKUO01ROvD2nnEN8YW37VKkF35HKavWQ9uG4JDJcaco/edit?tab=t.0",
+  },
+];
+
+export const contactLinks: FooterLink[] = [
+  {
+    name: "お問い合わせフォーム",
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSdpT0zG5oK_jxoLhYHqDLcCc6WqStOQ0swHRsJNI8b7yGe5Fw/viewform",
   },
 ];
 
