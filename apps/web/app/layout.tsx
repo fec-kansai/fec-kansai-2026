@@ -4,7 +4,7 @@ import "@workspace/ui/globals.css";
 
 import { Footer } from "./components/Footer";
 import { contactLinks, organizationLink, policyLinks } from "./constants";
-import { htmlLang, metadata } from "./layout.constants";
+import { eventJsonLd, htmlLang, metadata } from "./layout.constants";
 
 const fontBarlow = Barlow({
   weight: ["300", "400", "700"],
@@ -38,6 +38,15 @@ export default function RootLayout({
       className={`scroll-smooth ${fontBarlow.variable} ${fontNotoSansJp.variable} ${fontMontserrat.variable}`}
     >
       <body className="font-sans antialiased">
+        {/* schema.org Event JSON-LD. Non-production deploys are served noindex, so it's safe everywhere. */}
+        <script
+          type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: required to embed schema.org JSON-LD
+          dangerouslySetInnerHTML={{
+            // Escape `<` so embedded data can never close the <script> early.
+            __html: JSON.stringify(eventJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         {children}
         <Footer
           policyLinks={policyLinks}
