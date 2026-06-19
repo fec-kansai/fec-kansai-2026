@@ -4,6 +4,13 @@ import { SideEventSection } from "../components/SideEventSection/SideEventSectio
 import { WaveDivider } from "../components/WaveDivider";
 import { navItems } from "../constants";
 
+/**
+ * Re-render on the server at most once an hour so the date-driven "ended" ribbon
+ * (see getSideEventStatus) flips automatically after an event ends — no redeploy
+ * needed. Without this the page is fully static and the date would freeze at build time.
+ */
+export const revalidate = 3600;
+
 export default function SideEventsPage() {
   return (
     <main className="min-h-svh bg-fk-yellow-soft overflow-hidden font-sans">
