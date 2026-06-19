@@ -1,7 +1,7 @@
 import { Button } from "@workspace/ui/components/button";
 import Image from "next/image";
 import Link from "next/link";
-import type { SideEvent } from "./types";
+import type { SideEvent, SideEventStatus } from "./types";
 
 const WEEKDAY_LABEL: Record<string, string> = {
   mon: "mon",
@@ -42,6 +42,8 @@ type SideEventCardProps = {
   event: SideEvent;
   /** Position in the list — picks which decoration set the card uses. */
   index: number;
+  /** Resolved ribbon status (derived from the date or overridden) — see getSideEventStatus. */
+  status: SideEventStatus;
 };
 
 /**
@@ -49,8 +51,8 @@ type SideEventCardProps = {
  * data, so changes to copy, dates, tags, image or status only touch the data
  * in constants.ts — never this markup.
  */
-export function SideEventCard({ event, index }: SideEventCardProps) {
-  const { status, date, title, hosts, image, description, tags, link } = event;
+export function SideEventCard({ event, index, status }: SideEventCardProps) {
+  const { date, title, hosts, image, description, tags, link } = event;
   const weekday = WEEKDAY_LABEL[date.weekday] ?? date.weekday;
   const decorations = DECORATION_SETS[index % DECORATION_SETS.length] ?? [];
 

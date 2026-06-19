@@ -1,4 +1,8 @@
-/** Controls the corner ribbon: "ended" shows 終了, "upcoming" shows nothing. */
+/**
+ * Corner ribbon state: "ended" shows 終了, "upcoming" shows nothing.
+ * Normally derived from `endsAt` (see getSideEventStatus); the `status` field is
+ * only a manual override.
+ */
 export type SideEventStatus = "upcoming" | "ended";
 
 /** Lowercase 3-letter weekday, used as the key into WEEKDAY_LABEL in SideEventCard. */
@@ -12,9 +16,20 @@ export type Weekday = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun";
 export type SideEvent = {
   /** Stable id, also used as the anchor target. */
   id: string;
-  status: SideEventStatus;
-  /** Date badge, e.g. { month: 6, day: 22, weekday: "mon" }. */
+  /**
+   * Manual override for the corner ribbon. When omitted, the status is derived
+   * from `endsAt` — so leave it out for normal events and only set it to force a
+   * specific ribbon (e.g. a cancelled event).
+   */
+  status?: SideEventStatus;
+  /** Date badge, e.g. { month: 6, day: 22, weekday: "mon" }. Must match `endsAt`. */
   date: { month: number; day: number; weekday: Weekday };
+  /**
+   * When the event ends, as an ISO 8601 string WITH timezone offset (JST, +09:00,
+   * e.g. "2026-06-22T21:00:00+09:00"). Drives the automatic "ended" ribbon once
+   * this instant has passed — see getSideEventStatus.
+   */
+  endsAt: string;
   title: string;
   /** Organiser line, rendered under the title. Include the "主催：" prefix in the value. */
   hosts: string;
