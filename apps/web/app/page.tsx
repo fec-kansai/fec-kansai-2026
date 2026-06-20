@@ -3,10 +3,28 @@ import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { WaveDivider } from "./components/WaveDivider";
 import { navItems } from "./constants";
+import { eventJsonLd } from "./layout.constants";
 
 export default function Page() {
   return (
     <main className="min-h-svh bg-fk-yellow-soft overflow-hidden font-sans">
+      {/*
+        schema.org Event JSON-LD. Lives on the top page only because its `url`
+        points to the homepage — the page this data actually describes.
+        Rendered on every deploy: preview deploys carry no canonical SEO risk
+        because Cloudflare Pages serves all non-production (preview-branch)
+        deployments with an automatic `X-Robots-Tag: noindex` header, so search
+        engines never index this markup outside production. If we ever move off
+        Cloudflare Pages preview deploys, gate this behind a production check.
+      */}
+      <script
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: required to embed schema.org JSON-LD
+        dangerouslySetInnerHTML={{
+          // Escape `<` so embedded data can never close the <script> early.
+          __html: JSON.stringify(eventJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       {/*
         Yellow header band with a decorative SVG drawn on the ::before layer. Mobile: min-h-[145.6vw] 
         keeps the band's height of the viewport width, matching the 375px-wide design mock so the SVG fills the band at 
