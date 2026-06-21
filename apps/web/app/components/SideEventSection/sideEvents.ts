@@ -3,7 +3,6 @@ import type { SideEvent } from "./types";
 export const sideEvents: SideEvent[] = [
   {
     id: "kansai-frontend-meetup-1",
-    date: { month: 6, day: 22, weekday: "mon" },
     endsAt: "2026-06-22T21:00:00+09:00",
     title:
       "Kansai Frontend Meetup #1—プロポーザル締め切り間近！プロポーザルもくもく会",

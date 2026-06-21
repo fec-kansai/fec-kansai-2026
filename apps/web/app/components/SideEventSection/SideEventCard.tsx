@@ -1,17 +1,8 @@
 import { Button } from "@workspace/ui/components/button";
 import Image from "next/image";
 import Link from "next/link";
+import { getSideEventDate } from "./status";
 import type { SideEvent, SideEventStatus } from "./types";
-
-const WEEKDAY_LABEL: Record<string, string> = {
-  mon: "mon",
-  tue: "tue",
-  wed: "wed",
-  thu: "thu",
-  fri: "fri",
-  sat: "sat",
-  sun: "sun",
-};
 
 /**
  * Decorative tech-logo icons that stick out of the card edges, matching the
@@ -52,8 +43,8 @@ type SideEventCardProps = {
  * in constants.ts — never this markup.
  */
 export function SideEventCard({ event, index, status }: SideEventCardProps) {
-  const { date, title, hosts, image, description, tags, link } = event;
-  const weekday = WEEKDAY_LABEL[date.weekday] ?? date.weekday;
+  const { title, hosts, image, description, tags, link } = event;
+  const { month, day, weekday } = getSideEventDate(event.endsAt);
   const decorations = DECORATION_SETS[index % DECORATION_SETS.length] ?? [];
 
   return (
@@ -92,7 +83,7 @@ export function SideEventCard({ event, index, status }: SideEventCardProps) {
       <div className="flex items-center gap-4 sm:gap-5">
         <div className="flex h-[70px] w-[70px] sm:h-[88px] sm:w-[88px] shrink-0 flex-col items-center justify-center rounded-full bg-fk-accent-red leading-none text-fk-white">
           <span className="text-[24px] font-extrabold font-montserrat">
-            {date.month}.{date.day}
+            {month}.{day}
           </span>
           <span className="mt-[3px] text-[14px] font-bold lowercase font-montserrat">
             [{weekday}]

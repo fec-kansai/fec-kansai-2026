@@ -5,7 +5,7 @@
  */
 export type SideEventStatus = "upcoming" | "ended";
 
-/** Lowercase 3-letter weekday, used as the key into WEEKDAY_LABEL in SideEventCard. */
+/** Lowercase 3-letter weekday shown in the date badge — see getSideEventDate. */
 export type Weekday = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun";
 
 /**
@@ -22,12 +22,11 @@ export type SideEvent = {
    * specific ribbon (e.g. a cancelled event).
    */
   status?: SideEventStatus;
-  /** Date badge, e.g. { month: 6, day: 22, weekday: "mon" }. Must match `endsAt`. */
-  date: { month: number; day: number; weekday: Weekday };
   /**
    * When the event ends, as an ISO 8601 string WITH timezone offset (JST, +09:00,
    * e.g. "2026-06-22T21:00:00+09:00"). Drives the automatic "ended" ribbon once
-   * this instant has passed — see getSideEventStatus.
+   * this instant has passed (see getSideEventStatus) and the date badge on the
+   * card (month/day/weekday in JST — see getSideEventDate).
    */
   endsAt: string;
   title: string;
