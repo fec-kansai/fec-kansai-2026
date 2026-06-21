@@ -20,10 +20,10 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         /** Project-specific: solid green pill (ProposalSection / SponsorSection) */
         fkSolid:
-          "rounded-full border-2 border-fk-green bg-fk-green text-fk-white font-bold hover:opacity-85 transition-opacity",
+          "rounded-full border-2 border-fk-green bg-fk-green text-fk-white font-bold hover:opacity-85 transition-opacity min-w-[295px] sm:min-w-[360px]",
         /** Project-specific: outline green pill (SponsorSection) */
         fkOutline:
-          "rounded-full border-2 border-fk-green bg-transparent text-fk-green font-bold hover:opacity-85 transition-opacity",
+          "rounded-full border-2 border-fk-green bg-transparent text-fk-green font-bold hover:opacity-85 transition-opacity min-w-[295px] sm:min-w-[360px]",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
@@ -31,7 +31,7 @@ const buttonVariants = cva(
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-9",
         /** Project-specific: tall pill for CTAs (min-h: 56px = 3.5rem) */
-        fkPill: "min-h-14 px-6 text-lg gap-2.5 [&_svg]:size-4",
+        fkPill: "min-h-14 px-6 text-[14px] sm:text-lg gap-2.5 [&_svg]:size-4",
       },
     },
     defaultVariants: {

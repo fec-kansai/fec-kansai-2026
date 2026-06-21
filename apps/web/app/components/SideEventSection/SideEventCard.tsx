@@ -160,7 +160,7 @@ export function SideEventCard({ event, index }: SideEventCardProps) {
           <Button
             asChild
             variant="fkSolid"
-            className="h-auto w-full sm:w-auto px-[34px] py-3 text-[14px] sm:text-lg gap-2.5 [&_svg]:size-4"
+            className="h-auto px-[34px] py-3 text-[14px] sm:text-lg gap-2.5 [&_svg]:size-4"
           >
             <Link
               href={link.url}

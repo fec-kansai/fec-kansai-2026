@@ -29,23 +29,23 @@ export function SponsorSection() {
         <h2 className="m-0 text-[24px] sm:text-[28px] leading-[1.1] text-fk-text-main font-extrabold">
           スポンサー募集
         </h2>
-        <p className="mt-[6px] mb-0 text-fk-yellow text-[18px] font-bold tracking-[0.03em] font-montserrat max-[900px]:text-[24px]">
+        <p className="mt-[6px] mb-0 text-fk-yellow text-[18px] font-bold tracking-[0.03em] font-montserrat max-[900px]:text-[15px]">
           sponsor
         </p>
       </header>
 
       <div className="mt-[38px]">
-        <p className="m-0 text-fk-text-main text-base leading-[1.9] font-bold max-[900px]:text-[18px] max-[900px]:leading-[1.65]">
+        <p className="m-0 text-fk-text-main text-[14px] sm:text-base leading-[1.65] sm:leading-[1.9] font-bold">
           フロントエンドカンファレンス関西では、共にイベントを盛り上げてくださるスポンサー企業様を募集しております。
         </p>
-        <p className="m-0 text-fk-text-main text-base leading-[1.9] font-bold max-[900px]:text-[18px] max-[900px]:leading-[1.65]">
+        <p className="m-0 text-fk-text-main text-[14px] sm:text-base leading-[1.65] sm:leading-[1.9] font-bold">
           協賛をご検討いただける皆さま向けに、イベントの概要やスポンサー特典、協賛プランなどをまとめた
           「スポンサー協賛資料」を公開しております。
         </p>
-        <p className="mt-[26px] m-0 text-fk-text-main text-base leading-[1.9] font-bold max-[900px]:text-[18px] max-[900px]:leading-[1.65]">
+        <p className="mt-[26px] m-0 text-fk-text-main text-[14px] sm:text-base leading-[1.65] sm:leading-[1.9] font-bold">
           ぜひご一読の上、ご検討いただけますと幸いです。
         </p>
-        <p className="m-0 text-fk-text-main text-base leading-[1.9] font-bold max-[900px]:text-[18px] max-[900px]:leading-[1.65]">
+        <p className="m-0 text-fk-text-main text-[14px] sm:text-base leading-[1.65] sm:leading-[1.9] font-bold">
           皆さまと共に、関西のフロントエンドコミュニティをさらに活性化できることを楽しみにしております。
         </p>
       </div>
