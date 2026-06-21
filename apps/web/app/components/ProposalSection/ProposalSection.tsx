@@ -19,7 +19,7 @@ export function ProposalSection() {
         <h2 className="m-0 text-[24px] sm:text-[28px] leading-[1.1] text-fk-text-main font-extrabold">
           プロポーザル
         </h2>
-        <p className="mt-[6px] mb-0 text-fk-yellow text-[18px] font-bold tracking-[0.03em] font-montserrat max-[900px]:text-[24px]">
+        <p className="mt-[6px] mb-0 text-fk-yellow text-[18px] font-bold tracking-[0.03em] font-montserrat max-[900px]:text-[15px]">
           proposal
         </p>
       </header>
@@ -41,17 +41,12 @@ export function ProposalSection() {
       </div>
 
       <div className="mt-[54px] grid place-items-center">
-        <Button
-          asChild
-          variant="fkSolid"
-          className="h-auto w-full sm:w-auto px-[34px] py-3 text-[14px] sm:text-lg gap-2.5 [&_svg]:size-4"
-        >
+        <Button asChild variant="fkSolid" size="fkPill">
           <Link
             href="https://fortee.jp/fec-kansai-2026/speaker/proposal/cfp"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="プロポーザル募集フォームを開く"
-            className="text-[14px] sm:text-lg"
           >
             プロポーザル募集フォームはこちら
             <svg

@@ -7,7 +7,7 @@ export function OfficialCharacterSection() {
         <h2 className="m-0 text-[24px] sm:text-[28px] leading-[1.1] text-fk-text-main font-extrabold">
           公式キャラクター
         </h2>
-        <p className="mt-[6px] mb-0 text-fk-yellow text-[18px] font-bold tracking-[0.03em] font-montserrat max-[900px]:text-[24px]">
+        <p className="mt-[6px] mb-0 text-fk-yellow text-[18px] font-bold tracking-[0.03em] font-montserrat max-[900px]:text-[15px]">
           official character
         </p>
       </header>
@@ -19,24 +19,24 @@ export function OfficialCharacterSection() {
             alt="公式キャラクター"
             width={190}
             height={162}
-            className="w-[min(100%,190px)] h-auto"
+            className="w-[min(100%,190px)] max-[900px]:w-[140px] h-auto"
           />
         </div>
 
         <div className="text-fk-text-main">
-          <h3 className=" max-[900px]:text-center text-start m-0 text-[24px] leading-[1.1] font-extrabold max-[900px]:text-[40px]">
+          <h3 className=" max-[900px]:text-center text-start m-0 text-[24px] leading-[1.1] font-extrabold max-[900px]:text-[20px]">
             たこやん
           </h3>
-          <p className="m-0 mt-[18px] text-base leading-[1.75] font-bold max-[900px]:text-[18px] max-[900px]:leading-[1.65]">
+          <p className="m-0 mt-[18px] text-[14px] sm:text-base leading-[1.65] sm:leading-[1.75] font-bold">
             フロントエンド星から降り立った謎のタコ。
           </p>
-          <p className="m-0 text-base leading-[1.75] font-bold max-[900px]:text-[18px] max-[900px]:leading-[1.65]">
+          <p className="m-0 text-[14px] sm:text-base leading-[1.65] sm:leading-[1.75] font-bold">
             複数の言語を使いこなし、なんかすごいコードを書くらしい。
           </p>
-          <p className="m-0 text-base leading-[1.75] font-bold max-[900px]:text-[18px] max-[900px]:leading-[1.65]">
+          <p className="m-0 text-[14px] sm:text-base leading-[1.65] sm:leading-[1.75] font-bold">
             たまにたこ焼きをかぶっていたり、虹色だったり、
           </p>
-          <p className="m-0 text-base leading-[1.75] font-bold max-[900px]:text-[18px] max-[900px]:leading-[1.65]">
+          <p className="m-0 text-[14px] sm:text-base leading-[1.65] sm:leading-[1.75] font-bold">
             レアなすがたもあるとかないとか。ライバルは Claude Code のタコ。
           </p>
         </div>
