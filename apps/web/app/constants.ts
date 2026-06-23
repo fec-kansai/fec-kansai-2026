@@ -25,6 +25,36 @@ export const sponsorLinks: FooterLink[] = [
   { name: "スポンサー募集URL", url: "/sponsor" },
 ];
 
+export const socialLinks: FooterLink[] = [
+  {
+    name: "X (Twitter)",
+    url: "https://x.com/fec_kansai",
+  },
+  {
+    name: "GitHub",
+    url: "https://github.com/fec-kansai",
+  },
+  {
+    name: "Note",
+    url: "https://note.com/fec_kansai",
+  },
+  {
+    name: "Fortee",
+    url: "https://fortee.jp/fec-kansai-2026",
+  },
+  {
+    name: "connpass",
+    url: "https://fec-kansai.connpass.com/",
+  },
+];
+
+export const contactLinks: FooterLink[] = [
+  {
+    name: "お問い合わせフォーム",
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSdpT0zG5oK_jxoLhYHqDLcCc6WqStOQ0swHRsJNI8b7yGe5Fw/viewform",
+  },
+];
+
 export const policyLinks: FooterLink[] = [
   {
     name: "行動規範",
@@ -49,13 +79,6 @@ export const policyLinks: FooterLink[] = [
   {
     name: "キャンセルポリシー",
     url: "https://docs.google.com/document/d/1YKUO01ROvD2nnEN8YW37VKkF35HKavWQ9uG4JDJcaco/edit?tab=t.0",
-  },
-];
-
-export const contactLinks: FooterLink[] = [
-  {
-    name: "お問い合わせフォーム",
-    url: "https://docs.google.com/forms/d/e/1FAIpQLSdpT0zG5oK_jxoLhYHqDLcCc6WqStOQ0swHRsJNI8b7yGe5Fw/viewform",
   },
 ];
 
