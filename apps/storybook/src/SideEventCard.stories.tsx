@@ -71,7 +71,10 @@ export const ManualOverride: Story = {
   args: {
     event: { ...baseEvent, status: "upcoming" },
     index: 0,
-    status: getSideEventStatus({ ...baseEvent, status: "upcoming" }, AFTER_EVENT),
+    status: getSideEventStatus(
+      { ...baseEvent, status: "upcoming" },
+      AFTER_EVENT,
+    ),
   },
   play: async ({ canvasElement, args }) => {
     expect(args.status).toBe("upcoming");
