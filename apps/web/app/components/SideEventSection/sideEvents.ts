@@ -21,8 +21,7 @@ export const sideEvents: SideEvent[] = [
   },
   {
     id: "kansai-frontend-meetup-2",
-    status: "upcoming",
-    date: { month: 7, day: 29, weekday: "wed" },
+    endsAt: "2026-07-29T21:00:00+09:00",
     title: "Kansai Frontend Meetup #2—フロントエンド何でもLT大会",
     hosts: "主催：フロントエンドカンファレンス関西",
     image: "/side-meetup-event-2.png",
