@@ -3,12 +3,14 @@ import Link from "next/link";
 import type { FooterLink } from "../constants";
 
 type FooterProps = {
+  socialLinks: FooterLink[];
   policyLinks: FooterLink[];
   contactLinks: FooterLink[];
   organizationLink: FooterLink;
 };
 
 export function Footer({
+  socialLinks,
   policyLinks,
   contactLinks,
   organizationLink,
@@ -18,30 +20,9 @@ export function Footer({
       ? { target: "_blank" as const, rel: "noopener noreferrer" }
       : {};
 
-  const socialLinks = [
-    {
-      href: "https://x.com/fec_kansai",
-      ariaLabel: "X",
-      imageSrc: "/X-icon.svg",
-      imageAlt: "X",
-    },
-    {
-      href: "https://github.com/fec-kansai",
-      ariaLabel: "GitHub",
-      imageSrc: "/github-icon.svg",
-      imageAlt: "GitHub",
-    },
-    {
-      href: "https://note.com/fec_kansai",
-      ariaLabel: "Note",
-      imageSrc: "/note-icon.svg",
-      imageAlt: "Note",
-    },
-  ];
-
   return (
     <footer className="relative bg-fk-green text-fk-white pt-[44px] pb-[53px] px-4 md:px-8 lg:px-12 before:content-[''] before:absolute before:inset-x-0 before:-top-[40px] sm:before:-top-[66px] before:h-[40px] sm:before:h-[70px] before:bg-[url('/footer-wave-tile.svg')] before:bg-[position:73px_0] sm:before:bg-[position:left_-2px_bottom] before:bg-[length:148px_40px] sm:before:bg-[length:220px_70px] before:bg-repeat-x">
-      <div className="max-w-[1220px] mx-auto grid lg:grid-cols-[0.35fr_0.4fr] lg:items-start">
+      <div className="max-w-[1220px] gap-14 mx-auto grid lg:grid-cols-[0.35fr_0.4fr] lg:items-start">
         <div className="grid gap-[10px] justify-items-center lg:justify-items-start">
           <Image
             src="/footer-logo.svg"
@@ -52,18 +33,13 @@ export function Footer({
           <div className="flex gap-5">
             {socialLinks.map((item) => (
               <Link
-                key={item.ariaLabel}
-                href={item.href}
-                aria-label={item.ariaLabel}
-                className="w-7 h-7 text-fk-white no-underline text-[11px] font-bold grid place-items-center transition-opacity duration-200 ease-in-out hover:opacity-70"
-                {...getLinkProps(item.href)}
+                key={item.name}
+                href={item.url}
+                aria-label={item.name}
+                className="block text-[var(--fk-white-92)] no-underline text-sm leading-[1.55] transition-opacity duration-200 ease-in-out hover:opacity-70"
+                {...getLinkProps(item.url)}
               >
-                <Image
-                  src={item.imageSrc}
-                  alt={item.imageAlt}
-                  width={24}
-                  height={24}
-                />
+                <p>{item.name}</p>
               </Link>
             ))}
           </div>
