@@ -1,0 +1,61 @@
+/**
+ * Sponsor tier id. Drives the tier badge colour on each card (see SponsorCard)
+ * and groups sponsors into sections (see SponsorsSection).
+ */
+export type SponsorTierId = "gold" | "silver" | "bronze" | "student";
+
+/**
+ * Extra badge shown next to the tier badge on a card (e.g. 学生支援, オプション).
+ * `variant` only selects the colour — the visible text is `label`.
+ */
+export type SponsorBadge = {
+  label: string;
+  variant: "student" | "option";
+};
+
+/** Official SNS link on a card. Currently only X is used in the design. */
+export type SponsorSns = {
+  platform: "x";
+  url: string;
+};
+
+/**
+ * A single sponsor. The whole card is driven by this structure so that editing
+ * a sponsor (or adding a new one) only means changing data in sponsors.ts —
+ * never the markup in SponsorCard.
+ */
+export type Sponsor = {
+  /** Stable id, also used as the React key. */
+  id: string;
+  name: string;
+  /** Logo image. When omitted, a "LOGO" placeholder box is shown instead. */
+  logo?: string;
+  /** Extra badges rendered after the tier badge. */
+  badges?: SponsorBadge[];
+  /** Body paragraphs. Each entry becomes its own <p>. */
+  description: string[];
+  /** Tech blog link. When omitted, the row is hidden. */
+  techBlogUrl?: string;
+  /** Recruitment page link. When omitted, the row is hidden. */
+  recruitUrl?: string;
+  /** Official SNS links. When empty/omitted, the 公式SNS block is hidden. */
+  sns?: SponsorSns[];
+};
+
+/**
+ * A tier section: a heading, the badge text stamped on every card in the tier,
+ * and the sponsors themselves.
+ */
+export type SponsorTier = {
+  id: SponsorTierId;
+  /** Section heading (e.g. "Gold Sponsors"). */
+  heading: string;
+  /** Badge text on each card in this tier (e.g. "Gold Sponsor"). */
+  badgeLabel: string;
+  /**
+   * Takoyan body colour next to the tier heading. Optional — defaults to gold;
+   * set e.g. "#C0C0C0" for the silver tier (see TakoyanIcon).
+   */
+  iconColor?: string;
+  sponsors: Sponsor[];
+};

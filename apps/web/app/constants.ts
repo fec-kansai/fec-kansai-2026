@@ -13,6 +13,7 @@ export const navItems: NavLink[] = [
   { name: "チケット情報", url: "/#ticket" },
   { name: "公式キャラクター", url: "/#character" },
   { name: "サイドイベント", url: "/side-events" },
+  { name: "スポンサー", url: "/sponsors" },
 ];
 
 export type FooterLink = {
