@@ -41,7 +41,7 @@ export const TICKETS: Ticket[] = [
   },
   {
     type: "student-with-social-gathering",
-    name: "懇親会付き一般チケット",
+    name: "懇親会付き学生チケット",
     price: 0,
     description:
       "学生の方を対象とした割引チケットです。\n懇親会付き一般チケットの学割版としてご利用いただけます。",

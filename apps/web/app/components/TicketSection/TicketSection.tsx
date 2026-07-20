@@ -18,7 +18,7 @@ export function TicketSection() {
         </p>
       </header>
 
-      <div className="grid max-[900px]:grid-cols-1 grid-cols-2 gap-6 mt-6">
+      <div className="grid max-[900px]:grid-cols-1 grid-cols-2 max-[900px]:gap-4 gap-6 mt-6">
         {TICKETS.map((ticket) => (
           <TicketCard key={ticket.type} ticket={ticket} />
         ))}
