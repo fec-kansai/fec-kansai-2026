@@ -24,6 +24,13 @@
   --fk-white-90: rgb(255 255 255 / 90%);
   --fk-shadow-header: rgb(3 10 2 / 10%);
 
+  --fk-ticket-red-primary: #a73d2a;
+  --fk-ticket-red-secondary: #ffebe7;
+  --fk-ticket-green-primary: #59671e;
+  --fk-ticket-green-secondary: #f0f4da;
+  --fk-ticket-yellow-primary: #d58b0c;
+  --fk-ticket-yellow-secondary: #fff0ca;
+
   /* shadcn/ui design tokens (neutral, Tailwind v4) */
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -87,6 +94,12 @@
   --color-fk-text-light: var(--fk-text-light);
   --color-fk-text-olive: var(--fk-text-olive);
   --color-fk-white: var(--fk-white);
+  --color-fk-ticket-red-primary: var(--fk-ticket-red-primary);
+  --color-fk-ticket-red-secondary: var(--fk-ticket-red-secondary);
+  --color-fk-ticket-green-primary: var(--fk-ticket-green-primary);
+  --color-fk-ticket-green-secondary: var(--fk-ticket-green-secondary);
+  --color-fk-ticket-yellow-primary: var(--fk-ticket-yellow-primary);
+  --color-fk-ticket-yellow-secondary: var(--fk-ticket-yellow-secondary);
 
   /* shadcn/ui color tokens */
   --color-background: var(--background);
