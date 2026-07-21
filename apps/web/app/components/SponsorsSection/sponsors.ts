@@ -28,7 +28,6 @@ export const sponsorTiers: SponsorTier[] = [
     id: "silver",
     heading: "Silver Sponsors",
     badgeLabel: "Silver Sponsor",
-    iconColor: "#C0C0C0",
     sponsors: [
       {
         id: "silver-1",
@@ -47,7 +46,6 @@ export const sponsorTiers: SponsorTier[] = [
     id: "bronze",
     heading: "Bronze Sponsors",
     badgeLabel: "Bronze Sponsor",
-    iconColor: "#CD7F32",
     sponsors: [
       {
         id: "bronze-1",
@@ -66,7 +64,6 @@ export const sponsorTiers: SponsorTier[] = [
     id: "student",
     heading: "学生支援",
     badgeLabel: "学生支援",
-    iconColor: "#E54839",
     sponsors: [
       {
         id: "student-1",

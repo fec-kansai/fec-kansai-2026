@@ -52,10 +52,5 @@ export type SponsorTier = {
   heading: string;
   /** Badge text on each card in this tier (e.g. "Gold Sponsor"). */
   badgeLabel: string;
-  /**
-   * Takoyan body colour next to the tier heading. Optional — defaults to gold;
-   * set e.g. "#C0C0C0" for the silver tier (see TakoyanIcon).
-   */
-  iconColor?: string;
   sponsors: Sponsor[];
 };
