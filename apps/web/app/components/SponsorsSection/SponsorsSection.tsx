@@ -1,7 +1,15 @@
 import { SponsorCard } from "./SponsorCard";
-import { SponsorTierHeader } from "./SponsorTierHeader";
+import { type SponsorMascot, SponsorTierHeader } from "./SponsorTierHeader";
 import { individualSponsors, sponsorTiers } from "./sponsors";
 import type { SponsorTierId } from "./types";
+
+/** Mascot shape + colour per tier (see SponsorTierHeader). */
+const TIER_MASCOT: Record<SponsorTierId, SponsorMascot> = {
+  gold: "gold",
+  silver: "silver",
+  bronze: "bronze",
+  student: "red",
+};
 
 /**
  * Decorative tech-logo icons per tier, attached to that tier's first card as
@@ -40,18 +48,10 @@ export function SponsorsSection() {
     >
       <div className="mx-auto flex max-w-[904px] flex-col gap-4 px-4 sm:gap-[100px] min-[904px]:px-0">
         {sponsorTiers.map((tier) => (
-          <div
-            key={tier.id}
-            // On mobile only Gold is shown in full; Silver and below collapse
-            // into the note card below (they reuse Gold's style, see the mock).
-            className={`flex-col gap-8 sm:gap-10 ${
-              tier.id === "gold" ? "flex" : "hidden sm:flex"
-            }`}
-          >
+          <div key={tier.id} className="flex flex-col gap-8 sm:gap-10">
             <SponsorTierHeader
               heading={tier.heading}
-              iconColor={tier.iconColor}
-              variant={tier.id === "gold" ? "gold" : "silver"}
+              variant={TIER_MASCOT[tier.id]}
             />
             <div className="flex flex-col gap-6 sm:gap-8">
               {tier.sponsors.map((sponsor, sponsorIndex) => (
@@ -70,20 +70,9 @@ export function SponsorsSection() {
           </div>
         ))}
 
-        {/* Mobile only: Silver and below are represented by a single note. */}
-        <div className="rounded-[20px] bg-fk-white p-6 sm:hidden">
-          <p className="m-0 text-[16px] font-bold leading-[1.7] text-fk-text-main">
-            シルバー以下はGoldと同様のスタイルでお願い致します
-          </p>
-        </div>
-
         {/* Individual (personal) sponsors — just a name list. */}
         <div className="flex flex-col gap-8 sm:gap-10">
-          <SponsorTierHeader
-            heading="個人スポンサー"
-            iconColor="#E54839"
-            variant="silver"
-          />
+          <SponsorTierHeader heading="個人スポンサー" variant="red" />
           <ul className="flex flex-wrap justify-center gap-y-2 p-0">
             {individualSponsors.map((sponsor) => (
               <li

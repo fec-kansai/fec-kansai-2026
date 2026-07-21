@@ -5,20 +5,31 @@ import { TakoyanSilver } from "./TakoyanSilver";
 const ICON_CLASS = "h-[40px] w-auto sm:h-[48px] sm:w-[56px]";
 
 /**
+ * Mascot per tier. "gold" is a distinct shape (the gold asset); the rest share
+ * the TakoyanSilver shape, tinted to the variant's colour.
+ */
+export type SponsorMascot = "gold" | "silver" | "bronze" | "red";
+
+/** Body colour for the TakoyanSilver shape, keyed by variant (gold unused). */
+const MASCOT_COLOR: Record<SponsorMascot, string> = {
+  gold: "#E0B22C",
+  silver: "#C0C0C0",
+  bronze: "#CD7F32",
+  red: "#E54839",
+};
+
+/**
  * Centered tier heading with a horizontal rule on each side and the takoyan
- * mascot next to the label. Gold uses its own shape; Silver and below share a
- * second shape, each tinted to the tier's colour.
+ * mascot next to the label. `variant` selects both the mascot shape and its
+ * colour, so no separate colour prop is needed.
  */
 export function SponsorTierHeader({
   heading,
-  iconColor = "#E0B22C",
   variant = "gold",
 }: {
   heading: string;
-  /** Takoyan body colour for this tier. Defaults to gold. */
-  iconColor?: string;
-  /** Which mascot shape to use. "gold" for the Gold tier, "silver" below it. */
-  variant?: "gold" | "silver";
+  /** Mascot shape + colour for this tier. */
+  variant?: SponsorMascot;
 }) {
   return (
     <div className="flex items-center gap-3 sm:gap-4">
@@ -37,7 +48,7 @@ export function SponsorTierHeader({
             className={ICON_CLASS}
           />
         ) : (
-          <TakoyanSilver color={iconColor} />
+          <TakoyanSilver color={MASCOT_COLOR[variant]} />
         )}
       </div>
       <span className="h-0.5 flex-1 bg-fk-green" />
