@@ -1,9 +1,41 @@
+import Image from "next/image";
+
 /**
- * Silver-and-below mascot (a distinct takoyan shape). Body colour is driven by
- * `color` so each tier tints it (silver / bronze / red); the eyes (#424242) and
- * highlights (#fff) stay fixed — which is why it's inline SVG and not an asset.
+ * Takoyan mascot variant per tier. "gold" is a distinct shape (the gold asset);
+ * the rest share one inline shape, tinted to the variant's colour.
  */
-export function TakoyanSilver({ color }: { color: string }) {
+export type SponsorMascot = "gold" | "silver" | "bronze" | "red";
+
+/** Shared icon sizing so every variant renders identically. */
+const ICON_CLASS = "h-[40px] w-auto sm:h-[48px] sm:w-[56px]";
+
+/** Body colour for the tinted shape, keyed by variant (gold is the asset). */
+const BODY_COLOR: Record<Exclude<SponsorMascot, "gold">, string> = {
+  silver: "#C0C0C0",
+  bronze: "#CD7F32",
+  red: "#E54839",
+};
+
+/**
+ * Tier mascot. Given a `variant` it renders the right shape and colour itself:
+ * "gold" uses the gold asset; "silver" / "bronze" / "red" use one inline shape
+ * tinted accordingly. The eyes (#424242) and highlights (#fff) stay fixed — that
+ * tinted shape must be inline SVG (an <img> couldn't be recoloured per tier).
+ */
+export function ColoredTakoyan({ variant }: { variant: SponsorMascot }) {
+  if (variant === "gold") {
+    return (
+      <Image
+        src="/takoyan-gold.svg"
+        alt=""
+        aria-hidden
+        width={60}
+        height={49}
+        className={ICON_CLASS}
+      />
+    );
+  }
+
   return (
     <svg
       width="60"
@@ -12,10 +44,10 @@ export function TakoyanSilver({ color }: { color: string }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
-      className="h-[40px] w-auto sm:h-[48px] sm:w-[56px]"
+      className={ICON_CLASS}
     >
       <path
-        fill={color}
+        fill={BODY_COLOR[variant]}
         d="M41.083 1.37C34.2-1.607 19.94-.651 17.961 13.64c-.502-.323-2.603-1.463-6.991-3.443-1.685 2.188-6.023 6.166-7.744 7.64 3.442 1.001 10.755 2.39 15.917 4.627-.107 1.507.517 4.95 3.872 6.673-.932.502-3.635 1.399-6.99.968-2.366-.323-7.744-1.903-10.11-4.412-2.689-2.583-2.904-3.84-4.84-4.412C.649 21.154 0 21.3 0 23.11c.072.896 1.076 3.443 4.517 6.456 3.37 2.296 11.379 6.522 16.455 5.058-.645.789-2.603 2.626-5.27 3.659-1.9.287-6.001 1.162-7.206 2.367-.358.36-.774 1.227.43 1.83 1.793.215 6.324.15 10.11-1.83-1.255 1.04-4.41 3.585-4.41 4.446 0 .464 1.184 1.224 2.474.72 1.568-.612 4.99-2.196 7.314-4.09-.897 2.117-2.452 6.543-1.506 7.318.107.18 1.075.285 2.043-.753.502-.538 2.022-2.604 4.087-6.565-.036 1.758.13 5.618 1.076 6.995.179.251.774.603 1.72 0 .286-.181.882-.925 1.829-5.057.43 1.829 1.72 6.167 2.473 7.317.538.821 1.506.357 1.721-.43.287-1.4.817-4.65.645-6.457l1.829 2.905c.573 1.077 2 3.229 3.118 3.229 1.506.323 2.582-4.24-1.72-11.73 3.047.718 10.324 1.002 14.089-1.937 2.15-1.68 5.162-6.973 3.871-11.622-.238-.86-1.613-1.15-2.15.645-3.765 8.287-4.518 10.439-14.842 8.287 6.453-5.525 18.175-22.135-1.614-32.5"
       />
       <path
