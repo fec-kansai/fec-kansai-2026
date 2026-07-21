@@ -1,5 +1,6 @@
+import type { SponsorMascot } from "./ColoredTakoyan";
 import { SponsorCard } from "./SponsorCard";
-import { type SponsorMascot, SponsorTierHeader } from "./SponsorTierHeader";
+import { SponsorTierHeader } from "./SponsorTierHeader";
 import { individualSponsors, sponsorTiers } from "./sponsors";
 import type { SponsorTierId } from "./types";
 
