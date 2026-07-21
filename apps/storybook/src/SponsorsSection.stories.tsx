@@ -6,9 +6,6 @@ import { SponsorsSection } from "../../web/app/components/SponsorsSection/Sponso
 /**
  * The full sponsors showcase, rendering the real `sponsorTiers` /
  * `individualSponsors` data — the same content shown on the /sponsors route.
- *
- * Lets the page be reviewed in Storybook without deploying (see PR review note).
- * This is a layout/visual story plus a smoke check that every tier renders.
  */
 const meta = {
   title: "Sponsors/SponsorsSection",
