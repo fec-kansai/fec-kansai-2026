@@ -20,7 +20,7 @@ const general: Ticket = {
   image: "/takoyan-general.svg",
   benefits: ["session"],
   color: "red",
-  sold: false,
+  soldOut: false,
 };
 
 const generalWithSocial: Ticket = {
@@ -32,7 +32,7 @@ const generalWithSocial: Ticket = {
   image: "/takoyan-with-beer.svg",
   benefits: ["session", "social-gathering"],
   color: "red",
-  sold: false,
+  soldOut: false,
 };
 
 const student: Ticket = {
@@ -45,7 +45,7 @@ const student: Ticket = {
   image: "/takoyan-student.svg",
   benefits: ["session"],
   color: "green",
-  sold: false,
+  soldOut: false,
 };
 
 const studentWithSocial: Ticket = {
@@ -58,7 +58,7 @@ const studentWithSocial: Ticket = {
   image: "/takoyan-with-drink.svg",
   benefits: ["session", "social-gathering"],
   color: "green",
-  sold: false,
+  soldOut: false,
 };
 
 const personalSponsor: Ticket = {
@@ -70,7 +70,7 @@ const personalSponsor: Ticket = {
   image: "/takoyan-brighter.svg",
   benefits: ["session", "social-gathering"],
   color: "yellow",
-  sold: false,
+  soldOut: false,
 };
 
 export const General: Story = {
@@ -93,6 +93,6 @@ export const PersonalSponsor: Story = {
   args: { ticket: personalSponsor },
 };
 
-export const SoldOut: Story = {
-  args: { ticket: { ...general, sold: true } },
+export const soldOut: Story = {
+  args: { ticket: { ...general, soldOut: true } },
 };

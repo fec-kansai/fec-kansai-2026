@@ -43,7 +43,6 @@ type TicketCardProps = { ticket: Ticket };
 
 export function TicketCard({ ticket }: TicketCardProps) {
   const colors = TICKET_COLOR_CLASSES[ticket.color];
-
   return (
     <div
       className={cn(
@@ -55,13 +54,25 @@ export function TicketCard({ ticket }: TicketCardProps) {
         <Image src={ticket.image} alt={ticket.name} width={60} height={60} />
         <div className="font-bold">
           <p className="text-lg">{ticket.name}</p>
-          <p className={cn("flex items-baseline", colors.text)}>
-            <span className="font-montserrat text-[14px]">￥</span>
-            <span className="font-montserrat text-2xl">
-              {ticket.price.toLocaleString()}-
-            </span>
-            <span className="text-[9px]">(税込)</span>
-          </p>
+          <div className="flex items-center gap-2">
+            <div className={cn("relative flex items-baseline", colors.text)}>
+              <span className="font-montserrat text-[14px]">￥</span>
+              <span className="font-montserrat text-2xl">
+                {ticket.price.toLocaleString()}-
+              </span>
+              <span className="text-[9px]">(税込)</span>
+              {ticket.soldOut && (
+                <div className="absolute inset-0 flex items-center">
+                  <div className="w-full h-1.75 border-y-[2.5px] border-fk-accent-red" />
+                </div>
+              )}
+            </div>
+            {ticket.soldOut && (
+              <p className="font-montserrat text-sm text-white bg-fk-accent-red leading-5 px-1">
+                SOLD OUT
+              </p>
+            )}
+          </div>
         </div>
       </div>
 
