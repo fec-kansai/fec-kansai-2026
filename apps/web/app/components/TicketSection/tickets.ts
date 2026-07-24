@@ -14,7 +14,7 @@ export const TICKETS: Ticket[] = [
     image: "/takoyan-general.svg",
     benefits: ["session"],
     color: "red",
-    sold: false,
+    soldOut: false,
   },
   {
     type: "general-with-social-gathering",
@@ -25,7 +25,7 @@ export const TICKETS: Ticket[] = [
     image: "/takoyan-with-beer.svg",
     benefits: ["session", "social-gathering"],
     color: "red",
-    sold: false,
+    soldOut: false,
   },
   {
     type: "student",
@@ -37,7 +37,7 @@ export const TICKETS: Ticket[] = [
     image: "/takoyan-student.svg",
     benefits: ["session"],
     color: "green",
-    sold: false,
+    soldOut: false,
   },
   {
     type: "student-with-social-gathering",
@@ -49,7 +49,7 @@ export const TICKETS: Ticket[] = [
     image: "/takoyan-with-drink.svg",
     benefits: ["session", "social-gathering"],
     color: "green",
-    sold: false,
+    soldOut: false,
   },
   {
     type: "personal-sponsor",
@@ -60,6 +60,6 @@ export const TICKETS: Ticket[] = [
     image: "/takoyan-brighter.svg",
     benefits: ["session", "social-gathering"],
     color: "yellow",
-    sold: false,
+    soldOut: false,
   },
 ];

@@ -23,7 +23,7 @@ export type Ticket = {
   image: string;
   benefits: BenefitType[];
   color: TicketColor;
-  sold: boolean;
+  soldOut: boolean;
 };
 
 export type BenefitMap = Record<BenefitType, Benefit>;
