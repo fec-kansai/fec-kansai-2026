@@ -1,8 +1,8 @@
 import { Button } from "@workspace/ui/components/button";
 import Image from "next/image";
 import Link from "next/link";
-import type { SponsorMascot } from "./ColoredTakoyan";
-import { SponsorTierHeader } from "./SponsorTierHeader";
+import type { SponsorMascot } from "../SponsorsSection/ColoredTakoyan";
+import { SponsorTierHeader } from "../SponsorsSection/SponsorTierHeader";
 
 // 個人スポンサー — a simple name list under the 個人スポンサー heading.
 const individualSponsors: { id: string; name: string }[] = [
