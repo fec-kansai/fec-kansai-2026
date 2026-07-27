@@ -2,7 +2,8 @@ import { MapSection } from "./MapSection/MapSection";
 import { OfficialCharacterSection } from "./OfficialCharacterSection/OfficialCharacterSection";
 import { ProposalSection } from "./ProposalSection/ProposalSection";
 // import { SponsorSection } from "./SponsorSection/SponsorSection";
-import { SponsorsShowcaseSection } from "./SponsorsShowcaseSection/SponsorsShowcaseSection";
+// TODO: 実データが揃うまで一時的にコメントアウト
+// import { SponsorsShowcaseSection } from "./SponsorsShowcaseSection/SponsorsShowcaseSection";
 import { TicketSection } from "./TicketSection/TicketSection";
 import { UnboundedSection } from "./UnboundedSection/UnboundedSection";
 
@@ -25,9 +26,10 @@ export function ContentSection() {
           <SponsorSection />
         </div> */}
 
-        <div className="flex-1 relative">
+        {/* TODO: 実データが揃うまで一時的にコメントアウト */}
+        {/* <div className="flex-1 relative">
           <SponsorsShowcaseSection />
-        </div>
+        </div> */}
 
         <div className="bg-fk-white rounded-[10px] py-8 px-5 sm:py-[48px] sm:px-[56px] flex-1 relative">
           <TicketSection />
