@@ -268,7 +268,7 @@ export function SponsorsShowcaseSection() {
             variant="fkSolid"
             className="min-w-0 h-12 px-10 text-[15px] sm:text-[16px]"
           >
-            <Link href={sponsorListLink} aria-label="スポンサー一覧をみる">
+            <Link href={sponsorListLink} aria-label="スポンサー一覧はこちら">
               スポンサー一覧はこちら
             </Link>
           </Button>
