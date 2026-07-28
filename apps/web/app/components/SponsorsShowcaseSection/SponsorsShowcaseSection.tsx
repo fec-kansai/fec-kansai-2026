@@ -14,7 +14,7 @@ const individualSponsors: { id: string; name: string }[] = [
 ];
 
 // 「スポンサー一覧はこちら」の遷移先。専用ページ公開時に差し替え。
-const sponsorListLink = "#";
+const sponsorListLink = "#sponsors";
 
 type Sponsor = {
   name: string;
