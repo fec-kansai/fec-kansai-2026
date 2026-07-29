@@ -1,7 +1,7 @@
 import { MapSection } from "./MapSection/MapSection";
 import { OfficialCharacterSection } from "./OfficialCharacterSection/OfficialCharacterSection";
 import { ProposalSection } from "./ProposalSection/ProposalSection";
-// import { SponsorSection } from "./SponsorSection/SponsorSection";
+import { SponsorSection } from "./SponsorSection/SponsorSection";
 // TODO: 実データが揃うまで一時的にコメントアウト
 // import { SponsorsShowcaseSection } from "./SponsorsShowcaseSection/SponsorsShowcaseSection";
 import { TicketSection } from "./TicketSection/TicketSection";
@@ -21,12 +21,11 @@ export function ContentSection() {
           <ProposalSection />
         </div>
 
-        {/* 旧スポンサー募集セクション（念のため残しています） */}
-        {/* <div className="bg-fk-white rounded-[10px] py-8 px-5 sm:py-[48px] sm:px-[56px] flex-1 relative">
+        <div className="bg-fk-white rounded-[10px] py-8 px-5 sm:py-[48px] sm:px-[56px] flex-1 relative">
           <SponsorSection />
-        </div> */}
+        </div>
 
-        {/* TODO: 実データが揃うまで一時的にコメントアウト */}
+        {/* TODO: 実データが揃うまで一時的にコメントアウト（揃ったら上の SponsorSection と差し替え） */}
         {/* <div className="flex-1 relative">
           <SponsorsShowcaseSection />
         </div> */}
