@@ -1,198 +1,50 @@
 import { Button } from "@workspace/ui/components/button";
-import Image from "next/image";
 import Link from "next/link";
 import type { SponsorMascot } from "../SponsorsSection/ColoredTakoyan";
+import { OptionSponsors } from "../SponsorsSection/OptionSponsors";
+import { SponsorSlotRow } from "../SponsorsSection/SponsorLogoGrid";
 import { SponsorTierHeader } from "../SponsorsSection/SponsorTierHeader";
-
-// 個人スポンサー — a simple name list under the 個人スポンサー heading.
-const individualSponsors: { id: string; name: string }[] = [
-  { id: "individual-1", name: "スポンサー名入ります" },
-  { id: "individual-2", name: "スポンサー名入ります" },
-  { id: "individual-3", name: "スポンサー名入ります" },
-  { id: "individual-4", name: "スポンサー名入ります" },
-  { id: "individual-5", name: "スポンサー名入ります" },
-];
+import {
+  individualSponsors,
+  optionSponsorCategories,
+  sponsorTiers,
+} from "../SponsorsSection/sponsors";
+import type { Sponsor, SponsorTierId } from "../SponsorsSection/types";
 
 // 「スポンサー一覧はこちら」の遷移先。専用ページ公開時に差し替え。
 const sponsorListLink = "#sponsors";
 
-type Sponsor = {
-  name: string;
-  logoSrc: string;
-  url?: string;
-};
-
-type OptionGroup = {
-  key: string;
-  title: string;
-  /** Tailwind grid column classes for this group's slot grid. */
-  columns: string;
-  /** Number of empty slots to render while sponsors are not yet published. */
-  placeholderCount: number;
-  /** Extra classes on each slot box (e.g. to constrain the width of a lone card). */
-  slotClassName?: string;
-  /** Fixed sponsors, once announced. Falls back to placeholder slots when empty. */
-  sponsors?: Sponsor[];
-};
-
-type SponsorGroup = OptionGroup & {
-  /** Takoyan mascot shape + colour shown next to the tier heading. */
-  variant: SponsorMascot;
-};
-
-// メインスポンサー（Gold / Silver / Bronze）
-const mainTiers: SponsorGroup[] = [
-  {
-    key: "gold",
-    title: "Gold Sponsors",
-    variant: "gold",
-    columns: "grid-cols-1 sm:grid-cols-2",
-    placeholderCount: 5,
-  },
-  {
-    key: "silver",
-    title: "Silver Sponsors",
-    variant: "silver",
-    columns: "grid-cols-2 sm:grid-cols-3",
-    placeholderCount: 5,
-  },
-  {
-    key: "bronze",
-    title: "Bronze Sponsors",
-    variant: "bronze",
-    columns: "grid-cols-3 sm:grid-cols-4",
-    placeholderCount: 6,
-  },
+// メインスポンサー: 表示順とマスコット。列幅（＝1行あたりの最大枚数）は variant で
+// 決まる（TIER_CARD_BASIS）— ゴールドほど大きく、1行に少なく。データ側に style は
+// 持たせない。
+const tierSections: { id: SponsorTierId; variant: SponsorMascot }[] = [
+  { id: "gold", variant: "gold" },
+  { id: "silver", variant: "silver" },
+  { id: "bronze", variant: "bronze" },
 ];
 
-// オプションスポンサー
-const optionGroups: OptionGroup[] = [
-  {
-    key: "makuai-cm",
-    title: "幕間CM",
-    columns: "grid-cols-3 sm:grid-cols-4",
-    placeholderCount: 6,
-  },
-  {
-    key: "back-panel",
-    title: "バックパネル",
-    columns: "grid-cols-3 sm:grid-cols-4",
-    placeholderCount: 4,
-  },
-  {
-    key: "name-card",
-    title: "ネームカード",
-    columns: "grid-cols-1 justify-items-center",
-    placeholderCount: 1,
-    slotClassName: "max-w-[320px]",
-  },
-  {
-    key: "session-room-naming",
-    title: "セッションルームネーミングライツ",
-    columns: "grid-cols-[repeat(2,minmax(0,320px))] justify-center",
-    placeholderCount: 2,
-  },
-  {
-    key: "sponsor-booth",
-    title: "スポンサーブース",
-    columns: "grid-cols-3 sm:grid-cols-4",
-    placeholderCount: 12,
-  },
-  {
-    key: "sponsor-session",
-    title: "スポンサーセッション",
-    columns: "grid-cols-3 sm:grid-cols-4",
-    placeholderCount: 12,
-  },
-  {
-    key: "lunch",
-    title: "ランチ",
-    columns: "grid-cols-[repeat(2,minmax(0,320px))] justify-center",
-    placeholderCount: 2,
-  },
-  {
-    key: "party",
-    title: "懇親会",
-    columns: "grid-cols-3 sm:grid-cols-4",
-    placeholderCount: 4,
-  },
-  {
-    key: "coffee",
-    title: "コーヒー",
-    columns: "grid-cols-1 justify-items-center",
-    placeholderCount: 1,
-    slotClassName: "max-w-[320px]",
-  },
-  {
-    key: "student-support",
-    title: "学生支援",
-    columns: "grid-cols-2 sm:grid-cols-3",
-    placeholderCount: 5,
-  },
-];
+// variant ごとのカード幅（flex-basis）。中央寄せ flex-wrap で最大列数を決める。
+const TIER_CARD_BASIS: Record<SponsorMascot, string> = {
+  gold: "basis-full sm:basis-[calc(50%-10px)]",
+  silver: "basis-[calc(50%-8px)] sm:basis-[calc(33.333%-14px)]",
+  bronze: "basis-[calc(33.333%-11px)] sm:basis-[calc(25%-15px)]",
+  red: "basis-[calc(33.333%-11px)] sm:basis-[calc(25%-15px)]",
+};
 
-function SponsorSlot({
-  sponsor,
-  className = "",
-}: {
-  sponsor?: Sponsor;
-  /** Extra classes on the slot box (e.g. to constrain the width of a lone card). */
-  className?: string;
-}) {
-  const box = `flex aspect-[16/9] w-full items-center justify-center rounded-[8px] bg-fk-white shadow-[0_2px_10px_rgba(51,51,51,0.06)] ${className}`;
-
-  if (!sponsor) {
-    return <div className={box} aria-hidden="true" />;
-  }
-
-  const logo = (
-    <Image
-      src={sponsor.logoSrc}
-      alt={sponsor.name}
-      width={220}
-      height={124}
-      className="max-h-[80%] max-w-[80%] object-contain"
-    />
-  );
-
-  if (sponsor.url) {
-    return (
-      <Link
-        href={sponsor.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={sponsor.name}
-        className={`${box} transition-opacity hover:opacity-80`}
-      >
-        {logo}
-      </Link>
-    );
-  }
-
-  return <div className={box}>{logo}</div>;
+// id → sponsors / heading for the tiers.
+const sponsorsById = new Map<string, Sponsor[]>();
+const headingById = new Map<string, string>();
+for (const tier of sponsorTiers) {
+  sponsorsById.set(tier.id, tier.sponsors);
+  headingById.set(tier.id, tier.heading);
 }
 
-function SponsorGroupBlock({ group }: { group: SponsorGroup }) {
-  const slots: (Sponsor | undefined)[] =
-    group.sponsors && group.sponsors.length > 0
-      ? group.sponsors
-      : Array.from({ length: group.placeholderCount });
-
-  return (
-    <div>
-      <SponsorTierHeader heading={group.title} variant={group.variant} />
-
-      <div className={`mt-8 grid gap-4 sm:gap-5 ${group.columns}`}>
-        {slots.map((sponsor, index) => (
-          <SponsorSlot
-            key={sponsor ? sponsor.name : `${group.key}-slot-${index}`}
-            sponsor={sponsor}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
+// 学生支援 is a tier in the SSoT, but on the LP it is shown inside the option
+// section — append it as one more group after the option categories.
+const studentTier = sponsorTiers.find((tier) => tier.id === "student");
+const optionGroups = studentTier
+  ? [...optionSponsorCategories, studentTier]
+  : optionSponsorCategories;
 
 export function SponsorsShowcaseSection() {
   return (
@@ -217,34 +69,25 @@ export function SponsorsShowcaseSection() {
 
       {/* メインスポンサー */}
       <div className="mt-[44px] flex flex-col gap-12 sm:gap-14">
-        {mainTiers.map((group) => (
-          <SponsorGroupBlock key={group.key} group={group} />
+        {tierSections.map(({ id, variant }) => (
+          <div key={id}>
+            <SponsorTierHeader
+              heading={headingById.get(id) ?? ""}
+              variant={variant}
+            />
+            <div className="mt-8">
+              <SponsorSlotRow
+                sponsors={sponsorsById.get(id) ?? []}
+                basis={TIER_CARD_BASIS[variant]}
+              />
+            </div>
+          </div>
         ))}
       </div>
 
-      {/* オプションスポンサー */}
+      {/* オプションスポンサー（共通コンポーネント） */}
       <div className="mt-16 sm:mt-[72px]">
-        <SponsorTierHeader heading="オプションスポンサー" variant="red" />
-
-        <div className="mt-10 flex flex-col gap-12 sm:gap-14">
-          {optionGroups.map((group) => (
-            <div key={group.key}>
-              <p className="m-0 mb-5 text-center font-montserrat text-fk-green text-[14px] sm:text-[16px] font-bold">
-                {group.title}
-              </p>
-              <div className={`grid gap-4 sm:gap-5 ${group.columns}`}>
-                {Array.from({ length: group.placeholderCount }).map(
-                  (_, index) => (
-                    <SponsorSlot
-                      key={`${group.key}-slot-${index}`}
-                      className={group.slotClassName}
-                    />
-                  ),
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
+        <OptionSponsors groups={optionGroups} />
       </div>
 
       {/* 個人スポンサー */}
@@ -268,7 +111,7 @@ export function SponsorsShowcaseSection() {
             variant="fkSolid"
             className="min-w-0 h-12 px-10 text-[15px] sm:text-[16px]"
           >
-            <Link href={sponsorListLink} aria-label="スポンサー一覧はこちら">
+            <Link href={sponsorListLink} aria-label="スポンサー一覧をみる">
               スポンサー一覧はこちら
             </Link>
           </Button>

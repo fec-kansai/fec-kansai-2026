@@ -1,4 +1,5 @@
 import type { SponsorMascot } from "./ColoredTakoyan";
+import { OptionSponsors } from "./OptionSponsors";
 import { SponsorCard } from "./SponsorCard";
 import { SponsorTierHeader } from "./SponsorTierHeader";
 import { individualSponsors, sponsorTiers } from "./sponsors";
@@ -70,6 +71,9 @@ export function SponsorsSection() {
             </div>
           </div>
         ))}
+
+        {/* オプションスポンサー — shared with the LP showcase (same SSoT data). */}
+        <OptionSponsors />
 
         {/* Individual (personal) sponsors — just a name list. */}
         <div className="flex flex-col gap-8 sm:gap-10">
