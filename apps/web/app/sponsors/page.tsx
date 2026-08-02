@@ -14,6 +14,7 @@ export default function SponsorsPage() {
 // import { Header } from "../components/Header";
 // import { SponsorPageHero } from "../components/SponsorPageHero";
 // import { SponsorsSection } from "../components/SponsorsSection/SponsorsSection";
+// import { individualSponsors, optionSponsorCategories, sponsorTiers } from "../constants";
 // import { WaveDivider } from "../components/WaveDivider";
 // import { navItems } from "../constants";
 //
@@ -25,7 +26,11 @@ export default function SponsorsPage() {
 //         <SponsorPageHero />
 //       </div>
 //       <WaveDivider />
-//       <SponsorsSection />
+//       <SponsorsSection
+//         tiers={sponsorTiers}
+//         optionCategories={optionSponsorCategories}
+//         individualSponsors={individualSponsors}
+//       />
 //     </main>
 //   );
 // }

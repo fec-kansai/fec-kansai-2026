@@ -1,9 +1,13 @@
-import type { OptionSponsorCategory, SponsorTier } from "./types";
+import type {
+  IndividualSponsor,
+  OptionSponsorCategory,
+  SponsorTier,
+} from "../../../web/app/components/SponsorsSection/types";
 
 /**
- * Placeholder sponsor data matching the design mock. Every visible part of the
- * showcase is derived from here — to add, remove or edit a sponsor (or swap the
- * placeholders for real logos/copy/links), change this file only.
+ * Dummy sponsor data for Storybook only — lets the sponsor stories render a
+ * populated layout while the app itself ships empty data (see constants.ts).
+ * Adjust freely to tune the visuals; nothing here reaches production.
  */
 export const sponsorTiers: SponsorTier[] = [
   {
@@ -80,25 +84,6 @@ export const sponsorTiers: SponsorTier[] = [
   },
 ];
 
-/**
- * Individual (personal) sponsors — rendered as a simple name list under the
- * 個人スポンサー heading. `id` is only a stable React key; `name` is shown.
- */
-export const individualSponsors: { id: string; name: string }[] = [
-  { id: "individual-1", name: "スポンサー名入ります" },
-  { id: "individual-2", name: "スポンサー名入ります" },
-  { id: "individual-3", name: "スポンサー名入ります" },
-  { id: "individual-4", name: "スポンサー名入ります" },
-  { id: "individual-5", name: "スポンサー名入ります" },
-];
-
-/**
- * Option (協賛メニュー) sponsors, grouped by category. The categories are fixed;
- * each `sponsors` list holds only the companies that took that option (empty =
- * none yet). Placeholder entries below mirror the design mock — replace with
- * real names/logos as they are decided. 学生支援 is a tier (see sponsorTiers),
- * not an option category, so it is intentionally absent here.
- */
 export const optionSponsorCategories: OptionSponsorCategory[] = [
   {
     id: "makuai-cm",
@@ -161,4 +146,12 @@ export const optionSponsorCategories: OptionSponsorCategory[] = [
     heading: "コーヒー",
     sponsors: [{ id: "coffee-1", name: "企業名が入ります", description: [] }],
   },
+];
+
+export const individualSponsors: IndividualSponsor[] = [
+  { id: "individual-1", name: "スポンサー名入ります" },
+  { id: "individual-2", name: "スポンサー名入ります" },
+  { id: "individual-3", name: "スポンサー名入ります" },
+  { id: "individual-4", name: "スポンサー名入ります" },
+  { id: "individual-5", name: "スポンサー名入ります" },
 ];

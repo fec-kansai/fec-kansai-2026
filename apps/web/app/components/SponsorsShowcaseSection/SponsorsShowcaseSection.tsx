@@ -4,12 +4,12 @@ import type { SponsorMascot } from "../SponsorsSection/ColoredTakoyan";
 import { OptionSponsors } from "../SponsorsSection/OptionSponsors";
 import { SponsorSlotRow } from "../SponsorsSection/SponsorLogoGrid";
 import { SponsorTierHeader } from "../SponsorsSection/SponsorTierHeader";
-import {
-  individualSponsors,
-  optionSponsorCategories,
-  sponsorTiers,
-} from "../SponsorsSection/sponsors";
-import type { Sponsor, SponsorTierId } from "../SponsorsSection/types";
+import type {
+  IndividualSponsor,
+  OptionSponsorCategory,
+  SponsorTier,
+  SponsorTierId,
+} from "../SponsorsSection/types";
 
 // 「スポンサー一覧はこちら」の遷移先。専用ページ公開時に差し替え。
 const sponsorListLink = "#sponsors";
@@ -31,22 +31,26 @@ const TIER_CARD_BASIS: Record<SponsorMascot, string> = {
   red: "basis-[calc(33.333%-11px)] sm:basis-[calc(25%-15px)]",
 };
 
-// id → sponsors / heading for the tiers.
-const sponsorsById = new Map<string, Sponsor[]>();
-const headingById = new Map<string, string>();
-for (const tier of sponsorTiers) {
-  sponsorsById.set(tier.id, tier.sponsors);
-  headingById.set(tier.id, tier.heading);
-}
+type SponsorsShowcaseSectionProps = {
+  tiers: SponsorTier[];
+  optionCategories: OptionSponsorCategory[];
+  individualSponsors: IndividualSponsor[];
+};
 
-// 学生支援 is a tier in the SSoT, but on the LP it is shown inside the option
-// section — append it as one more group after the option categories.
-const studentTier = sponsorTiers.find((tier) => tier.id === "student");
-const optionGroups = studentTier
-  ? [...optionSponsorCategories, studentTier]
-  : optionSponsorCategories;
+export function SponsorsShowcaseSection({
+  tiers,
+  optionCategories,
+  individualSponsors,
+}: SponsorsShowcaseSectionProps) {
+  const tierById = new Map(tiers.map((tier) => [tier.id, tier]));
 
-export function SponsorsShowcaseSection() {
+  // 学生支援 is a tier in the data, but on the LP it is shown inside the option
+  // section — append it as one more group after the option categories.
+  const studentTier = tiers.find((tier) => tier.id === "student");
+  const optionGroups = studentTier
+    ? [...optionCategories, studentTier]
+    : optionCategories;
+
   return (
     <div id="sponsor" className="relative font-sans">
       <header className="text-center">
@@ -69,20 +73,23 @@ export function SponsorsShowcaseSection() {
 
       {/* メインスポンサー */}
       <div className="mt-[44px] flex flex-col gap-12 sm:gap-14">
-        {tierSections.map(({ id, variant }) => (
-          <div key={id}>
-            <SponsorTierHeader
-              heading={headingById.get(id) ?? ""}
-              variant={variant}
-            />
-            <div className="mt-8">
-              <SponsorSlotRow
-                sponsors={sponsorsById.get(id) ?? []}
-                basis={TIER_CARD_BASIS[variant]}
+        {tierSections.map(({ id, variant }) => {
+          const tier = tierById.get(id);
+          return (
+            <div key={id}>
+              <SponsorTierHeader
+                heading={tier?.heading ?? ""}
+                variant={variant}
               />
+              <div className="mt-8">
+                <SponsorSlotRow
+                  sponsors={tier?.sponsors ?? []}
+                  basis={TIER_CARD_BASIS[variant]}
+                />
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* オプションスポンサー（共通コンポーネント） */}
