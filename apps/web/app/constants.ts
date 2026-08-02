@@ -1,3 +1,9 @@
+import type {
+  IndividualSponsor,
+  OptionSponsorCategory,
+  SponsorTier,
+} from "./components/SponsorsSection/types";
+
 export type NavLink = {
   name: string;
   url: string;
@@ -88,3 +94,45 @@ export const organizationLink: FooterLink = {
   name: "一般社団法人 関西開発者会議",
   url: "https://k3jp.org/",
 };
+
+// スポンサー実データ。ティア／オプションの枠（見出し）は固定で、`sponsors` を
+// 埋めていくと表示に反映される。実データが決まるまで sponsors は空。
+export const sponsorTiers: SponsorTier[] = [
+  {
+    id: "gold",
+    heading: "Gold Sponsors",
+    badgeLabel: "Gold Sponsor",
+    sponsors: [],
+  },
+  {
+    id: "silver",
+    heading: "Silver Sponsors",
+    badgeLabel: "Silver Sponsor",
+    sponsors: [],
+  },
+  {
+    id: "bronze",
+    heading: "Bronze Sponsors",
+    badgeLabel: "Bronze Sponsor",
+    sponsors: [],
+  },
+  { id: "student", heading: "学生支援", badgeLabel: "学生支援", sponsors: [] },
+];
+
+export const optionSponsorCategories: OptionSponsorCategory[] = [
+  { id: "makuai-cm", heading: "幕間CM", sponsors: [] },
+  { id: "back-panel", heading: "バックパネル", sponsors: [] },
+  { id: "name-card", heading: "ネームカード", sponsors: [] },
+  {
+    id: "session-room-naming",
+    heading: "セッションルームネーミングライツ",
+    sponsors: [],
+  },
+  { id: "sponsor-booth", heading: "スポンサーブース", sponsors: [] },
+  { id: "sponsor-session", heading: "スポンサーセッション", sponsors: [] },
+  { id: "lunch", heading: "ランチ", sponsors: [] },
+  { id: "party", heading: "懇親会", sponsors: [] },
+  { id: "coffee", heading: "コーヒー", sponsors: [] },
+];
+
+export const individualSponsors: IndividualSponsor[] = [];

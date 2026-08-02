@@ -2,10 +2,16 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { expect, within } from "@storybook/test";
 
 import { SponsorsSection } from "../../web/app/components/SponsorsSection/SponsorsSection";
+import {
+  individualSponsors,
+  optionSponsorCategories,
+  sponsorTiers,
+} from "./mocks/sponsors";
 
 /**
- * The full sponsors showcase, rendering the real `sponsorTiers` /
- * `individualSponsors` data — the same content shown on the /sponsors route.
+ * The full sponsors showcase, rendering placeholder `sponsorTiers` /
+ * `optionSponsorCategories` / `individualSponsors` data passed in as props —
+ * the same content shown on the /sponsors route.
  */
 const meta = {
   title: "Sponsors/SponsorsSection",
@@ -17,6 +23,11 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
+  args: {
+    tiers: sponsorTiers,
+    optionCategories: optionSponsorCategories,
+    individualSponsors,
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     // Every tier heading and the individual-sponsor list render.

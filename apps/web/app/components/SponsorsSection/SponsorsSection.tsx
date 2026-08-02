@@ -2,8 +2,12 @@ import type { SponsorMascot } from "./ColoredTakoyan";
 import { OptionSponsors } from "./OptionSponsors";
 import { SponsorCard } from "./SponsorCard";
 import { SponsorTierHeader } from "./SponsorTierHeader";
-import { individualSponsors, sponsorTiers } from "./sponsors";
-import type { SponsorTierId } from "./types";
+import type {
+  IndividualSponsor,
+  OptionSponsorCategory,
+  SponsorTier,
+  SponsorTierId,
+} from "./types";
 
 /** Mascot shape + colour per tier (see SponsorTierHeader). */
 const TIER_MASCOT: Record<SponsorTierId, SponsorMascot> = {
@@ -37,19 +41,28 @@ const TIER_DECORATIONS: Record<SponsorTierId, string[]> = {
 };
 
 /**
- * Renders the sponsor showcase: one group per tier (each a heading + its cards)
- * followed by the 個人スポンサー name list. The section is purely a loop over
- * `sponsorTiers` / `individualSponsors` data — to add, remove or edit a sponsor,
- * change sponsors.ts only.
+ * Renders the sponsor showcase: one group per tier (each a heading + its cards),
+ * the shared option-sponsor section, then the 個人スポンサー name list. All data
+ * is provided by the caller — the component holds no data of its own.
  */
-export function SponsorsSection() {
+type SponsorsSectionProps = {
+  tiers: SponsorTier[];
+  optionCategories: OptionSponsorCategory[];
+  individualSponsors: IndividualSponsor[];
+};
+
+export function SponsorsSection({
+  tiers,
+  optionCategories,
+  individualSponsors,
+}: SponsorsSectionProps) {
   return (
     <section
       id="sponsors"
       className="min-h-[300px] bg-fk-yellow-soft pt-[43px] pb-24 sm:pt-[80px] sm:pb-[200px]"
     >
       <div className="mx-auto flex max-w-[904px] flex-col gap-4 px-4 sm:gap-[100px] min-[904px]:px-0">
-        {sponsorTiers.map((tier) => (
+        {tiers.map((tier) => (
           <div key={tier.id} className="flex flex-col gap-8 sm:gap-10">
             <SponsorTierHeader
               heading={tier.heading}
@@ -72,8 +85,8 @@ export function SponsorsSection() {
           </div>
         ))}
 
-        {/* オプションスポンサー — shared with the LP showcase (same SSoT data). */}
-        <OptionSponsors />
+        {/* オプションスポンサー — shared with the LP showcase (same data). */}
+        <OptionSponsors groups={optionCategories} />
 
         {/* Individual (personal) sponsors — just a name list. */}
         <div className="flex flex-col gap-8 sm:gap-10">
