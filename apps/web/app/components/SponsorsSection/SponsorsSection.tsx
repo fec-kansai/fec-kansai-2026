@@ -42,8 +42,7 @@ const TIER_DECORATIONS: Record<SponsorTierId, string[]> = {
 
 /**
  * Renders the sponsor showcase: one group per tier (each a heading + its cards),
- * the shared option-sponsor section, then the 個人スポンサー name list. All data
- * is provided by the caller — the component holds no data of its own.
+ * the shared option-sponsor section, then the 個人スポンサー name list.
  */
 type SponsorsSectionProps = {
   tiers: SponsorTier[];

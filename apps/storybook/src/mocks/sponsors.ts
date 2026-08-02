@@ -7,7 +7,7 @@ import type {
 /**
  * Dummy sponsor data for Storybook only — lets the sponsor stories render a
  * populated layout while the app itself ships empty data (see constants.ts).
- * Adjust freely to tune the visuals; nothing here reaches production.
+ * Adjust freely to tune the visuals;
  */
 export const sponsorTiers: SponsorTier[] = [
   {
