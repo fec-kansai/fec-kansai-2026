@@ -2,6 +2,11 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { expect, within } from "@storybook/test";
 
 import { SponsorsShowcaseSection } from "../../web/app/components/SponsorsShowcaseSection/SponsorsShowcaseSection";
+import {
+  individualSponsors,
+  optionSponsorCategories,
+  sponsorTiers,
+} from "./mocks/sponsors";
 
 /**
  * The full sponsor showcase section: the スポンサー header, the Gold / Silver /
@@ -31,6 +36,11 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
+  args: {
+    tiers: sponsorTiers,
+    optionCategories: optionSponsorCategories,
+    individualSponsors,
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     // Tier headings and an option group render.

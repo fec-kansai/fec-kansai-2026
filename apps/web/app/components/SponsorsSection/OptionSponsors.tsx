@@ -1,6 +1,5 @@
 import { SponsorSlotRow } from "./SponsorLogoGrid";
 import { SponsorTierHeader } from "./SponsorTierHeader";
-import { optionSponsorCategories } from "./sponsors";
 import type { OptionSponsorCategory } from "./types";
 
 // Shared option layout: centered, up to 4 columns. Column count grows with the
@@ -13,13 +12,13 @@ const OPTION_CARD_BASIS =
  * centered logo grid per category. Shared by the LP showcase and the /sponsors
  * page so both render option sponsors identically from the same SSoT data.
  *
- * `groups` defaults to `optionSponsorCategories`; callers can pass a different
- * list (e.g. the landing appends the 学生支援 tier as one more group).
+ * The caller provides `groups` (e.g. the landing appends the 学生支援 tier as
+ * one more group)
  */
 export function OptionSponsors({
-  groups = optionSponsorCategories,
+  groups,
 }: {
-  groups?: OptionSponsorCategory[];
+  groups: OptionSponsorCategory[];
 }) {
   return (
     <div>

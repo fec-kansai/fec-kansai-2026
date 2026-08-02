@@ -70,3 +70,9 @@ export type OptionSponsorCategory = {
   heading: string;
   sponsors: Sponsor[];
 };
+
+/** A personal (個人) sponsor — only the name is shown; `id` is the React key. */
+export type IndividualSponsor = {
+  id: string;
+  name: string;
+};
