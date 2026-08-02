@@ -1,4 +1,10 @@
-﻿import Image from "next/image";
+﻿import { Button } from "@workspace/ui/components/button";
+import { ExternalLinkIcon } from "lucide-react";
+import Link from "next/link";
+import { TicketCard } from "./TicketCard";
+import { TICKETS } from "./tickets";
+
+const ticketLink = "https://peatix.com/event/5023766";
 
 export function TicketSection() {
   return (
@@ -12,24 +18,25 @@ export function TicketSection() {
         </p>
       </header>
 
-      <div className="mt-[42px] mx-auto max-w-[560px] flex items-end justify-center gap-3 md:gap-7">
-        <Image
-          src="/coming-soon.png"
-          alt="coming soon"
-          width={384}
-          height={165}
-          aria-hidden
-          className="w-[220px] h-auto md:w-[min(100%,384px)]"
-        />
-        <Image
-          src="/Octopus.svg"
-          alt="octopus"
-          width={164}
-          height={164}
-          aria-hidden
-          className="w-[92px] h-auto md:w-[min(100%,164px)]"
-        />
+      <div className="grid max-[900px]:grid-cols-1 grid-cols-2 max-[900px]:gap-4 gap-6 mt-6">
+        {TICKETS.map((ticket) => (
+          <TicketCard key={ticket.type} ticket={ticket} />
+        ))}
       </div>
+
+      <footer className="mt-10 text-center">
+        <Button asChild variant="fkSolid" size="fkPill">
+          <Link
+            href={ticketLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="チケット購入リンクを開く"
+          >
+            チケット購入はこちら
+            <ExternalLinkIcon />
+          </Link>
+        </Button>
+      </footer>
 
       {/* vue.svg 装飾 */}
       <span
