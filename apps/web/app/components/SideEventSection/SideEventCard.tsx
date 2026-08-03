@@ -25,7 +25,7 @@ const DECORATION_SETS: string[][] = [
     "before:bg-[url('/react.svg')] before:left-[-80px] before:top-1/2 before:h-[108px] before:w-[110px] before:-translate-x-[110px] before:-translate-y-1/2",
   ],
   [
-    "before:bg-[url('/lalavel.svg')] before:right-[-90px] before:top-[64px] before:h-[110px] before:w-[120px] before:translate-x-[100px]",
+    "before:bg-[url('/laravel.svg')] before:right-[-90px] before:top-[64px] before:h-[110px] before:w-[120px] before:translate-x-[100px]",
   ],
 ];
 
