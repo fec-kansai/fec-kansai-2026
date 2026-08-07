@@ -70,25 +70,25 @@ export function SessionCard({
         )}
       </h3>
 
-      <p className="m-0 mt-2 flex items-center gap-2 text-[13px] leading-none text-fk-text-light">
-        <span>{speaker}</span>
-        {speakerImage ? (
-          <Image
-            src={speakerImage}
-            // The name sits right next to it, so the avatar adds nothing for
-            // screen readers.
-            alt=""
-            width={18}
-            height={18}
-            className="size-[18px] shrink-0 rounded-full object-cover"
-          />
-        ) : (
-          <span
-            aria-hidden="true"
-            className="size-[18px] shrink-0 rounded-full bg-[#b3b3b3]"
-          />
-        )}
-      </p>
+      {speaker && (
+        <p className="m-0 mt-2 flex items-center gap-2 text-[13px] leading-none text-fk-text-light">
+          <span>{speaker}</span>
+          {speakerImage ? (
+            <Image
+              src={speakerImage}
+              alt={speaker}
+              width={18}
+              height={18}
+              className="size-[18px] shrink-0 rounded-full object-cover"
+            />
+          ) : (
+            <span
+              aria-hidden="true"
+              className="size-[18px] shrink-0 rounded-full bg-[#b3b3b3]"
+            />
+          )}
+        </p>
+      )}
 
       {surveyUrl && (
         // mt-auto pushes the link to the bottom of a stretched card.

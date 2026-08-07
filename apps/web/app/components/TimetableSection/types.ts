@@ -17,7 +17,8 @@ export type Session = {
   /** Badge above the title, e.g. "レギュラートーク" / "LT". */
   category: string;
   title: string;
-  speaker: string;
+  /** Speaker row (name + avatar) is hidden entirely when omitted. */
+  speaker?: string;
   /** Speaker avatar in public/. A grey placeholder circle is shown when omitted. */
   speakerImage?: string;
   /** Session detail page. The title is plain text when omitted. */
