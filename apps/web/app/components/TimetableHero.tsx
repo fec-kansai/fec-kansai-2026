@@ -13,9 +13,11 @@ export function TimetableHero() {
   return (
     <section className="w-full max-w-[1140px] mx-auto mt-5 sm:mt-5 min-h-[70px] sm:min-h-[10px] relative grid place-items-center px-3 sm:pt-3">
       <div className="flex items-center justify-center gap-3 sm:gap-6">
+        {/* Decorative mascots flanking the heading — alt="" so screen readers
+            only announce the h1 once. */}
         <Image
           src="/tako-character.svg"
-          alt="公式キャラクターたこやん"
+          alt=""
           width={190}
           height={163}
           priority
@@ -26,7 +28,7 @@ export function TimetableHero() {
         </h1>
         <Image
           src="/tako-character.svg"
-          alt="公式キャラクターたこやん"
+          alt=""
           width={190}
           height={163}
           priority

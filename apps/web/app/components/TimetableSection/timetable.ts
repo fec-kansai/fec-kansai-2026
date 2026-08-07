@@ -32,10 +32,8 @@ const AVATAR = "https://fortee.jp/files/fec-kansai-2026/speaker";
 /** Dummy talk shown in the sponsor cells until the real programme lands. */
 const dummySession = (category: string): Session => ({
   category,
-  title: "セッションタイトルは後日公開予定です（ダミー）",
-  speaker: "スピーカー名",
+  title: "セッションタイトルは後日公開予定です",
   url: FORTEE_TIMETABLE,
-  surveyUrl: FORTEE_TIMETABLE,
 });
 
 /** Both tracks filled with the same dummy talk. */
@@ -64,9 +62,11 @@ export const timetableSlots: TimetableSlot[] = [
       a: {
         category: "主催者",
         title: "オープニングトーク",
-        speaker: "スピーカー名",
       },
-      b: null,
+      b: {
+        category: "主催者",
+        title: "オープニングトーク(ミラー)",
+      },
     },
   },
   {
@@ -391,9 +391,11 @@ export const timetableSlots: TimetableSlot[] = [
       a: {
         category: "主催者",
         title: "クロージング",
-        speaker: "スピーカー名",
       },
-      b: null,
+      b: {
+        category: "主催者",
+        title: "クロージング(ミラー)",
+      },
     },
   },
   {
