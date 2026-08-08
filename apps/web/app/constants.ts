@@ -4,13 +4,13 @@ export type NavLink = {
 };
 
 export const navItems: NavLink[] = [
-  // Anchors are absolute (/#…) so the menu also works from the /side-events route,
-  // where these sections don't exist — clicking jumps back to the section on the LP.
-  { name: "メッセージ", url: "/#message" },
+  // Anchor entries are absolute (/#…) so the menu also works from other routes
+  // (/side-events, /timetable), where these sections don't exist — clicking
+  // jumps back to the section on the LP. Page entries are plain routes.
   { name: "開催日・アクセス", url: "/#access" },
-  { name: "プロポーザル", url: "/#proposal" },
   { name: "スポンサー募集", url: "/#sponsor" },
   { name: "チケット情報", url: "/#ticket" },
+  { name: "タイムテーブル", url: "/timetable" },
   { name: "公式キャラクター", url: "/#character" },
   { name: "サイドイベント", url: "/side-events" },
   // TODO: mock data
