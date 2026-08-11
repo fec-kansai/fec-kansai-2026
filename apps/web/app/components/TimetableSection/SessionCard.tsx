@@ -34,7 +34,7 @@ export function SessionCard({
   return (
     <article
       className={cn(
-        "flex flex-col rounded-[8px] border bg-fk-white px-4 py-[14px]",
+        "flex flex-col rounded-[8px] bg-fk-white px-4 py-[14px]",
         theme.border,
         className,
       )}
@@ -42,7 +42,7 @@ export function SessionCard({
       <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1">
         <span
           className={cn(
-            "rounded-full px-3 py-[5px] text-[12px] font-bold leading-none text-fk-text-main",
+            "rounded-full px-3 py-[5px] text-[12px] font-bold leading-none text-fk-white",
             TIMETABLE_SURFACES.badge,
           )}
         >

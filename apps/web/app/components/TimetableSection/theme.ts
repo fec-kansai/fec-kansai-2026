@@ -4,6 +4,7 @@ import type { TrackId } from "./types";
  * Per-track colour theme. Track A uses the site's green, track B the brown
  * accent — the same pairing the design applies to the column header, the card
  * border and the room label, so a card always reads as belonging to one track.
+ * `border` carries the width too: both tracks use a 2px border.
  */
 export const TRACK_THEMES: Record<
   TrackId,
@@ -11,12 +12,12 @@ export const TRACK_THEMES: Record<
 > = {
   a: {
     header: "bg-fk-green",
-    border: "border-fk-green",
+    border: "border-2 border-fk-green",
     text: "text-fk-green",
   },
   b: {
     header: "bg-fk-accent-brown",
-    border: "border-fk-accent-brown",
+    border: "border-2 border-fk-accent-brown",
     text: "text-fk-accent-brown",
   },
 };
