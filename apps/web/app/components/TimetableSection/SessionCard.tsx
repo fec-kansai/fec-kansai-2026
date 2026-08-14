@@ -2,7 +2,7 @@ import { cn } from "@workspace/ui/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { ExternalLinkIcon } from "../ExternalLinkIcon";
-import { TIMETABLE_SURFACES, TRACK_THEMES } from "./theme";
+import { CATEGORY_BADGES, TRACK_THEMES } from "./theme";
 import type { Session, TrackId } from "./types";
 
 type SessionCardProps = {
@@ -43,7 +43,7 @@ export function SessionCard({
         <span
           className={cn(
             "rounded-full px-3 py-[5px] text-[12px] font-bold leading-none text-fk-white",
-            TIMETABLE_SURFACES.badge,
+            CATEGORY_BADGES[category],
           )}
         >
           {category}

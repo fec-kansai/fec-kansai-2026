@@ -1,4 +1,5 @@
-import type { TrackId } from "./types";
+import { SESSION_CATEGORIES } from "./types";
+import type { SessionCategory, TrackId } from "./types";
 
 /**
  * Per-track colour theme. Track A uses the site's green, track B the brown
@@ -31,6 +32,17 @@ export const TIMETABLE_SURFACES = {
   time: "bg-[#f0f0f0]",
   /** "セッションなし" and 休憩 rows. */
   unavailable: "bg-[#d4d4d4]",
-  /** Category badge on a session card. */
-  badge: "bg-[#d8b029]",
 } as const;
+
+/**
+ * Category badge fill, keyed by the badge text. The design reuses the two track
+ * colours here — 主催者 matches the track A header, スポンサーセッション the
+ * track B one — so those two follow the site tokens rather than repeating a hex.
+ * The gold and purple are timetable-only, so they stay literals.
+ */
+export const CATEGORY_BADGES: Record<SessionCategory, string> = {
+  [SESSION_CATEGORIES.organizer]: "bg-fk-green",
+  [SESSION_CATEGORIES.regular]: "bg-[#e1a937]",
+  [SESSION_CATEGORIES.sponsor]: "bg-fk-accent-brown",
+  [SESSION_CATEGORIES.lightning]: "bg-[#64407b]",
+};
