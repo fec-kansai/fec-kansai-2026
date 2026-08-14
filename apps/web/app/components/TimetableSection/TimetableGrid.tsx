@@ -99,7 +99,7 @@ function SlotCells({ slot }: { slot: TimetableSlot }) {
     return (
       <td
         colSpan={tracks.length}
-        className="rounded-[8px] border border-fk-green bg-fk-white px-4 py-3 text-center align-middle"
+        className="rounded-[8px] border-2 border-fk-green bg-fk-white px-4 py-3 text-center align-middle"
       >
         <span className="block text-[14px] font-bold text-fk-text-main">
           {slot.label}

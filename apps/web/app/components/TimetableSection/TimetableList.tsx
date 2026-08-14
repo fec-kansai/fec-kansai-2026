@@ -67,7 +67,7 @@ function SlotBody({ slot }: { slot: TimetableSlot }) {
 
   if (slot.kind === "shared") {
     return (
-      <div className="rounded-[8px] border border-fk-green bg-fk-white px-4 py-3 text-center">
+      <div className="rounded-[8px] border-2 border-fk-green bg-fk-white px-4 py-3 text-center">
         <p className="m-0 text-[14px] font-bold text-fk-text-main">
           {slot.label}
         </p>
