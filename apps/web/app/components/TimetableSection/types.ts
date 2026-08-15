@@ -12,10 +12,24 @@ export type Track = {
   hall: string;
 };
 
+/**
+ * The kinds of talk the timetable distinguishes. Each one gets its own badge
+ * colour — see CATEGORY_BADGES.
+ */
+export const SESSION_CATEGORIES = {
+  organizer: "主催者",
+  regular: "レギュラートーク",
+  sponsor: "スポンサーセッション",
+  lightning: "LT",
+} as const;
+
+export type SessionCategory =
+  (typeof SESSION_CATEGORIES)[keyof typeof SESSION_CATEGORIES];
+
 /** A single talk, occupying one track of one time slot. */
 export type Session = {
   /** Badge above the title, e.g. "レギュラートーク" / "LT". */
-  category: string;
+  category: SessionCategory;
   title: string;
   /** Speaker row (name + avatar) is hidden entirely when omitted. */
   speaker?: string;

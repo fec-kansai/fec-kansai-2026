@@ -1,4 +1,11 @@
-import type { Session, TimetableSlot, Track, TrackId } from "./types";
+import { SESSION_CATEGORIES } from "./types";
+import type {
+  Session,
+  SessionCategory,
+  TimetableSlot,
+  Track,
+  TrackId,
+} from "./types";
 
 /**
  * Sessions extracted from https://fortee.jp/fec-kansai-2026/timetable .
@@ -30,20 +37,24 @@ const PROPOSAL = "https://fortee.jp/fec-kansai-2026/proposal";
 const AVATAR = "https://fortee.jp/files/fec-kansai-2026/speaker";
 
 /** Dummy talk shown in the sponsor cells until the real programme lands. */
-const dummySession = (category: string): Session => ({
+const dummySession = (category: SessionCategory): Session => ({
   category,
   title: "セッションタイトルは後日公開予定です",
   url: FORTEE_TIMETABLE,
 });
 
 /** Both tracks filled with the same dummy talk. */
-const dummySessions = (category: string): Record<TrackId, Session | null> => ({
+const dummySessions = (
+  category: SessionCategory,
+): Record<TrackId, Session | null> => ({
   a: dummySession(category),
   b: dummySession(category),
 });
 
-const REGULAR = "レギュラートーク";
-const LT = "LT";
+const ORGANIZER = SESSION_CATEGORIES.organizer;
+const REGULAR = SESSION_CATEGORIES.regular;
+const SPONSOR = SESSION_CATEGORIES.sponsor;
+const LT = SESSION_CATEGORIES.lightning;
 
 export const timetableSlots: TimetableSlot[] = [
   {
@@ -60,11 +71,11 @@ export const timetableSlots: TimetableSlot[] = [
     endsAt: "10:45",
     sessions: {
       a: {
-        category: "主催者",
+        category: ORGANIZER,
         title: "オープニングトーク",
       },
       b: {
-        category: "主催者",
+        category: ORGANIZER,
         title: "オープニングトーク(ミラー)",
       },
     },
@@ -132,21 +143,21 @@ export const timetableSlots: TimetableSlot[] = [
     kind: "sessions",
     startsAt: "12:10",
     endsAt: "12:30",
-    sessions: dummySessions("スポンサーセッション"),
+    sessions: dummySessions(SPONSOR),
   },
   {
     id: "sponsor-2",
     kind: "sessions",
     startsAt: "12:30",
     endsAt: "12:50",
-    sessions: dummySessions("スポンサーセッション"),
+    sessions: dummySessions(SPONSOR),
   },
   {
     id: "sponsor-3",
     kind: "sessions",
     startsAt: "12:50",
     endsAt: "13:20",
-    sessions: dummySessions("スポンサーセッション"),
+    sessions: dummySessions(SPONSOR),
   },
   {
     id: "regular-3",
@@ -389,11 +400,11 @@ export const timetableSlots: TimetableSlot[] = [
     endsAt: "16:40",
     sessions: {
       a: {
-        category: "主催者",
+        category: ORGANIZER,
         title: "クロージング",
       },
       b: {
-        category: "主催者",
+        category: ORGANIZER,
         title: "クロージング(ミラー)",
       },
     },
