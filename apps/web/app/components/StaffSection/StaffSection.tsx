@@ -22,7 +22,7 @@ export function StaffSection() {
         </p>
       </div>
 
-      <div className="mt-[44px] grid grid-cols-6 gap-6">
+      <div className="mt-[44px] grid md:grid-cols-6 gap-6 grid-cols-2">
         {staffList.map((staff) => (
           <StaffCard key={staff.displayName} staff={staff} />
         ))}

@@ -27,9 +27,9 @@ export function StaffCard({ staff }: Props) {
   return (
     <Wrapper href={x ? `https://x.com/${x}` : undefined}>
       <Image
-        src={`/staff/${icon}`}
+        src={`/staff-img/${icon}`}
         alt={displayName}
-        className="aspect-square w-32"
+        className="aspect-square w-32 rounded-2xl object-cover"
         width={130}
         height={130}
       />
