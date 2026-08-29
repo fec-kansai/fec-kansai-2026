@@ -104,7 +104,7 @@ export const staffList: Staff[] = [
   {
     displayName: "273*",
     x: "273Do",
-    icon: "237Do.png",
+    icon: "273Do.png",
   },
   {
     displayName: "にこやか",
