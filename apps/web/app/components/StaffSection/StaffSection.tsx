@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { StaffCard } from "./StaffCard";
 import { staffList } from "./staff";
 
 export function StaffSection() {
@@ -23,22 +23,8 @@ export function StaffSection() {
       </div>
 
       <div className="mt-[44px] grid grid-cols-6 gap-6">
-        {staffList.map(({ displayName, x, icon }) => (
-          <Link
-            key={displayName}
-            href={`/staff/${x}`}
-            rel="noopener noreferrer"
-            className="flex flex-col items-center"
-          >
-            <img
-              src="/takoyan-general.svg"
-              alt={displayName}
-              className="aspect-square w-32"
-            />
-            <p className="text-fk-text-main text-[14px] leading-[1.65]">
-              {displayName}
-            </p>
-          </Link>
+        {staffList.map((staff) => (
+          <StaffCard key={staff.displayName} staff={staff} />
         ))}
       </div>
     </div>
