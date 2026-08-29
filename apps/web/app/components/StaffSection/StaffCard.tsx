@@ -22,12 +22,12 @@ function Wrapper({ href, children }: { href?: string; children: ReactNode }) {
 }
 
 export function StaffCard({ staff }: Props) {
-  const { displayName, x } = staff;
+  const { displayName, x, icon } = staff;
 
   return (
     <Wrapper href={x ? `https://x.com/${x}` : undefined}>
       <Image
-        src="/takoyan-general.svg"
+        src={`/staff/${icon}`}
         alt={displayName}
         className="aspect-square w-32"
         width={130}
