@@ -58,7 +58,6 @@ export const staffList: Staff[] = [
   },
   {
     displayName: "SAW",
-    x: "",
     icon: "",
   },
   {
@@ -73,17 +72,14 @@ export const staffList: Staff[] = [
   },
   {
     displayName: "堀内亮",
-    x: "",
     icon: "堀内亮.jpg",
   },
   {
     displayName: "お茶",
-    x: "",
     icon: "",
   },
   {
     displayName: "outoffuel",
-    x: "",
     icon: "",
   },
   {
@@ -93,12 +89,11 @@ export const staffList: Staff[] = [
   },
   {
     displayName: "asaki",
-    x: "",
     icon: "Asaki-Iwata.jpg",
   },
   {
     displayName: "JuliettKhar",
-    x: "",
+    anyLink: "https://www.wantedly.com/id/julia_kh",
     icon: "JuliettKhar.jpeg",
   },
   {

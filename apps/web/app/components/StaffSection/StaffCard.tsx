@@ -3,9 +3,9 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import type { Staff } from "./types";
 
-type Props = { staff: Staff };
+type WrapperProps = { href?: string; children: ReactNode };
 
-function Wrapper({ href, children }: { href?: string; children: ReactNode }) {
+function Wrapper({ href, children }: WrapperProps) {
   if (!href)
     return <div className="flex flex-col items-center">{children}</div>;
 
@@ -21,11 +21,13 @@ function Wrapper({ href, children }: { href?: string; children: ReactNode }) {
   );
 }
 
+type Props = { staff: Staff };
+
 export function StaffCard({ staff }: Props) {
-  const { displayName, x, icon } = staff;
+  const { displayName, x, anyLink, icon } = staff;
 
   return (
-    <Wrapper href={x ? `https://x.com/${x}` : undefined}>
+    <Wrapper href={x ? `https://x.com/${x}` : anyLink}>
       <Image
         src={`/staff-img/${icon}`}
         alt={displayName}
