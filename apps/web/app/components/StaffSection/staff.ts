@@ -48,8 +48,8 @@ export const staffList: Staff[] = [
   },
   {
     displayName: "わら",
-    x: "",
-    icon: "",
+    x: "w_q_r_q",
+    icon: "w_q_r_q.png",
   },
   {
     displayName: "NobuhiroYokota",
@@ -67,9 +67,9 @@ export const staffList: Staff[] = [
     icon: "sakai_nako.png",
   },
   {
-    displayName: "道前果歩",
-    x: "",
-    icon: "道前果歩.jpeg",
+    displayName: "Kaho Michimae",
+    x: "kaho_eng",
+    icon: "Kaho-Michimae.jpeg",
   },
   {
     displayName: "堀内亮",
