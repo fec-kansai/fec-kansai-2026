@@ -1,5 +1,6 @@
 import type {
   IndividualSponsor,
+  JobBoardEntry,
   OptionSponsorCategory,
   SponsorTier,
 } from "./components/SponsorsSection/types";
@@ -102,13 +103,98 @@ export const sponsorTiers: SponsorTier[] = [
     id: "gold",
     heading: "Gold Sponsors",
     badgeLabel: "Gold Sponsor",
-    sponsors: [],
+    sponsors: [
+      // ロゴ利用ガイドライン: https://www.coderabbit.ai/ja/brand
+      // オプションはブース出展のみ（サイト表記不要）。
+      {
+        id: "coderabbit",
+        name: "CodeRabbit",
+        logo: "/coderabbit.svg",
+        websiteUrl: "https://coderabbit.link/atsushija",
+        description: [
+          "CodeRabbitは、AIによるコード生成が急増する開発環境において、ソフトウェア変更を安全かつ効率的に管理する「Agentic Change Management」を提供する開発プラットフォームです。PRごとのAIコードレビューを中心に、コードベースや変更履歴、ドキュメントなど多様なコンテキストを活用し、潜在的な問題の検出から修正提案までを自動化します。",
+          "さらに、PRの価値・リスクを評価して優先順位やレビュアーを振り分けるCodeRabbit Triage、巨大な差分の意図や影響範囲を理解しやすくするChange Stack、コードベースを継続的に監視して脆弱性を発見・検証・修復するCodeRabbit Securityを提供。AIコーディングエージェントとも連携してレビューやPRの理解負荷解消、優先順位付け、そしてセキュリティまでソフトウェア変更のライフサイクル全体を支援します。",
+        ],
+        recruitUrl: "https://www.coderabbit.ai/ja/careers",
+        sns: [{ platform: "x", url: "https://x.com/coderabbitaija" }],
+      },
+      // ブランドガイドライン: 標準（2行）ロゴのカラー版。カラーロゴは白／黒背景
+      // のみ可 — カードもロゴ枠も白背景なのでそのまま使用できる。
+      {
+        id: "sakura-internet",
+        name: "さくらインターネット株式会社",
+        logo: "/sakurainternet.png",
+        websiteUrl: "https://www.sakura.ad.jp/",
+        description: [
+          "さくらインターネットは、1996年創業のデジタルインフラ企業です。信頼性の高いクラウドおよび計算基盤を国内の自社データセンターから提供しています。「『やりたいこと』を『できる』に変える」を企業理念に掲げ、安心して利用できるデジタルインフラの提供を通じ、多様な取り組みを支援しています。「さくらのクラウド」や「さくらのAI Engine」など、開発を支援するサービスも多数提供しています。",
+        ],
+        sns: [{ platform: "x", url: "https://x.com/sakura_users" }],
+      },
+      {
+        id: "chot-inc",
+        name: "ちょっと株式会社",
+        logo: "/chot-inc.png",
+        websiteUrl: "https://chot-inc.com/",
+        description: [
+          "ちょっと株式会社は、Next.jsやTypeScriptを中心としたモダン技術を活用し、スピーディかつ高品質なWebサイト・サービスの開発支援を行うフロントエンド特化の技術者集団です。大規模サイトのリニューアルやサーバーレスを活用したWebアプリ・モバイルアプリ開発まで幅広く対応し、技術選定からデザイン、運用保守まで一気通貫で支援します。",
+          "UXに優れた「魅力的品質」を追求し、アクセシビリティやパフォーマンスの最適化にも注力することで、あらゆるデバイスで最高のユーザー体験を提供します。さらに独自開発のCMSプラットフォーム「Orizm」により、従来のCMSでは難しかったフルカスタマイズをスピーディかつ低コストに実現。業界特化のCMS開発や運用改善など、幅広いユースケースに対応可能です。お客様に寄り添い、技術的なパートナーとして課題解決とビジネス成長に貢献します。",
+        ],
+        techBlogUrl: "https://zenn.dev/p/chot",
+        recruitUrl: "https://recruit.chot-inc.com/",
+        sns: [{ platform: "x", url: "https://x.com/chot_inc" }],
+      },
+      // ロゴガイドライン: ロゴマークは無く、ロゴタイプのみ。白背景ではブランド
+      // カラー版をそのまま使用（オンスクリーン最小サイズ 60px）。
+      {
+        id: "miidas",
+        name: "ミイダス株式会社",
+        logo: "/miidas.png",
+        websiteUrl: "https://miidas.co.jp/",
+        description: [
+          "ミイダスは、世界初※1の採用・転職におけるミスマッチを減らしながら、入社後の活躍までを支援する採用・転職サービスです。人口減少による人材不足が深刻化する中、主に中小企業を対象に「採用力」の向上を支援。AIや独自のビッグデータを活用し、採用課題の可視化から応募獲得、定着・活躍支援までを一気通貫で提供し、企業価値向上に貢献しています。",
+          "※「バイアス診断ゲーム」（認知バイアスを測定するテスト）と「ミイダス コンピテンシー診断(特性診断)」を使って人材の採用と配置・育成を可能にする無料のスマホアプリ診断サービスとして（2023年5月 未来トレンド研究機構）",
+        ],
+        techBlogUrl: "https://note.com/miidas_tech",
+        recruitUrl: "https://careers.miidas.co.jp/tech/",
+        sns: [{ platform: "x", url: "https://x.com/miidas_tech" }],
+      },
+    ],
   },
   {
     id: "silver",
     heading: "Silver Sponsors",
     badgeLabel: "Silver Sponsor",
-    sponsors: [],
+    sponsors: [
+      // ブランドガイドライン: ブラックのワードマーク（白背景での優先カラー）。
+      // 社名表記は「LINEヤフー株式会社」固定 — 表記ゆれ・改行は禁止。
+      {
+        id: "line-yahoo",
+        name: "LINEヤフー株式会社",
+        logo: "/line-yahoo.png",
+        websiteUrl: "https://www.lycorp.co.jp/ja/technology-design/",
+        description: [
+          "LINEヤフー株式会社は、2023年10月に、LINE株式会社やヤフー株式会社などのグループ会社による再編を経て誕生した日本最大級のテックカンパニーです。",
+          "「WOW Our Users!」をミッションに掲げ、検索・ポータル、eコマース、メッセンジャー、広告など、多様な領域において事業を展開しています。",
+          "多くの国と地域から集まった1万人以上の従業員が働くLINEヤフーは、ユーザーに感動を与えるサービスを提供し続けるとともに、インターネットの力を通じてより豊かで便利な暮らしの実現に貢献していきます。",
+        ],
+        techBlogUrl: "https://techblog.lycorp.co.jp/ja/tag/Frontend",
+        sns: [{ platform: "x", url: "https://x.com/lycorptech_jp" }],
+      },
+      // ロゴ使用の注意: 白黒印刷以外はカラーロゴを使用。ロゴ背景の「光彩」は
+      // ノイズではなく、白背景では表示されない — カードもロゴ枠も白なので問題なし。
+      {
+        id: "teamlab",
+        name: "チームラボ",
+        logo: "/teamlab.png",
+        websiteUrl: "https://www.team-lab.com/",
+        description: [
+          "最新のテクノロジーを活用したソリューション、大規模システム、都市計画やICT空間設計を行う。エンジニア、デザイナー、カタリスト等各分野のスペシャリストが共創。設計から実装まで一貫して追求し、前例のない価値を共に生み出す。",
+        ],
+        techBlogUrl: "https://zenn.dev/p/team_lab",
+        recruitUrl: "https://www.team-lab.com/recruit/",
+        sns: [{ platform: "x", url: "https://x.com/teamlab_recruit" }],
+      },
+    ],
   },
   {
     id: "bronze",
@@ -128,11 +214,34 @@ export const optionSponsorCategories: OptionSponsorCategory[] = [
     heading: "セッションルームネーミングライツ",
     sponsors: [],
   },
+  // ブース出展はサイト表記不要のため、ここには載せない。
   { id: "sponsor-booth", heading: "スポンサーブース", sponsors: [] },
-  { id: "sponsor-session", heading: "スポンサーセッション", sponsors: [] },
+  {
+    id: "sponsor-session",
+    heading: "スポンサーセッション",
+    sponsors: [
+      {
+        id: "sponsor-session-coderabbit",
+        name: "CodeRabbit",
+        logo: "/coderabbit.svg",
+        websiteUrl: "https://coderabbit.link/atsushija",
+        description: [],
+      },
+    ],
+  },
   { id: "lunch", heading: "ランチ", sponsors: [] },
   { id: "party", heading: "懇親会", sponsors: [] },
   { id: "coffee", heading: "コーヒー", sponsors: [] },
 ];
 
 export const individualSponsors: IndividualSponsor[] = [];
+
+// ジョブボード。ジョブボードのオプションを取ったスポンサーのみを載せる。
+export const jobBoardEntries: JobBoardEntry[] = [
+  {
+    id: "chot-inc",
+    name: "ちょっと株式会社",
+    logo: "/chot-inc.png",
+    url: "https://recruit.chot-inc.com/",
+  },
+];
