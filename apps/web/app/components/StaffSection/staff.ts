@@ -88,8 +88,8 @@ export const staffList: Staff[] = [
   },
   {
     displayName: "Melonps",
-    x: "",
-    icon: "",
+    x: "Melonps_",
+    icon: "Melonps_.jpg",
   },
   {
     displayName: "asaki",
