@@ -58,7 +58,8 @@ export const staffList: Staff[] = [
   },
   {
     displayName: "SAW",
-    icon: "",
+    x: "azuki_eater",
+    icon: "azuki_eater.jpg",
   },
   {
     displayName: "sakai-nako",
