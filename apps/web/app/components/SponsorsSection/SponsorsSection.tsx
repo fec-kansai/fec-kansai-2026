@@ -61,46 +61,52 @@ export function SponsorsSection({
       className="min-h-[300px] bg-fk-yellow-soft pt-[43px] pb-24 sm:pt-[80px] sm:pb-[200px]"
     >
       <div className="mx-auto flex max-w-[904px] flex-col gap-4 px-4 sm:gap-[100px] min-[904px]:px-0">
-        {tiers.map((tier) => (
-          <div key={tier.id} className="flex flex-col gap-8 sm:gap-10">
-            <SponsorTierHeader
-              heading={tier.heading}
-              variant={TIER_MASCOT[tier.id]}
-            />
-            <div className="flex flex-col gap-6 sm:gap-8">
-              {tier.sponsors.map((sponsor, sponsorIndex) => (
-                <SponsorCard
-                  key={sponsor.id}
-                  sponsor={sponsor}
-                  tierId={tier.id}
-                  badgeLabel={tier.badgeLabel}
-                  // Only the tier's first card carries its decorations.
-                  decorations={
-                    sponsorIndex === 0 ? TIER_DECORATIONS[tier.id] : []
-                  }
-                />
-              ))}
+        {/* Tiers nobody has taken yet are skipped — an empty tier would render
+            as a heading with nothing under it. */}
+        {tiers
+          .filter((tier) => tier.sponsors.length > 0)
+          .map((tier) => (
+            <div key={tier.id} className="flex flex-col gap-8 sm:gap-10">
+              <SponsorTierHeader
+                heading={tier.heading}
+                variant={TIER_MASCOT[tier.id]}
+              />
+              <div className="flex flex-col gap-6 sm:gap-8">
+                {tier.sponsors.map((sponsor, sponsorIndex) => (
+                  <SponsorCard
+                    key={sponsor.id}
+                    sponsor={sponsor}
+                    tierId={tier.id}
+                    badgeLabel={tier.badgeLabel}
+                    // Only the tier's first card carries its decorations.
+                    decorations={
+                      sponsorIndex === 0 ? TIER_DECORATIONS[tier.id] : []
+                    }
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
 
         {/* オプションスポンサー — shared with the LP showcase (same data). */}
         <OptionSponsors groups={optionCategories} />
 
         {/* Individual (personal) sponsors — just a name list. */}
-        <div className="flex flex-col gap-8 sm:gap-10">
-          <SponsorTierHeader heading="個人スポンサー" variant="red" />
-          <ul className="flex flex-wrap justify-center gap-y-2 p-0">
-            {individualSponsors.map((sponsor) => (
-              <li
-                key={sponsor.id}
-                className="mx-[6px] list-none font-montserrat text-[16px] font-bold text-fk-text-main sm:text-[18px]"
-              >
-                {sponsor.name}
-              </li>
-            ))}
-          </ul>
-        </div>
+        {individualSponsors.length > 0 && (
+          <div className="flex flex-col gap-8 sm:gap-10">
+            <SponsorTierHeader heading="個人スポンサー" variant="red" />
+            <ul className="flex flex-wrap justify-center gap-y-2 p-0">
+              {individualSponsors.map((sponsor) => (
+                <li
+                  key={sponsor.id}
+                  className="mx-[6px] list-none font-montserrat text-[16px] font-bold text-fk-text-main sm:text-[18px]"
+                >
+                  {sponsor.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </section>
   );

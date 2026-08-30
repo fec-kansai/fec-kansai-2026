@@ -3,7 +3,14 @@ import { expect, within } from "@storybook/test";
 
 import { SponsorsShowcaseSection } from "../../web/app/components/SponsorsShowcaseSection/SponsorsShowcaseSection";
 import {
+  individualSponsors as realIndividualSponsors,
+  jobBoardEntries as realJobBoardEntries,
+  optionSponsorCategories as realOptionSponsorCategories,
+  sponsorTiers as realSponsorTiers,
+} from "../../web/app/constants";
+import {
   individualSponsors,
+  jobBoardEntries,
   optionSponsorCategories,
   sponsorTiers,
 } from "./mocks/sponsors";
@@ -40,6 +47,7 @@ export const Default: Story = {
     tiers: sponsorTiers,
     optionCategories: optionSponsorCategories,
     individualSponsors,
+    jobBoardEntries,
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -52,5 +60,22 @@ export const Default: Story = {
     // Individual sponsors block + CTA.
     expect(canvas.getByText("個人スポンサー")).toBeInTheDocument();
     expect(canvas.getByText("スポンサー一覧はこちら")).toBeInTheDocument();
+    // ジョブボード block.
+    expect(canvas.getByText("ジョブボード")).toBeInTheDocument();
+  },
+};
+
+/**
+ * The same section fed with the real sponsor data from the web app's
+ * constants.ts — a preview of how the LP will look while the showcase itself is
+ * still commented out in ContentSection. No play assertions: the data changes as
+ * sponsors are added.
+ */
+export const RealData: Story = {
+  args: {
+    tiers: realSponsorTiers,
+    optionCategories: realOptionSponsorCategories,
+    individualSponsors: realIndividualSponsors,
+    jobBoardEntries: realJobBoardEntries,
   },
 };

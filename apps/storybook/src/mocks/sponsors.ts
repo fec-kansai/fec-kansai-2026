@@ -1,5 +1,6 @@
 import type {
   IndividualSponsor,
+  JobBoardEntry,
   OptionSponsorCategory,
   SponsorTier,
 } from "../../../web/app/components/SponsorsSection/types";
@@ -146,6 +147,15 @@ export const optionSponsorCategories: OptionSponsorCategory[] = [
     heading: "コーヒー",
     sponsors: [{ id: "coffee-1", name: "企業名が入ります", description: [] }],
   },
+];
+
+/** Five empty job board cards, matching the placeholder grid in the design. */
+export const jobBoardEntries: JobBoardEntry[] = [
+  { id: "job-board-1", name: "企業名が入ります", url: "#" },
+  { id: "job-board-2", name: "企業名が入ります", url: "#" },
+  { id: "job-board-3", name: "企業名が入ります", url: "#" },
+  { id: "job-board-4", name: "企業名が入ります", url: "#" },
+  { id: "job-board-5", name: "企業名が入ります", url: "#" },
 ];
 
 export const individualSponsors: IndividualSponsor[] = [
