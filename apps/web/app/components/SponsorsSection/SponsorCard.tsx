@@ -66,11 +66,32 @@ export function SponsorCard({
   badgeLabel,
   decorations = [],
 }: SponsorCardProps) {
-  const { name, logo, badges, description, techBlogUrl, recruitUrl, sns } =
-    sponsor;
+  const {
+    name,
+    logo,
+    websiteUrl,
+    badges,
+    description,
+    techBlogUrl,
+    recruitUrl,
+    sns,
+  } = sponsor;
+
+  const logoImage = logo ? (
+    <Image
+      src={logo}
+      alt={name}
+      width={300}
+      height={169}
+      className="h-auto w-full rounded-[6px] sm:w-[300px]"
+    />
+  ) : null;
 
   return (
-    <article className="relative flex flex-col gap-5 rounded-[20px] bg-fk-white p-5 sm:flex-row sm:gap-7 sm:p-8 font-sans">
+    // Spacing between the logo and the text lives on the logo column as a
+    // margin (see below), not as a flex gap — a gap would stack with whatever
+    // whitespace each logo file already carries.
+    <article className="relative flex flex-col rounded-[20px] bg-fk-white p-5 sm:flex-row sm:p-8 font-sans">
       {/* Decorative tech-logo icons, attached via ::before like the side events.
           Hidden below lg where there's no room beside the card. */}
       {decorations.map((decoration) => (
@@ -80,16 +101,24 @@ export function SponsorCard({
           className={`hidden lg:block before:content-[''] before:absolute before:bg-contain before:bg-no-repeat ${decoration}`}
         />
       ))}
-      {/* Logo — falls back to a "LOGO" placeholder box when none is provided. */}
-      <div className="shrink-0">
-        {logo ? (
-          <Image
-            src={logo}
-            alt={name}
-            width={300}
-            height={169}
-            className="h-auto w-full rounded-[6px] sm:w-[300px]"
-          />
+      {/* Logo — links to the company site when known, and falls back to a
+          "LOGO" placeholder box when no logo is provided. */}
+      {/* Bottom margin in the column layout, right margin in the row layout. */}
+      <div className="mb-5 shrink-0 sm:mb-0 sm:mr-7">
+        {logoImage ? (
+          websiteUrl ? (
+            <Link
+              href={websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={name}
+              className="block transition-opacity duration-200 ease-in-out hover:opacity-70"
+            >
+              {logoImage}
+            </Link>
+          ) : (
+            logoImage
+          )
         ) : (
           <div className="flex h-[169px] w-full items-center justify-center rounded-[6px] bg-[#d9d9d9] sm:w-[300px]">
             <span className="text-[20px] font-bold tracking-[0.12em] text-[#9a9a9a]">

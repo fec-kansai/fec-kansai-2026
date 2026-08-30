@@ -4,7 +4,7 @@ import { ProposalSection } from "./ProposalSection/ProposalSection";
 import { SponsorSection } from "./SponsorSection/SponsorSection";
 // TODO: 実データが揃うまで一時的にコメントアウト
 // import { SponsorsShowcaseSection } from "./SponsorsShowcaseSection/SponsorsShowcaseSection";
-// import { individualSponsors, optionSponsorCategories, sponsorTiers } from "../constants";
+// import { individualSponsors, jobBoardEntries, optionSponsorCategories, sponsorTiers } from "../constants";
 import { TicketSection } from "./TicketSection/TicketSection";
 import { UnboundedSection } from "./UnboundedSection/UnboundedSection";
 
@@ -32,6 +32,7 @@ export function ContentSection() {
             tiers={sponsorTiers}
             optionCategories={optionSponsorCategories}
             individualSponsors={individualSponsors}
+            jobBoardEntries={jobBoardEntries}
           />
         </div> */}
 
