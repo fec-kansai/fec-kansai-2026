@@ -97,9 +97,9 @@ export const staffList: Staff[] = [
     icon: "Asaki-Iwata.jpg",
   },
   {
-    displayName: "ユリヤ",
+    displayName: "JuliettKhar",
     x: "",
-    icon: "",
+    icon: "JuliettKhar.jpeg",
   },
   {
     displayName: "273*",
