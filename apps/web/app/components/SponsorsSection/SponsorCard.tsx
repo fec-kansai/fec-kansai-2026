@@ -83,7 +83,7 @@ export function SponsorCard({
       alt={name}
       width={300}
       height={169}
-      className="h-auto w-full rounded-[6px] sm:w-[300px]"
+      className="h-auto max-h-[180px] w-full rounded-[6px] object-contain sm:w-[300px]"
     />
   ) : null;
 
@@ -103,8 +103,11 @@ export function SponsorCard({
       ))}
       {/* Logo — links to the company site when known, and falls back to a
           "LOGO" placeholder box when no logo is provided. */}
-      {/* Bottom margin in the column layout, right margin in the row layout. */}
-      <div className="mb-5 shrink-0 sm:mb-0 sm:mr-7">
+      {/* Bottom margin in the column layout, right margin in the row layout.
+          Fixed width + centred content: a wide wordmark fills the column, while
+          a tall logo is capped by max-h and sits centred instead of hugging the
+          left edge. */}
+      <div className="mb-5 flex shrink-0 justify-center sm:mb-0 sm:mr-7 sm:w-[300px]">
         {logoImage ? (
           websiteUrl ? (
             <Link
