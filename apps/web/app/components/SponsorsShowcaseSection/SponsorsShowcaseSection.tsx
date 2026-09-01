@@ -13,8 +13,8 @@ import type {
   SponsorTierId,
 } from "../SponsorsSection/types";
 
-// 「スポンサー一覧はこちら」の遷移先。専用ページ公開時に差し替え。
-const sponsorListLink = "#sponsors";
+// 「スポンサー一覧はこちら」の遷移先。
+const sponsorListLink = "/sponsors";
 
 // メインスポンサー: 表示順とマスコット。列幅（＝1行あたりの最大枚数）は variant で
 // 決まる（TIER_CARD_BASIS）— ゴールドほど大きく、1行に少なく。データ側に style は
@@ -59,7 +59,9 @@ export function SponsorsShowcaseSection({
   );
 
   return (
-    <div id="sponsor" className="relative font-sans">
+    // The 募集 block above keeps id="sponsor" (the /#sponsor nav anchor), so
+    // this one gets its own id.
+    <div id="sponsors" className="relative font-sans">
       <header className="text-center">
         <h2 className="m-0 text-[24px] sm:text-[28px] leading-[1.1] text-fk-text-main font-extrabold">
           スポンサー
