@@ -20,8 +20,7 @@ export const navItems: NavLink[] = [
   { name: "タイムテーブル", url: "/timetable" },
   { name: "公式キャラクター", url: "/#character" },
   { name: "サイドイベント", url: "/side-events" },
-  // TODO: mock data
-  // { name: "スポンサー", url: "/sponsors" },
+  { name: "スポンサー", url: "/sponsors" },
 ];
 
 export type FooterLink = {
@@ -200,7 +199,22 @@ export const sponsorTiers: SponsorTier[] = [
     id: "bronze",
     heading: "Bronze Sponsors",
     badgeLabel: "Bronze Sponsor",
-    sponsors: [],
+    sponsors: [
+      // ガイドラインなし。オプションプランもなし。
+      {
+        id: "joint-crew",
+        name: "株式会社JOINT CREW",
+        logo: "/joint-crew.png",
+        // 提出は http だが https でも同じサイトが開くため https を使用。
+        websiteUrl: "https://www.jointcrew.co.jp/",
+        description: [
+          "私たちのビジョンは、日本の子供たちを笑顔にすることです。",
+          "この目標に向け、顧客の課題解決を支援するシステム開発事業と、病児保育支援サービス『くれいしゅ』をはじめとしたBabyTech事業を展開しています。会社として社会課題に挑む一方で、従業員に対しては、市場価値の向上を支援し、長く働ける環境づくりに取り組んでいます。新しい技術を積極的に採用してスキルアップを支援し、ライフステージの変化にも対応できる制度や福利厚生を整えることで、「安心して一生働き続けられる場所」の実現を目指しています。",
+        ],
+        recruitUrl: "https://www.wantedly.com/companies/jointcrew",
+        sns: [{ platform: "x", url: "https://x.com/JOINTCREW_inc" }],
+      },
+    ],
   },
   { id: "student", heading: "学生支援", badgeLabel: "学生支援", sponsors: [] },
 ];
@@ -241,7 +255,13 @@ export const jobBoardEntries: JobBoardEntry[] = [
   {
     id: "chot-inc",
     name: "ちょっと株式会社",
-    logo: "/chot-inc.png",
+    image: "/chot-inc-job-board.png",
     url: "https://recruit.chot-inc.com/",
+  },
+  {
+    id: "teamlab",
+    name: "チームラボ",
+    image: "/teamlab-job-board.png",
+    url: "https://www.team-lab.com/engineering/",
   },
 ];

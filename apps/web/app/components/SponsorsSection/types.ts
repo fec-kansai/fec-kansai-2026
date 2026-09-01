@@ -86,8 +86,12 @@ export type JobBoardEntry = {
   /** Stable id, also used as the React key. */
   id: string;
   name: string;
-  /** Logo image. When omitted, the card stays an empty box. */
-  logo?: string;
+  /**
+   * Card artwork — usually a recruiting banner, but a plain logo works too:
+   * either way it is fitted inside the card. When omitted, the card stays an
+   * empty box.
+   */
+  image?: string;
   /** Where the card links to (the company's job board / recruiting page). */
   url: string;
 };

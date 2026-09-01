@@ -34,15 +34,18 @@ export function JobBoardSection({ entries }: { entries: JobBoardEntry[] }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={entry.name}
-            className="flex aspect-[16/9] items-center justify-center rounded-[10px] bg-fk-white transition-opacity duration-200 ease-in-out hover:opacity-70"
+            // 16:9 as in the design; the banner fills the card edge to edge.
+            // Banners are not all the same shape, so anything that is not 16:9
+            // gets cropped a little at the sides (or top and bottom).
+            className="flex aspect-[16/9] items-center justify-center overflow-hidden rounded-[10px] bg-fk-white transition-opacity duration-200 ease-in-out hover:opacity-70"
           >
-            {entry.logo && (
+            {entry.image && (
               <Image
-                src={entry.logo}
+                src={entry.image}
                 alt={entry.name}
-                width={300}
-                height={169}
-                className="max-h-[70%] max-w-[70%] object-contain"
+                width={600}
+                height={338}
+                className="h-full w-full object-cover"
               />
             )}
           </Link>
