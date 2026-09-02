@@ -25,8 +25,10 @@ export function JobBoardSection({ entries }: { entries: JobBoardEntry[] }) {
       </header>
 
       {/* Two columns at every width, as in the design. A trailing odd card is
-          left-aligned (grid), not centered. */}
-      <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-5">
+          left-aligned (grid), not centered. The desktop gap is 28px: that is
+          what makes each card 438px wide inside the 904px container, matching
+          the design. */}
+      <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-7">
         {entries.map((entry) => (
           <Link
             key={entry.id}
@@ -34,9 +36,10 @@ export function JobBoardSection({ entries }: { entries: JobBoardEntry[] }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={entry.name}
-            // 16:9 as in the design; the banner fills the card edge to edge.
-            // Banners are not all the same shape, so anything that is not 16:9
-            // gets cropped a little at the sides (or top and bottom).
+            // 16:9 as in the design; the banner fills the card. Banners are not
+            // all 16:9 (chot is, teamLab is 2:1), so a wider one is cropped at
+            // the sides — `imagePosition` shifts the crop when something sits
+            // close to an edge.
             className="flex aspect-[16/9] items-center justify-center overflow-hidden rounded-[10px] bg-fk-white transition-opacity duration-200 ease-in-out hover:opacity-70"
           >
             {entry.image && (
@@ -46,6 +49,7 @@ export function JobBoardSection({ entries }: { entries: JobBoardEntry[] }) {
                 width={600}
                 height={338}
                 className="h-full w-full object-cover"
+                style={{ objectPosition: entry.imagePosition }}
               />
             )}
           </Link>

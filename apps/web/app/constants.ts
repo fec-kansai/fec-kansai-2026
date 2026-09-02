@@ -262,6 +262,9 @@ export const jobBoardEntries: JobBoardEntry[] = [
     id: "teamlab",
     name: "チームラボ",
     image: "/teamlab-job-board.png",
+    // 2:1 のバナーなので左右が少し切れる。ロゴが右端（幅の約95%）にあるため、
+    // 切り取り位置を右に寄せてロゴが欠けないようにする。
+    imagePosition: "65% center",
     url: "https://www.team-lab.com/engineering/",
   },
 ];

@@ -106,8 +106,9 @@ export function SponsorCard({
       {/* Bottom margin in the column layout, right margin in the row layout.
           Fixed width + centred content: a wide wordmark fills the column, while
           a tall logo is capped by max-h and sits centred instead of hugging the
-          left edge. */}
-      <div className="mb-5 flex shrink-0 justify-center sm:mb-0 sm:mr-7 sm:w-[300px]">
+          left edge. `self-center` keeps the logo in the middle of a tall card
+          rather than pinned to the top. */}
+      <div className="mb-5 flex shrink-0 justify-center sm:mb-0 sm:mr-7 sm:w-[300px] sm:self-center">
         {logoImage ? (
           websiteUrl ? (
             <Link
