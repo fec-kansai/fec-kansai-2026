@@ -92,6 +92,12 @@ export type JobBoardEntry = {
    * empty box.
    */
   image?: string;
+  /**
+   * CSS `object-position` for the artwork, e.g. "60% center". Banners are not
+   * all the same shape, so one that is wider than the card gets cropped at the
+   * sides — this shifts which part survives. Defaults to centred.
+   */
+  imagePosition?: string;
   /** Where the card links to (the company's job board / recruiting page). */
   url: string;
 };
