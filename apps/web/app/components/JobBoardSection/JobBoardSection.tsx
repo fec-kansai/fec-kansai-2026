@@ -24,11 +24,11 @@ export function JobBoardSection({ entries }: { entries: JobBoardEntry[] }) {
         </p>
       </header>
 
-      {/* Two columns at every width, as in the design. A trailing odd card is
-          left-aligned (grid), not centered. The desktop gap is 28px: that is
-          what makes each card 438px wide inside the 904px container, matching
-          the design. */}
-      <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-7">
+      {/* One card per row on mobile, two from sm up, as in the design. A
+          trailing odd card is left-aligned (grid), not centered. The desktop gap
+          is 28px: that is what makes each card 438px wide inside the 904px
+          container, matching the design. */}
+      <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-7">
         {entries.map((entry) => (
           <Link
             key={entry.id}
