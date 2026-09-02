@@ -22,6 +22,17 @@ export const WithX: Story = {
   },
 };
 
+/** Xアカウントなし・他リンクあり */
+export const WithLink: Story = {
+  args: {
+    staff: {
+      displayName: "フロントエンドカンファレンス関西",
+      anyLink: "https://note.com/fec_kansai",
+      icon: "/takoyan-general.svg",
+    },
+  },
+};
+
 /** Xアカウントなし */
 export const WithoutX: Story = {
   args: {
