@@ -71,14 +71,15 @@ export function SponsorsShowcaseSection({
         </p>
       </header>
 
-      <div className="mt-[38px] text-center">
+      {/* 二次募集中のため一旦コメントアウト。募集終了後に日付を入れて戻す。 */}
+      {/* <div className="mt-[38px] text-center">
         <p className="m-0 text-fk-text-main text-[14px] sm:text-base leading-[1.65] sm:leading-[1.9] font-bold">
           X月XX日(金)をもちまして、スポンサー募集を終了いたしました。
         </p>
         <p className="m-0 text-fk-text-main text-[14px] sm:text-base leading-[1.65] sm:leading-[1.9] font-bold">
           ご応募いただいた企業の皆さま、誠にありがとうございます！
         </p>
-      </div>
+      </div> */}
 
       {/* メインスポンサー */}
       <div className="mt-[44px] flex flex-col gap-12 sm:gap-14">
