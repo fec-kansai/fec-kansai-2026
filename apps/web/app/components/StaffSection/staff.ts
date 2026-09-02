@@ -115,6 +115,6 @@ export const staffList: Staff[] = [
   {
     displayName: "ぐゆ",
     x: "YUI_WebxCareer",
-    icon: "YUI_WebxCareer.jpeg",
+    icon: "YUI_WebxCareer.png",
   },
 ];
