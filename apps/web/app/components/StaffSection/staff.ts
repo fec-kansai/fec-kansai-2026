@@ -90,6 +90,7 @@ export const staffList: Staff[] = [
   {
     displayName: "asaki",
     icon: "Asaki-Iwata.jpg",
+    anyLink: "https://github.com/asaki15",
   },
   {
     displayName: "JuliettKhar",
