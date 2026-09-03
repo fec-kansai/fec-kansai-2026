@@ -1,18 +1,20 @@
 import { Button } from "@workspace/ui/components/button";
 import Link from "next/link";
+import { JobBoardSection } from "../JobBoardSection/JobBoardSection";
 import type { SponsorMascot } from "../SponsorsSection/ColoredTakoyan";
 import { OptionSponsors } from "../SponsorsSection/OptionSponsors";
 import { SponsorSlotRow } from "../SponsorsSection/SponsorLogoGrid";
 import { SponsorTierHeader } from "../SponsorsSection/SponsorTierHeader";
 import type {
   IndividualSponsor,
+  JobBoardEntry,
   OptionSponsorCategory,
   SponsorTier,
   SponsorTierId,
 } from "../SponsorsSection/types";
 
-// 「スポンサー一覧はこちら」の遷移先。専用ページ公開時に差し替え。
-const sponsorListLink = "#sponsors";
+// 「スポンサー一覧はこちら」の遷移先。
+const sponsorListLink = "/sponsors";
 
 // メインスポンサー: 表示順とマスコット。列幅（＝1行あたりの最大枚数）は variant で
 // 決まる（TIER_CARD_BASIS）— ゴールドほど大きく、1行に少なく。データ側に style は
@@ -35,12 +37,14 @@ type SponsorsShowcaseSectionProps = {
   tiers: SponsorTier[];
   optionCategories: OptionSponsorCategory[];
   individualSponsors: IndividualSponsor[];
+  jobBoardEntries: JobBoardEntry[];
 };
 
 export function SponsorsShowcaseSection({
   tiers,
   optionCategories,
   individualSponsors,
+  jobBoardEntries,
 }: SponsorsShowcaseSectionProps) {
   const tierById = new Map(tiers.map((tier) => [tier.id, tier]));
 
@@ -50,9 +54,14 @@ export function SponsorsShowcaseSection({
   const optionGroups = studentTier
     ? [...optionCategories, studentTier]
     : optionCategories;
+  const hasOptionSponsors = optionGroups.some(
+    (group) => group.sponsors.length > 0,
+  );
 
   return (
-    <div id="sponsor" className="relative font-sans">
+    // The 募集 block above keeps id="sponsor" (the /#sponsor nav anchor), so
+    // this one gets its own id.
+    <div id="sponsors" className="relative font-sans">
       <header className="text-center">
         <h2 className="m-0 text-[24px] sm:text-[28px] leading-[1.1] text-fk-text-main font-extrabold">
           スポンサー
@@ -62,55 +71,66 @@ export function SponsorsShowcaseSection({
         </p>
       </header>
 
-      <div className="mt-[38px] text-center">
+      {/* 二次募集中のため一旦コメントアウト。募集終了後に日付を入れて戻す。 */}
+      {/* <div className="mt-[38px] text-center">
         <p className="m-0 text-fk-text-main text-[14px] sm:text-base leading-[1.65] sm:leading-[1.9] font-bold">
           X月XX日(金)をもちまして、スポンサー募集を終了いたしました。
         </p>
         <p className="m-0 text-fk-text-main text-[14px] sm:text-base leading-[1.65] sm:leading-[1.9] font-bold">
           ご応募いただいた企業の皆さま、誠にありがとうございます！
         </p>
-      </div>
+      </div> */}
 
       {/* メインスポンサー */}
       <div className="mt-[44px] flex flex-col gap-12 sm:gap-14">
-        {tierSections.map(({ id, variant }) => {
-          const tier = tierById.get(id);
-          return (
-            <div key={id}>
-              <SponsorTierHeader
-                heading={tier?.heading ?? ""}
-                variant={variant}
-              />
-              <div className="mt-8">
-                <SponsorSlotRow
-                  sponsors={tier?.sponsors ?? []}
-                  basis={TIER_CARD_BASIS[variant]}
+        {/* Tiers nobody has taken yet are skipped. */}
+        {tierSections
+          .filter(({ id }) => (tierById.get(id)?.sponsors.length ?? 0) > 0)
+          .map(({ id, variant }) => {
+            const tier = tierById.get(id);
+            return (
+              <div key={id}>
+                <SponsorTierHeader
+                  heading={tier?.heading ?? ""}
+                  variant={variant}
                 />
+                <div className="mt-8">
+                  <SponsorSlotRow
+                    sponsors={tier?.sponsors ?? []}
+                    basis={TIER_CARD_BASIS[variant]}
+                  />
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
 
-      {/* オプションスポンサー（共通コンポーネント） */}
-      <div className="mt-16 sm:mt-[72px]">
-        <OptionSponsors groups={optionGroups} />
-      </div>
+      {/* オプションスポンサー（共通コンポーネント）— 該当なしの間は非表示。
+          ラッパーごと出し分けないと、空divのマージンだけが残ってしまう。 */}
+      {hasOptionSponsors && (
+        <div className="mt-16 sm:mt-[72px]">
+          <OptionSponsors groups={optionGroups} />
+        </div>
+      )}
 
-      {/* 個人スポンサー */}
+      {/* 個人スポンサー。一覧が空でも「スポンサー一覧はこちら」は残す。 */}
       <div className="mt-16 sm:mt-[72px]">
-        <SponsorTierHeader heading="個人スポンサー" variant="red" />
+        {individualSponsors.length > 0 && (
+          <>
+            <SponsorTierHeader heading="個人スポンサー" variant="red" />
 
-        <ul className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 p-0">
-          {individualSponsors.map((sponsor) => (
-            <li
-              key={sponsor.id}
-              className="list-none font-montserrat text-[16px] font-bold text-fk-text-main sm:text-[18px]"
-            >
-              {sponsor.name}
-            </li>
-          ))}
-        </ul>
+            <ul className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 p-0">
+              {individualSponsors.map((sponsor) => (
+                <li
+                  key={sponsor.id}
+                  className="list-none font-montserrat text-[16px] font-bold text-fk-text-main sm:text-[18px]"
+                >
+                  {sponsor.name}
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
 
         <div className="mt-10 flex justify-center">
           <Button
@@ -124,6 +144,13 @@ export function SponsorsShowcaseSection({
           </Button>
         </div>
       </div>
+
+      {/* ジョブボード — 掲載企業がいない間は非表示。 */}
+      {jobBoardEntries.length > 0 && (
+        <div className="mt-16 sm:mt-[72px]">
+          <JobBoardSection entries={jobBoardEntries} />
+        </div>
+      )}
     </div>
   );
 }

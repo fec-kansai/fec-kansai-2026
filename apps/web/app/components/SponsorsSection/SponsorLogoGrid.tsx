@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Sponsor } from "./types";
 
 /**
@@ -13,16 +14,29 @@ export function SponsorSlot({ sponsor }: { sponsor?: Sponsor }) {
     return <div className={box} aria-hidden="true" />;
   }
 
-  return (
-    <div className={box}>
-      <Image
-        src={sponsor.logo}
-        alt={sponsor.name}
-        width={220}
-        height={124}
-        className="max-h-[80%] max-w-[80%] object-contain"
-      />
-    </div>
+  const logo = (
+    <Image
+      src={sponsor.logo}
+      alt={sponsor.name}
+      width={220}
+      height={124}
+      className="max-h-[80%] max-w-[80%] object-contain"
+    />
+  );
+
+  // Linked to the company site when known — same behaviour as the sponsor card.
+  return sponsor.websiteUrl ? (
+    <Link
+      href={sponsor.websiteUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={sponsor.name}
+      className={`${box} transition-opacity duration-200 ease-in-out hover:opacity-70`}
+    >
+      {logo}
+    </Link>
+  ) : (
+    <div className={box}>{logo}</div>
   );
 }
 

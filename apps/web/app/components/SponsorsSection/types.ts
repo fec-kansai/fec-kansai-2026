@@ -30,6 +30,11 @@ export type Sponsor = {
   name: string;
   /** Logo image. When omitted, a "LOGO" placeholder box is shown instead. */
   logo?: string;
+  /**
+   * Official company site. When set, the logo becomes a link to it (both on the
+   * card and in the LP showcase); when omitted, the logo stays static.
+   */
+  websiteUrl?: string;
   /** Extra badges rendered after the tier badge. */
   badges?: SponsorBadge[];
   /** Body paragraphs. Each entry becomes its own <p>. */
@@ -69,6 +74,32 @@ export type OptionSponsorCategory = {
   /** Category heading (e.g. "幕間CM"). */
   heading: string;
   sponsors: Sponsor[];
+};
+
+/**
+ * A ジョブボード entry — a sponsor's recruiting page, shown as its own card in
+ * the job board grid. Separate from `Sponsor` because a company can take the
+ * job board option without being listed in a tier (and vice versa), and the
+ * card only ever needs a logo and the link.
+ */
+export type JobBoardEntry = {
+  /** Stable id, also used as the React key. */
+  id: string;
+  name: string;
+  /**
+   * Card artwork — usually a recruiting banner, but a plain logo works too:
+   * either way it is fitted inside the card. When omitted, the card stays an
+   * empty box.
+   */
+  image?: string;
+  /**
+   * CSS `object-position` for the artwork, e.g. "60% center". Banners are not
+   * all the same shape, so one that is wider than the card gets cropped at the
+   * sides — this shifts which part survives. Defaults to centred.
+   */
+  imagePosition?: string;
+  /** Where the card links to (the company's job board / recruiting page). */
+  url: string;
 };
 
 /** A personal (個人) sponsor — only the name is shown; `id` is the React key. */

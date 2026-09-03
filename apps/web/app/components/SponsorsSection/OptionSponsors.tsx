@@ -20,12 +20,19 @@ export function OptionSponsors({
 }: {
   groups: OptionSponsorCategory[];
 }) {
+  // A category nobody took yet would render as a lone heading, so skip it —
+  // and skip the whole section while none of them have sponsors.
+  const filledGroups = groups.filter((group) => group.sponsors.length > 0);
+  if (filledGroups.length === 0) {
+    return null;
+  }
+
   return (
     <div>
       <SponsorTierHeader heading="オプションスポンサー" variant="red" />
 
       <div className="mt-10 flex flex-col gap-12 sm:gap-14">
-        {groups.map((group) => (
+        {filledGroups.map((group) => (
           <div key={group.id}>
             <p className="m-0 mb-5 text-center font-montserrat text-fk-green text-[14px] sm:text-[16px] font-bold">
               {group.heading}
