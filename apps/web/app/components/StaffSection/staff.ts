@@ -76,11 +76,11 @@ export const staffList: Staff[] = [
   },
   {
     displayName: "お茶",
-    icon: "",
+    icon: "お茶.jpg",
   },
   {
     displayName: "outoffuel",
-    icon: "",
+    icon: "outoffuel.jpg",
   },
   {
     displayName: "Melonps",
