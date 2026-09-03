@@ -23,7 +23,6 @@ export const staffList: Staff[] = [
   },
   {
     displayName: "あずにゃん",
-    x: "azunyan_eng",
     icon: "azunyan.jpg",
   },
   {
