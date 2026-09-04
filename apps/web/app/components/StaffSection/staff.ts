@@ -1,0 +1,120 @@
+import type { Staff } from "./types";
+
+export const staffList: Staff[] = [
+  {
+    displayName: "Keisuke Ikeda",
+    x: "ike_keichan",
+    icon: "ike_keichan.png",
+  },
+  {
+    displayName: "haino",
+    x: "hai_haino",
+    icon: "haino.png",
+  },
+  {
+    displayName: "yamasaw",
+    x: "yamasaw44",
+    icon: "yamasaw.jpg",
+  },
+  {
+    displayName: "high-g",
+    x: "high_g_engineer",
+    icon: "high-g.jpg",
+  },
+  {
+    displayName: "あずにゃん",
+    icon: "azunyan.jpg",
+  },
+  {
+    displayName: "zonoryo",
+    x: "zonoryo03",
+    icon: "zonoryo03.jpg",
+  },
+  {
+    displayName: "いずりょー",
+    x: "is_ryo",
+    icon: "is_ryo.png",
+  },
+  {
+    displayName: "Hoshi",
+    x: "ho460kenya",
+    icon: "hoshi.jpeg",
+  },
+  {
+    displayName: "ゆき",
+    x: "Ryuki_4648",
+    icon: "yuki.jpg",
+  },
+  {
+    displayName: "わら",
+    x: "w_q_r_q",
+    icon: "w_q_r_q.png",
+  },
+  {
+    displayName: "NobuhiroYokota",
+    x: "nobu_front",
+    icon: "nobu_front.png",
+  },
+  {
+    displayName: "SAW",
+    x: "azuki_eater",
+    icon: "azuki_eater.jpg",
+  },
+  {
+    displayName: "sakai-nako",
+    x: "sakai_nako",
+    icon: "sakai_nako.png",
+  },
+  {
+    displayName: "Kaho Michimae",
+    x: "kaho_eng",
+    icon: "Kaho-Michimae.jpeg",
+  },
+  {
+    displayName: "堀内亮",
+    icon: "堀内亮.jpg",
+  },
+  {
+    displayName: "お茶",
+    icon: "お茶.jpg",
+  },
+  {
+    displayName: "outoffuel",
+    icon: "outoffuel.jpg",
+  },
+  {
+    displayName: "Melonps",
+    x: "Melonps_",
+    icon: "Melonps_.jpg",
+  },
+  {
+    displayName: "asaki",
+    icon: "Asaki-Iwata.jpg",
+    anyLink: "https://github.com/asaki15",
+  },
+  {
+    displayName: "JuliettKhar",
+    anyLink: "https://www.wantedly.com/id/julia_kh",
+    icon: "JuliettKhar.jpeg",
+  },
+  {
+    displayName: "273*",
+    x: "273Do",
+    icon: "273Do.png",
+  },
+  {
+    displayName: "にこやか",
+    x: "nikoyaka_com",
+    icon: "nikoyaka_com.png",
+  },
+  {
+    displayName: "R-524",
+    x: "R5ni4",
+    icon: "R5ni4.png",
+  },
+  {
+    displayName: "ぐゆ",
+    x: "YUI_WebxCareer",
+    icon: "YUI_WebxCareer.png",
+  },
+];
