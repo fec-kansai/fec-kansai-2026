@@ -1,13 +1,7 @@
 import type { SponsorMascot } from "./ColoredTakoyan";
-import { OptionSponsors } from "./OptionSponsors";
 import { SponsorCard } from "./SponsorCard";
 import { SponsorTierHeader } from "./SponsorTierHeader";
-import type {
-  IndividualSponsor,
-  OptionSponsorCategory,
-  SponsorTier,
-  SponsorTierId,
-} from "./types";
+import type { IndividualSponsor, SponsorTier, SponsorTierId } from "./types";
 
 /** Mascot shape + colour per tier (see SponsorTierHeader). */
 const TIER_MASCOT: Record<SponsorTierId, SponsorMascot> = {
@@ -46,13 +40,11 @@ const TIER_DECORATIONS: Record<SponsorTierId, string[]> = {
  */
 type SponsorsSectionProps = {
   tiers: SponsorTier[];
-  optionCategories: OptionSponsorCategory[];
   individualSponsors: IndividualSponsor[];
 };
 
 export function SponsorsSection({
   tiers,
-  optionCategories,
   individualSponsors,
 }: SponsorsSectionProps) {
   return (
@@ -87,9 +79,6 @@ export function SponsorsSection({
               </div>
             </div>
           ))}
-
-        {/* オプションスポンサー — shared with the LP showcase (same data). */}
-        <OptionSponsors groups={optionCategories} />
 
         {/* Individual (personal) sponsors — just a name list. */}
         {individualSponsors.length > 0 && (
