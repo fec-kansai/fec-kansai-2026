@@ -2,12 +2,7 @@ import { Header } from "../components/Header";
 import { SponsorPageHero } from "../components/SponsorPageHero";
 import { SponsorsSection } from "../components/SponsorsSection/SponsorsSection";
 import { WaveDivider } from "../components/WaveDivider";
-import {
-  individualSponsors,
-  navItems,
-  optionSponsorCategories,
-  sponsorTiers,
-} from "../constants";
+import { individualSponsors, navItems, sponsorTiers } from "../constants";
 
 /**
  * /sponsors — the full sponsor list, driven by the real data in constants.ts.
@@ -24,7 +19,6 @@ export default function SponsorsPage() {
       <WaveDivider />
       <SponsorsSection
         tiers={sponsorTiers}
-        optionCategories={optionSponsorCategories}
         individualSponsors={individualSponsors}
       />
     </main>

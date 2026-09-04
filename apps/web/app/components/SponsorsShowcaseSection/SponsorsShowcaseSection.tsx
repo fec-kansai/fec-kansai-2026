@@ -2,7 +2,6 @@ import { Button } from "@workspace/ui/components/button";
 import Link from "next/link";
 import { JobBoardSection } from "../JobBoardSection/JobBoardSection";
 import type { SponsorMascot } from "../SponsorsSection/ColoredTakoyan";
-import { OptionSponsors } from "../SponsorsSection/OptionSponsors";
 import { SponsorSlotRow } from "../SponsorsSection/SponsorLogoGrid";
 import { SponsorTierHeader } from "../SponsorsSection/SponsorTierHeader";
 import type {
@@ -104,14 +103,6 @@ export function SponsorsShowcaseSection({
             );
           })}
       </div>
-
-      {/* オプションスポンサー（共通コンポーネント）— 該当なしの間は非表示。
-          ラッパーごと出し分けないと、空divのマージンだけが残ってしまう。 */}
-      {hasOptionSponsors && (
-        <div className="mt-16 sm:mt-[72px]">
-          <OptionSponsors groups={optionGroups} />
-        </div>
-      )}
 
       {/* 個人スポンサー。一覧が空でも「スポンサー一覧はこちら」は残す。 */}
       <div className="mt-16 sm:mt-[72px]">
