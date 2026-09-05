@@ -103,45 +103,6 @@ export const sponsorTiers: SponsorTier[] = [
     heading: "Gold Sponsors",
     badgeLabel: "Gold Sponsor",
     sponsors: [
-      // ロゴ利用ガイドライン: https://www.coderabbit.ai/ja/brand
-      // オプションはブース出展のみ（サイト表記不要）。
-      {
-        id: "coderabbit",
-        name: "CodeRabbit",
-        logo: "/coderabbit.svg",
-        websiteUrl: "https://coderabbit.link/atsushija",
-        description: [
-          "CodeRabbitは、AIによるコード生成が急増する開発環境において、ソフトウェア変更を安全かつ効率的に管理する「Agentic Change Management」を提供する開発プラットフォームです。PRごとのAIコードレビューを中心に、コードベースや変更履歴、ドキュメントなど多様なコンテキストを活用し、潜在的な問題の検出から修正提案までを自動化します。",
-          "さらに、PRの価値・リスクを評価して優先順位やレビュアーを振り分けるCodeRabbit Triage、巨大な差分の意図や影響範囲を理解しやすくするChange Stack、コードベースを継続的に監視して脆弱性を発見・検証・修復するCodeRabbit Securityを提供。AIコーディングエージェントとも連携してレビューやPRの理解負荷解消、優先順位付け、そしてセキュリティまでソフトウェア変更のライフサイクル全体を支援します。",
-        ],
-        recruitUrl: "https://www.coderabbit.ai/ja/careers",
-        sns: [{ platform: "x", url: "https://x.com/coderabbitaija" }],
-      },
-      // ブランドガイドライン: 標準（2行）ロゴのカラー版。カラーロゴは白／黒背景
-      // のみ可 — カードもロゴ枠も白背景なのでそのまま使用できる。
-      {
-        id: "sakura-internet",
-        name: "さくらインターネット株式会社",
-        logo: "/sakurainternet.png",
-        websiteUrl: "https://www.sakura.ad.jp/",
-        description: [
-          "さくらインターネットは、1996年創業のデジタルインフラ企業です。信頼性の高いクラウドおよび計算基盤を国内の自社データセンターから提供しています。「『やりたいこと』を『できる』に変える」を企業理念に掲げ、安心して利用できるデジタルインフラの提供を通じ、多様な取り組みを支援しています。「さくらのクラウド」や「さくらのAI Engine」など、開発を支援するサービスも多数提供しています。",
-        ],
-        sns: [{ platform: "x", url: "https://x.com/sakura_users" }],
-      },
-      {
-        id: "chot-inc",
-        name: "ちょっと株式会社",
-        logo: "/chot-inc.png",
-        websiteUrl: "https://chot-inc.com/",
-        description: [
-          "ちょっと株式会社は、Next.jsやTypeScriptを中心としたモダン技術を活用し、スピーディかつ高品質なWebサイト・サービスの開発支援を行うフロントエンド特化の技術者集団です。大規模サイトのリニューアルやサーバーレスを活用したWebアプリ・モバイルアプリ開発まで幅広く対応し、技術選定からデザイン、運用保守まで一気通貫で支援します。",
-          "UXに優れた「魅力的品質」を追求し、アクセシビリティやパフォーマンスの最適化にも注力することで、あらゆるデバイスで最高のユーザー体験を提供します。さらに独自開発のCMSプラットフォーム「Orizm」により、従来のCMSでは難しかったフルカスタマイズをスピーディかつ低コストに実現。業界特化のCMS開発や運用改善など、幅広いユースケースに対応可能です。お客様に寄り添い、技術的なパートナーとして課題解決とビジネス成長に貢献します。",
-        ],
-        techBlogUrl: "https://zenn.dev/p/chot",
-        recruitUrl: "https://recruit.chot-inc.com/",
-        sns: [{ platform: "x", url: "https://x.com/chot_inc" }],
-      },
       // ロゴガイドライン: ロゴマークは無く、ロゴタイプのみ。白背景ではブランド
       // カラー版をそのまま使用（オンスクリーン最小サイズ 60px）。
       {
@@ -157,6 +118,51 @@ export const sponsorTiers: SponsorTier[] = [
         recruitUrl: "https://careers.miidas.co.jp/tech/",
         sns: [{ platform: "x", url: "https://x.com/miidas_tech" }],
       },
+      // ロゴ利用ガイドライン: https://www.coderabbit.ai/ja/brand
+      // オプションはブース出展のみ（サイト表記不要）。
+      {
+        id: "coderabbit",
+        name: "CodeRabbit",
+        logo: "/coderabbit.svg",
+        websiteUrl: "https://coderabbit.link/atsushija",
+        description: [
+          "CodeRabbitは、AIによるコード生成が急増する開発環境において、ソフトウェア変更を安全かつ効率的に管理する「Agentic Change Management」を提供する開発プラットフォームです。PRごとのAIコードレビューを中心に、コードベースや変更履歴、ドキュメントなど多様なコンテキストを活用し、潜在的な問題の検出から修正提案までを自動化します。",
+          "さらに、PRの価値・リスクを評価して優先順位やレビュアーを振り分けるCodeRabbit Triage、巨大な差分の意図や影響範囲を理解しやすくするChange Stack、コードベースを継続的に監視して脆弱性を発見・検証・修復するCodeRabbit Securityを提供。AIコーディングエージェントとも連携してレビューやPRの理解負荷解消、優先順位付け、そしてセキュリティまでソフトウェア変更のライフサイクル全体を支援します。",
+        ],
+        recruitUrl: "https://www.coderabbit.ai/ja/careers",
+        sns: [{ platform: "x", url: "https://x.com/coderabbitaija" }],
+        badges: [
+          {
+            label: "スポンサーセッション",
+            variant: "option",
+          },
+        ],
+      },
+      {
+        id: "chot-inc",
+        name: "ちょっと株式会社",
+        logo: "/chot-inc.png",
+        websiteUrl: "https://chot-inc.com/",
+        description: [
+          "ちょっと株式会社は、Next.jsやTypeScriptを中心としたモダン技術を活用し、スピーディかつ高品質なWebサイト・サービスの開発支援を行うフロントエンド特化の技術者集団です。大規模サイトのリニューアルやサーバーレスを活用したWebアプリ・モバイルアプリ開発まで幅広く対応し、技術選定からデザイン、運用保守まで一気通貫で支援します。",
+          "UXに優れた「魅力的品質」を追求し、アクセシビリティやパフォーマンスの最適化にも注力することで、あらゆるデバイスで最高のユーザー体験を提供します。さらに独自開発のCMSプラットフォーム「Orizm」により、従来のCMSでは難しかったフルカスタマイズをスピーディかつ低コストに実現。業界特化のCMS開発や運用改善など、幅広いユースケースに対応可能です。お客様に寄り添い、技術的なパートナーとして課題解決とビジネス成長に貢献します。",
+        ],
+        techBlogUrl: "https://zenn.dev/p/chot",
+        recruitUrl: "https://recruit.chot-inc.com/",
+        sns: [{ platform: "x", url: "https://x.com/chot_inc" }],
+      },
+      // ブランドガイドライン: 標準（2行）ロゴのカラー版。カラーロゴは白／黒背景
+      // のみ可 — カードもロゴ枠も白背景なのでそのまま使用できる。
+      {
+        id: "sakura-internet",
+        name: "さくらインターネット株式会社",
+        logo: "/sakurainternet.png",
+        websiteUrl: "https://www.sakura.ad.jp/",
+        description: [
+          "さくらインターネットは、1996年創業のデジタルインフラ企業です。信頼性の高いクラウドおよび計算基盤を国内の自社データセンターから提供しています。「『やりたいこと』を『できる』に変える」を企業理念に掲げ、安心して利用できるデジタルインフラの提供を通じ、多様な取り組みを支援しています。「さくらのクラウド」や「さくらのAI Engine」など、開発を支援するサービスも多数提供しています。",
+        ],
+        sns: [{ platform: "x", url: "https://x.com/sakura_users" }],
+      },
     ],
   },
   {
@@ -164,6 +170,20 @@ export const sponsorTiers: SponsorTier[] = [
     heading: "Silver Sponsors",
     badgeLabel: "Silver Sponsor",
     sponsors: [
+      // ロゴ使用の注意: 白黒印刷以外はカラーロゴを使用。ロゴ背景の「光彩」は
+      // ノイズではなく、白背景では表示されない — カードもロゴ枠も白なので問題なし。
+      {
+        id: "teamlab",
+        name: "チームラボ",
+        logo: "/teamlab.png",
+        websiteUrl: "https://www.team-lab.com/",
+        description: [
+          "最新のテクノロジーを活用したソリューション、大規模システム、都市計画やICT空間設計を行う。エンジニア、デザイナー、カタリスト等各分野のスペシャリストが共創。設計から実装まで一貫して追求し、前例のない価値を共に生み出す。",
+        ],
+        techBlogUrl: "https://zenn.dev/p/team_lab",
+        recruitUrl: "https://www.team-lab.com/recruit/",
+        sns: [{ platform: "x", url: "https://x.com/teamlab_recruit" }],
+      },
       // ブランドガイドライン: ブラックのワードマーク（白背景での優先カラー）。
       // 社名表記は「LINEヤフー株式会社」固定 — 表記ゆれ・改行は禁止。
       {
@@ -178,20 +198,6 @@ export const sponsorTiers: SponsorTier[] = [
         ],
         techBlogUrl: "https://techblog.lycorp.co.jp/ja/tag/Frontend",
         sns: [{ platform: "x", url: "https://x.com/lycorptech_jp" }],
-      },
-      // ロゴ使用の注意: 白黒印刷以外はカラーロゴを使用。ロゴ背景の「光彩」は
-      // ノイズではなく、白背景では表示されない — カードもロゴ枠も白なので問題なし。
-      {
-        id: "teamlab",
-        name: "チームラボ",
-        logo: "/teamlab.png",
-        websiteUrl: "https://www.team-lab.com/",
-        description: [
-          "最新のテクノロジーを活用したソリューション、大規模システム、都市計画やICT空間設計を行う。エンジニア、デザイナー、カタリスト等各分野のスペシャリストが共創。設計から実装まで一貫して追求し、前例のない価値を共に生み出す。",
-        ],
-        techBlogUrl: "https://zenn.dev/p/team_lab",
-        recruitUrl: "https://www.team-lab.com/recruit/",
-        sns: [{ platform: "x", url: "https://x.com/teamlab_recruit" }],
       },
     ],
   },
