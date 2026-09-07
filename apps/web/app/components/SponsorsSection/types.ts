@@ -61,22 +61,6 @@ export type SponsorTier = {
 };
 
 /**
- * An option (協賛メニュー) sponsor category — e.g. 幕間CM, スポンサーブース. The set
- * of categories is fixed by the sponsor plan; how many sponsors each holds is
- * not, so only the sponsors that actually took the option are listed (an empty
- * `sponsors` array means "none yet"). Reuses the same `Sponsor` structure as
- * tiers, so both the sponsor page and the LP showcase render option sponsors
- * from this single source — no styling lives here, only data.
- */
-export type OptionSponsorCategory = {
-  /** Stable id, also used as the React key. */
-  id: string;
-  /** Category heading (e.g. "幕間CM"). */
-  heading: string;
-  sponsors: Sponsor[];
-};
-
-/**
  * A ジョブボード entry — a sponsor's recruiting page, shown as its own card in
  * the job board grid. Separate from `Sponsor` because a company can take the
  * job board option without being listed in a tier (and vice versa), and the

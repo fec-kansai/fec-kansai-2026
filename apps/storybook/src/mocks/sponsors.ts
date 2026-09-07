@@ -1,7 +1,6 @@
 import type {
   IndividualSponsor,
   JobBoardEntry,
-  OptionSponsorCategory,
   SponsorTier,
 } from "../../../web/app/components/SponsorsSection/types";
 
@@ -82,70 +81,6 @@ export const sponsorTiers: SponsorTier[] = [
         sns: [{ platform: "x", url: "https://x.com/fec_kansai" }],
       },
     ],
-  },
-];
-
-export const optionSponsorCategories: OptionSponsorCategory[] = [
-  {
-    id: "makuai-cm",
-    heading: "幕間CM",
-    sponsors: [
-      { id: "makuai-cm-1", name: "企業名が入ります", description: [] },
-    ],
-  },
-  {
-    id: "back-panel",
-    heading: "バックパネル",
-    sponsors: [
-      { id: "back-panel-1", name: "企業名が入ります", description: [] },
-    ],
-  },
-  {
-    id: "name-card",
-    heading: "ネームカード",
-    sponsors: [
-      { id: "name-card-1", name: "企業名が入ります", description: [] },
-    ],
-  },
-  {
-    id: "session-room-naming",
-    heading: "セッションルームネーミングライツ",
-    sponsors: [
-      {
-        id: "session-room-naming-1",
-        name: "企業名が入ります",
-        description: [],
-      },
-    ],
-  },
-  {
-    id: "sponsor-booth",
-    heading: "スポンサーブース",
-    sponsors: [
-      { id: "sponsor-booth-1", name: "企業名が入ります", description: [] },
-    ],
-  },
-  {
-    id: "sponsor-session",
-    heading: "スポンサーセッション",
-    sponsors: [
-      { id: "sponsor-session-1", name: "企業名が入ります", description: [] },
-    ],
-  },
-  {
-    id: "lunch",
-    heading: "ランチ",
-    sponsors: [{ id: "lunch-1", name: "企業名が入ります", description: [] }],
-  },
-  {
-    id: "party",
-    heading: "懇親会",
-    sponsors: [{ id: "party-1", name: "企業名が入ります", description: [] }],
-  },
-  {
-    id: "coffee",
-    heading: "コーヒー",
-    sponsors: [{ id: "coffee-1", name: "企業名が入ります", description: [] }],
   },
 ];
 
