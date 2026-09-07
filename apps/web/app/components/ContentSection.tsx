@@ -1,7 +1,6 @@
 import {
   individualSponsors,
   jobBoardEntries,
-  optionSponsorCategories,
   sponsorTiers,
 } from "../constants";
 import { MapSection } from "./MapSection/MapSection";
@@ -33,7 +32,6 @@ export function ContentSection() {
         <div className="flex-1 relative">
           <SponsorsShowcaseSection
             tiers={sponsorTiers}
-            optionCategories={optionSponsorCategories}
             individualSponsors={individualSponsors}
             jobBoardEntries={jobBoardEntries}
           />
