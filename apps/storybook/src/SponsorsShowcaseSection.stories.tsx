@@ -5,24 +5,22 @@ import { SponsorsShowcaseSection } from "../../web/app/components/SponsorsShowca
 import {
   individualSponsors as realIndividualSponsors,
   jobBoardEntries as realJobBoardEntries,
-  optionSponsorCategories as realOptionSponsorCategories,
   sponsorTiers as realSponsorTiers,
 } from "../../web/app/constants";
 import {
   individualSponsors,
   jobBoardEntries,
-  optionSponsorCategories,
   sponsorTiers,
 } from "./mocks/sponsors";
 
 /**
  * The full sponsor showcase section: the スポンサー header, the Gold / Silver /
- * Bronze tiers, the オプションスポンサー groups and the 個人スポンサー list + CTA.
+ * Bronze tiers, the 個人スポンサー list + CTA and the ジョブボード grid.
  *
- * Everything is driven by the `mainTiers` / `optionGroups` / `individualSponsors`
- * data inside the component, so this is a layout/visual story plus a smoke check
- * that the tiers and option groups render. The wrapper mirrors the yellow-soft
- * background and max-width container the section sits in within `ContentSection`.
+ * Everything is driven by the data passed in as props, so this is a layout /
+ * visual story plus a smoke check that each block renders. The wrapper mirrors
+ * the yellow-soft background and max-width container the section sits in within
+ * `ContentSection`.
  */
 const meta = {
   title: "Sponsor/SponsorsShowcaseSection",
@@ -45,18 +43,15 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     tiers: sponsorTiers,
-    optionCategories: optionSponsorCategories,
     individualSponsors,
     jobBoardEntries,
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    // Tier headings and an option group render.
+    // Tier headings render.
     expect(await canvas.findByText("Gold Sponsors")).toBeInTheDocument();
     expect(canvas.getByText("Silver Sponsors")).toBeInTheDocument();
     expect(canvas.getByText("Bronze Sponsors")).toBeInTheDocument();
-    expect(canvas.getByText("オプションスポンサー")).toBeInTheDocument();
-    expect(canvas.getByText("幕間CM")).toBeInTheDocument();
     // Individual sponsors block + CTA.
     expect(canvas.getByText("個人スポンサー")).toBeInTheDocument();
     expect(canvas.getByText("スポンサー一覧はこちら")).toBeInTheDocument();
@@ -67,14 +62,11 @@ export const Default: Story = {
 
 /**
  * The same section fed with the real sponsor data from the web app's
- * constants.ts — a preview of how the LP will look while the showcase itself is
- * still commented out in ContentSection. No play assertions: the data changes as
- * sponsors are added.
+ * constants.ts. No play assertions: the data changes as sponsors are added.
  */
 export const RealData: Story = {
   args: {
     tiers: realSponsorTiers,
-    optionCategories: realOptionSponsorCategories,
     individualSponsors: realIndividualSponsors,
     jobBoardEntries: realJobBoardEntries,
   },

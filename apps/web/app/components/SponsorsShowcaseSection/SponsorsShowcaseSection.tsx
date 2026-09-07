@@ -7,7 +7,6 @@ import { SponsorTierHeader } from "../SponsorsSection/SponsorTierHeader";
 import type {
   IndividualSponsor,
   JobBoardEntry,
-  OptionSponsorCategory,
   SponsorTier,
   SponsorTierId,
 } from "../SponsorsSection/types";
@@ -34,28 +33,16 @@ const TIER_CARD_BASIS: Record<SponsorMascot, string> = {
 
 type SponsorsShowcaseSectionProps = {
   tiers: SponsorTier[];
-  optionCategories: OptionSponsorCategory[];
   individualSponsors: IndividualSponsor[];
   jobBoardEntries: JobBoardEntry[];
 };
 
 export function SponsorsShowcaseSection({
   tiers,
-  optionCategories,
   individualSponsors,
   jobBoardEntries,
 }: SponsorsShowcaseSectionProps) {
   const tierById = new Map(tiers.map((tier) => [tier.id, tier]));
-
-  // 学生支援 is a tier in the data, but on the LP it is shown inside the option
-  // section — append it as one more group after the option categories.
-  const studentTier = tiers.find((tier) => tier.id === "student");
-  const optionGroups = studentTier
-    ? [...optionCategories, studentTier]
-    : optionCategories;
-  const hasOptionSponsors = optionGroups.some(
-    (group) => group.sponsors.length > 0,
-  );
 
   return (
     // The 募集 block above keeps id="sponsor" (the /#sponsor nav anchor), so
