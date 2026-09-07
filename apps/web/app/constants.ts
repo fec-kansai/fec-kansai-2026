@@ -138,6 +138,21 @@ export const sponsorTiers: SponsorTier[] = [
           },
         ],
       },
+      // ロゴは .ai（Illustrator）でしか提供がないため、先方の許可を得たうえで
+      // 横組みの .ai をベクターから 1600px の PNG に書き出したもの。
+      // オプションはブース出展のみ（サイト表記不要）。
+      {
+        id: "kakehashi",
+        name: "株式会社カケハシ",
+        logo: "/kakehashi.png",
+        websiteUrl: "https://recruit.kakehashi.life/",
+        description: [
+          "株式会社カケハシは日本の医療システムの再構築を目指すヘルステックスタートアップ企業です。テクノロジーを駆使し、患者さんにとってより良い医療を医療現場にとって持続可能な形で実現します。",
+          "薬局体験アシスタント「Musubi」のほか、複数プロダクトを開発・提供し、国内の薬局の1万店舗超をカバー。服薬期間中の患者フォローによる治療効果最大化や医薬品の市中在庫可視化・安定供給などをサポートします。薬局や医療機関をはじめとしたステークホルダーとともに、より良い医療を実現するプラットフォームを構築していきます。",
+        ],
+        techBlogUrl: "https://kakehashi-dev.hatenablog.com/",
+        sns: [{ platform: "x", url: "https://x.com/kakehashi_dev" }],
+      },
       {
         id: "chot-inc",
         name: "ちょっと株式会社",
@@ -163,21 +178,6 @@ export const sponsorTiers: SponsorTier[] = [
         ],
         sns: [{ platform: "x", url: "https://x.com/sakura_users" }],
       },
-      // ロゴは .ai（Illustrator）でしか提供がないため、先方の許可を得たうえで
-      // 横組みの .ai をベクターから 1600px の PNG に書き出したもの。
-      // オプションはブース出展のみ（サイト表記不要）。
-      {
-        id: "kakehashi",
-        name: "株式会社カケハシ",
-        logo: "/kakehashi.png",
-        websiteUrl: "https://recruit.kakehashi.life/",
-        description: [
-          "株式会社カケハシは日本の医療システムの再構築を目指すヘルステックスタートアップ企業です。テクノロジーを駆使し、患者さんにとってより良い医療を医療現場にとって持続可能な形で実現します。",
-          "薬局体験アシスタント「Musubi」のほか、複数プロダクトを開発・提供し、国内の薬局の1万店舗超をカバー。服薬期間中の患者フォローによる治療効果最大化や医薬品の市中在庫可視化・安定供給などをサポートします。薬局や医療機関をはじめとしたステークホルダーとともに、より良い医療を実現するプラットフォームを構築していきます。",
-        ],
-        techBlogUrl: "https://kakehashi-dev.hatenablog.com/",
-        sns: [{ platform: "x", url: "https://x.com/kakehashi_dev" }],
-      },
     ],
   },
   {
@@ -185,6 +185,25 @@ export const sponsorTiers: SponsorTier[] = [
     heading: "Silver Sponsors",
     badgeLabel: "Silver Sponsor",
     sponsors: [
+      // ロゴ使用申請: https://corp.kaonavi.jp/logoapply/
+      // 社内のクオリティチェックは不要だが、Slack で共有されたブランドデッキに
+      // 沿っているか要確認。オプションはブース出展のみ（サイト表記不要）。
+      {
+        id: "kaonavi",
+        name: "株式会社カオナビ",
+        logo: "/kaonavi.png",
+        websiteUrl: "https://corp.kaonavi.jp/",
+        description: [
+          '私たちカオナビは「"はたらく"にテクノロジーを実装し、個の力から社会の仕様を変える」をPurposeに掲げ、タレントマネジメント市場No.1（導入社数4,500社超(2025/9月時点)）の『カオナビ』を開発・提供しています。',
+          "性別、学歴、肩書きといったラベルにとらわれず、「個」の力が開かれる社会の実現を目指し、人材データベースを核とした人事DXからタレントマネジメントまで幅広いソリューションを展開。企業の人事業務を革新するタレントマネジメントシステムとして、多くの企業様にご活用いただいています。",
+          "フロントエンド開発ではReact・TypeScriptを採用し、ユーザビリティを重視したUI/UX設計により、様々な利用者が直感的に操作できるシステムを追求。テクノロジーの力で働く人すべてが自分らしく活躍できる未来を創造します。",
+          "Face you, Face next. 向き合おう、すべての人が先へ進めるように。",
+        ],
+        techBlogUrl: "https://note.com/kaonavi",
+        recruitUrl: "https://recruit.kaonavi.jp/engineer",
+        // 技術広報アカウント（@kaonavi_devs）もあるが、公式アカウントのみ掲載。
+        sns: [{ platform: "x", url: "https://x.com/kaonavi_jp" }],
+      },
       // ロゴ使用の注意: 白黒印刷以外はカラーロゴを使用。ロゴ背景の「光彩」は
       // ノイズではなく、白背景では表示されない — カードもロゴ枠も白なので問題なし。
       {
@@ -214,25 +233,6 @@ export const sponsorTiers: SponsorTier[] = [
         techBlogUrl: "https://techblog.lycorp.co.jp/ja/tag/Frontend",
         sns: [{ platform: "x", url: "https://x.com/lycorptech_jp" }],
       },
-      // ロゴ使用申請: https://corp.kaonavi.jp/logoapply/
-      // 社内のクオリティチェックは不要だが、Slack で共有されたブランドデッキに
-      // 沿っているか要確認。オプションはブース出展のみ（サイト表記不要）。
-      {
-        id: "kaonavi",
-        name: "株式会社カオナビ",
-        logo: "/kaonavi.png",
-        websiteUrl: "https://corp.kaonavi.jp/",
-        description: [
-          '私たちカオナビは「"はたらく"にテクノロジーを実装し、個の力から社会の仕様を変える」をPurposeに掲げ、タレントマネジメント市場No.1（導入社数4,500社超(2025/9月時点)）の『カオナビ』を開発・提供しています。',
-          "性別、学歴、肩書きといったラベルにとらわれず、「個」の力が開かれる社会の実現を目指し、人材データベースを核とした人事DXからタレントマネジメントまで幅広いソリューションを展開。企業の人事業務を革新するタレントマネジメントシステムとして、多くの企業様にご活用いただいています。",
-          "フロントエンド開発ではReact・TypeScriptを採用し、ユーザビリティを重視したUI/UX設計により、様々な利用者が直感的に操作できるシステムを追求。テクノロジーの力で働く人すべてが自分らしく活躍できる未来を創造します。",
-          "Face you, Face next. 向き合おう、すべての人が先へ進めるように。",
-        ],
-        techBlogUrl: "https://note.com/kaonavi",
-        recruitUrl: "https://recruit.kaonavi.jp/engineer",
-        // 技術広報アカウント（@kaonavi_devs）もあるが、公式アカウントのみ掲載。
-        sns: [{ platform: "x", url: "https://x.com/kaonavi_jp" }],
-      },
     ],
   },
   {
@@ -240,20 +240,6 @@ export const sponsorTiers: SponsorTier[] = [
     heading: "Bronze Sponsors",
     badgeLabel: "Bronze Sponsor",
     sponsors: [
-      // ガイドラインなし。オプションプランもなし。
-      {
-        id: "joint-crew",
-        name: "株式会社JOINT CREW",
-        logo: "/joint-crew.png",
-        // 提出は http だが https でも同じサイトが開くため https を使用。
-        websiteUrl: "https://www.jointcrew.co.jp/",
-        description: [
-          "私たちのビジョンは、日本の子供たちを笑顔にすることです。",
-          "この目標に向け、顧客の課題解決を支援するシステム開発事業と、病児保育支援サービス『くれいしゅ』をはじめとしたBabyTech事業を展開しています。会社として社会課題に挑む一方で、従業員に対しては、市場価値の向上を支援し、長く働ける環境づくりに取り組んでいます。新しい技術を積極的に採用してスキルアップを支援し、ライフステージの変化にも対応できる制度や福利厚生を整えることで、「安心して一生働き続けられる場所」の実現を目指しています。",
-        ],
-        recruitUrl: "https://www.wantedly.com/companies/jointcrew",
-        sns: [{ platform: "x", url: "https://x.com/JOINTCREW_inc" }],
-      },
       // ガイドラインなし。オプションプランもなし。
       {
         id: "novelty",
@@ -267,6 +253,20 @@ export const sponsorTiers: SponsorTier[] = [
         ],
         recruitUrl: "https://recruit.noveltyinc.co.jp/",
         sns: [{ platform: "x", url: "https://x.com/Noveltyinc_" }],
+      },
+      // ガイドラインなし。オプションプランもなし。
+      {
+        id: "joint-crew",
+        name: "株式会社JOINT CREW",
+        logo: "/joint-crew.png",
+        // 提出は http だが https でも同じサイトが開くため https を使用。
+        websiteUrl: "https://www.jointcrew.co.jp/",
+        description: [
+          "私たちのビジョンは、日本の子供たちを笑顔にすることです。",
+          "この目標に向け、顧客の課題解決を支援するシステム開発事業と、病児保育支援サービス『くれいしゅ』をはじめとしたBabyTech事業を展開しています。会社として社会課題に挑む一方で、従業員に対しては、市場価値の向上を支援し、長く働ける環境づくりに取り組んでいます。新しい技術を積極的に採用してスキルアップを支援し、ライフステージの変化にも対応できる制度や福利厚生を整えることで、「安心して一生働き続けられる場所」の実現を目指しています。",
+        ],
+        recruitUrl: "https://www.wantedly.com/companies/jointcrew",
+        sns: [{ platform: "x", url: "https://x.com/JOINTCREW_inc" }],
       },
       // TAMくんキャラクター利用ガイドライン2026: 顔・表情・帽子・手足を改変しない、
       // 頭や顔に他の画像を重ねない、同じ画像内に複数登場させない、原作者が作成した
