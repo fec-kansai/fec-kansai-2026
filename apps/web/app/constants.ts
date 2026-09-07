@@ -157,6 +157,19 @@ export const sponsorTiers: SponsorTier[] = [
         recruitUrl: "https://careers.miidas.co.jp/tech/",
         sns: [{ platform: "x", url: "https://x.com/miidas_tech" }],
       },
+      // TODO: ロゴが .ai（Illustrator）でしか届いていないため未設定。PNG か SVG を
+      // 依頼中。届いたら logo を追加する。オプションはブース出展のみ（サイト表記不要）。
+      {
+        id: "kakehashi",
+        name: "株式会社カケハシ",
+        websiteUrl: "https://recruit.kakehashi.life/",
+        description: [
+          "株式会社カケハシは日本の医療システムの再構築を目指すヘルステックスタートアップ企業です。テクノロジーを駆使し、患者さんにとってより良い医療を医療現場にとって持続可能な形で実現します。",
+          "薬局体験アシスタント「Musubi」のほか、複数プロダクトを開発・提供し、国内の薬局の1万店舗超をカバー。服薬期間中の患者フォローによる治療効果最大化や医薬品の市中在庫可視化・安定供給などをサポートします。薬局や医療機関をはじめとしたステークホルダーとともに、より良い医療を実現するプラットフォームを構築していきます。",
+        ],
+        techBlogUrl: "https://kakehashi-dev.hatenablog.com/",
+        sns: [{ platform: "x", url: "https://x.com/kakehashi_dev" }],
+      },
     ],
   },
   {
@@ -193,6 +206,25 @@ export const sponsorTiers: SponsorTier[] = [
         recruitUrl: "https://www.team-lab.com/recruit/",
         sns: [{ platform: "x", url: "https://x.com/teamlab_recruit" }],
       },
+      // ロゴ使用申請: https://corp.kaonavi.jp/logoapply/
+      // 社内のクオリティチェックは不要だが、Slack で共有されたブランドデッキに
+      // 沿っているか要確認。オプションはブース出展のみ（サイト表記不要）。
+      {
+        id: "kaonavi",
+        name: "株式会社カオナビ",
+        logo: "/kaonavi.png",
+        websiteUrl: "https://corp.kaonavi.jp/",
+        description: [
+          '私たちカオナビは「"はたらく"にテクノロジーを実装し、個の力から社会の仕様を変える」をPurposeに掲げ、タレントマネジメント市場No.1（導入社数4,500社超(2025/9月時点)）の『カオナビ』を開発・提供しています。',
+          "性別、学歴、肩書きといったラベルにとらわれず、「個」の力が開かれる社会の実現を目指し、人材データベースを核とした人事DXからタレントマネジメントまで幅広いソリューションを展開。企業の人事業務を革新するタレントマネジメントシステムとして、多くの企業様にご活用いただいています。",
+          "フロントエンド開発ではReact・TypeScriptを採用し、ユーザビリティを重視したUI/UX設計により、様々な利用者が直感的に操作できるシステムを追求。テクノロジーの力で働く人すべてが自分らしく活躍できる未来を創造します。",
+          "Face you, Face next. 向き合おう、すべての人が先へ進めるように。",
+        ],
+        techBlogUrl: "https://note.com/kaonavi",
+        recruitUrl: "https://recruit.kaonavi.jp/engineer",
+        // 技術広報アカウント（@kaonavi_devs）もあるが、公式アカウントのみ掲載。
+        sns: [{ platform: "x", url: "https://x.com/kaonavi_jp" }],
+      },
     ],
   },
   {
@@ -213,6 +245,40 @@ export const sponsorTiers: SponsorTier[] = [
         ],
         recruitUrl: "https://www.wantedly.com/companies/jointcrew",
         sns: [{ platform: "x", url: "https://x.com/JOINTCREW_inc" }],
+      },
+      // ガイドラインなし。オプションプランもなし。
+      {
+        id: "novelty",
+        name: "株式会社ノベルティ",
+        logo: "/novelty.png",
+        websiteUrl: "https://noveltyinc.jp/",
+        description: [
+          "株式会社ノベルティは、ウェブサイトの制作・開発にとどまらず、集客・ブランディング・運用改善まで、事業成果に直結するウェブプロモーションを総合的に支援する会社です。",
+          "私たちは単に「つくること」をゴールとせず、リリース後もデータに基づいたサイト改善や運用支援を継続し、お客様の事業成長に寄り添い続けます。その中で特に注力しているのは「ウェブアクセシビリティ向上支援」です。障害の有無や利用環境に関わらず「誰もが快適にアクセスし、目的を達成できる」ウェブ品質を目指し、設計・実装段階からUI/UXのアクセシビリティ向上に取り組んでいます。",
+          "フロントエンドカンファレンス関西2026への協賛を通じて、技術者コミュニティの発展を応援するとともに、アクセシブルで高品質なウェブ体験が当たり前になる未来を皆様と共に創っていきたいと考えています。ウェブ制作やアクセシビリティに関する課題、制作・運用のパートナーシップについてもお気軽にご相談ください！",
+        ],
+        recruitUrl: "https://recruit.noveltyinc.co.jp/",
+        sns: [{ platform: "x", url: "https://x.com/Noveltyinc_" }],
+      },
+      // TAMくんキャラクター利用ガイドライン2026: 顔・表情・帽子・手足を改変しない、
+      // 頭や顔に他の画像を重ねない、同じ画像内に複数登場させない、原作者が作成した
+      // 9種類のバリエーションから使う、AIで改変しない。提供データをそのまま1つだけ
+      // 表示しているため、いずれも満たしている。
+      // オプションはブース出展のみ（サイト表記不要）。
+      {
+        id: "tam",
+        name: "株式会社TAM",
+        logo: "/tam.png",
+        websiteUrl: "https://www.tam-tam.co.jp/",
+        description: [
+          "TAMはお客さまと共に新しい価値を創る、クリエイティブな開発パートナーです。コンサルティングから、制作・開発、マーケティング、現場運用まで伴走し、DX（デジタルトランスフォーメーション）を共創します。フロントエンド領域でも、Next.jsやAstroなどのモダン技術から、長年培ってきたレガシー技術まで、幅広く手がけています。",
+          "ベテランも学生も、エンジニアもデザイナーも、フロントエンドに関わる誰もが居場所になる場所をつくる。関西から発信する文化を、もっと大きく育てたい。そんな「関西も負けてへんで」という気概に、同じ関西発の会社として強く背中を押されました。",
+          "AIが当たり前になった今だからこそ、フロントエンドはますます多様な人が交わる場所になっていく。そのつながりを作る一員になれたら嬉しいです。",
+          "当日はTAMのエンジニアが登壇し、CEDEC2026でも発表した、ブラウザで遊べる謎解きアドベンチャーゲーム「カミとミコ」についてお話しします。ブースも出展し、ノベルティもご用意しております。皆さまにお会いできることを楽しみにしております。",
+        ],
+        techBlogUrl: "https://note.tam-tam.co.jp/",
+        recruitUrl: "https://www.wantedly.com/companies/tam",
+        sns: [{ platform: "x", url: "https://x.com/tam_koho" }],
       },
     ],
   },
