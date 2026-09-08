@@ -17,9 +17,9 @@ export const navItems: NavLink[] = [
   { name: "スポンサー募集", url: "/#sponsor" },
   { name: "チケット情報", url: "/#ticket" },
   { name: "タイムテーブル", url: "/timetable" },
+  { name: "スポンサー", url: "/sponsors" },
   { name: "公式キャラクター", url: "/#character" },
   { name: "サイドイベント", url: "/side-events" },
-  { name: "スポンサー", url: "/sponsors" },
 ];
 
 export type FooterLink = {

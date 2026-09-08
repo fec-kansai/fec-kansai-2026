@@ -91,7 +91,13 @@ export function SponsorCard({
     // Spacing between the logo and the text lives on the logo column as a
     // margin (see below), not as a flex gap — a gap would stack with whatever
     // whitespace each logo file already carries.
-    <article className="relative flex flex-col rounded-[20px] bg-fk-white p-5 sm:flex-row sm:p-8 font-sans">
+    // `id` is the anchor target for /sponsors#<id> — the LP logos link here and
+    // the same URL is shared on social media. scroll-mt keeps the card from
+    // landing flush against the top of the viewport.
+    <article
+      id={sponsor.id}
+      className="relative flex scroll-mt-24 flex-col rounded-[20px] bg-fk-white p-5 sm:flex-row sm:p-8 font-sans"
+    >
       {/* Decorative tech-logo icons, attached via ::before like the side events.
           Hidden below lg where there's no room beside the card. */}
       {decorations.map((decoration) => (

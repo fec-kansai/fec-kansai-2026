@@ -3,10 +3,28 @@ import Link from "next/link";
 import type { Sponsor } from "./types";
 
 /**
- * A single compact logo slot (16:9). Stays an empty box until the sponsor has a
- * logo — used by the LP showcase tiers and the shared option section.
+ * How much of the slot a logo may fill. Gold slots are the biggest, so their
+ * logos looked lost inside the white box at the shared 80% — they get more of
+ * it. Everything below stays at 80%.
  */
-export function SponsorSlot({ sponsor }: { sponsor?: Sponsor }) {
+const LOGO_FILL = {
+  large: "max-h-[86%] max-w-[92%]",
+  default: "max-h-[80%] max-w-[80%]",
+} as const;
+
+export type SponsorSlotFill = keyof typeof LOGO_FILL;
+
+/**
+ * A single compact logo slot (16:9). Stays an empty box until the sponsor has a
+ * logo — used by the LP showcase tiers.
+ */
+export function SponsorSlot({
+  sponsor,
+  fill = "default",
+}: {
+  sponsor?: Sponsor;
+  fill?: SponsorSlotFill;
+}) {
   const box =
     "flex aspect-[16/9] w-full items-center justify-center rounded-[8px] bg-fk-white shadow-[0_2px_10px_rgba(51,51,51,0.06)]";
 
@@ -20,23 +38,20 @@ export function SponsorSlot({ sponsor }: { sponsor?: Sponsor }) {
       alt={sponsor.name}
       width={220}
       height={124}
-      className="max-h-[80%] max-w-[80%] object-contain"
+      className={`${LOGO_FILL[fill]} object-contain`}
     />
   );
 
-  // Linked to the company site when known — same behaviour as the sponsor card.
-  return sponsor.websiteUrl ? (
+  // Links to that sponsor's card on the sponsor page (not to their own site),
+  // so the anchor can also be shared on social media.
+  return (
     <Link
-      href={sponsor.websiteUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={sponsor.name}
+      href={`/sponsors#${sponsor.id}`}
+      aria-label={`${sponsor.name}の詳細をみる`}
       className={`${box} transition-opacity duration-200 ease-in-out hover:opacity-70`}
     >
       {logo}
     </Link>
-  ) : (
-    <div className={box}>{logo}</div>
   );
 }
 
@@ -47,15 +62,17 @@ export function SponsorSlot({ sponsor }: { sponsor?: Sponsor }) {
 export function SponsorSlotRow({
   sponsors,
   basis,
+  fill,
 }: {
   sponsors: Sponsor[];
   basis: string;
+  fill?: SponsorSlotFill;
 }) {
   return (
     <div className="flex flex-wrap justify-center gap-4 sm:gap-5">
       {sponsors.map((sponsor) => (
         <div key={sponsor.id} className={basis}>
-          <SponsorSlot sponsor={sponsor} />
+          <SponsorSlot sponsor={sponsor} fill={fill} />
         </div>
       ))}
     </div>

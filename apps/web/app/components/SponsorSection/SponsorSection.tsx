@@ -1,7 +1,4 @@
-﻿import { Button } from "@workspace/ui/components/button";
-import Link from "next/link";
-
-const ExternalLinkIcon = () => (
+﻿const ExternalLinkIcon = () => (
   <svg
     width="16"
     height="16"
@@ -34,7 +31,18 @@ export function SponsorSection() {
         </p>
       </header>
 
-      <div className="mt-[38px]">
+      {/* 2次募集は 2026/9/7 に終了。プロポーザルと同じく締め切りの表示に切り替え。
+          再募集する場合は下の案内文とボタンを戻す。 */}
+      <div className="mt-[38px] grid text-center">
+        <p className="m-0 text-fk-text-main text-[14px] sm:text-base leading-[1.65] sm:leading-[1.75] font-bold">
+          9月7日(月)をもちまして、スポンサーの募集を締め切りました。
+        </p>
+        <p className="mt-[30px] m-0 text-fk-text-main text-[14px] sm:text-base leading-[1.65] sm:leading-[1.75] font-bold">
+          たくさんのご応募をいただき、誠にありがとうございました。
+        </p>
+      </div>
+
+      {/* <div className="mt-[38px]">
         <p className="m-0 text-fk-text-main text-[14px] sm:text-base leading-[1.65] sm:leading-[1.9] font-bold">
           フロントエンドカンファレンス関西では、共にイベントを盛り上げてくださるスポンサー企業様を募集しております。
         </p>
@@ -74,7 +82,7 @@ export function SponsorSection() {
             <ExternalLinkIcon />
           </Link>
         </Button>
-      </div>
+      </div> */}
 
       {/* js.svg 装飾 */}
       <span
