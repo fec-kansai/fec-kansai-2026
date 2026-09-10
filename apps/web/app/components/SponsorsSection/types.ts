@@ -31,6 +31,14 @@ export type Sponsor = {
   /** Logo image. When omitted, a "LOGO" placeholder box is shown instead. */
   logo?: string;
   /**
+   * Optical size correction for this logo, 1 = the shared default. Logo files
+   * differ in how much built-in whitespace they carry and in how wide the mark
+   * is, so at the same box size some marks read much smaller than others. The
+   * factor evens that out within a tier; it is derived from the mark's real
+   * bounding box, not from the file size (see the sponsor data for values).
+   */
+  logoScale?: number;
+  /**
    * Official company site. When set, the logo becomes a link to it (both on the
    * card and in the LP showcase); when omitted, the logo stays static.
    */

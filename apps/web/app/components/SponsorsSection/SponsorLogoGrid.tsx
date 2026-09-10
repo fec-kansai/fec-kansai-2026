@@ -5,14 +5,18 @@ import type { Sponsor } from "./types";
 /**
  * How much of the slot a logo may fill. Gold slots are the biggest, so their
  * logos looked lost inside the white box at the shared 80% — they get more of
- * it. Everything below stays at 80%.
+ * it. Everything below stays at 80%. `Sponsor.logoScale` then nudges a single
+ * logo around that budget.
  */
 const LOGO_FILL = {
-  large: "max-h-[86%] max-w-[92%]",
-  default: "max-h-[80%] max-w-[80%]",
+  large: { width: 92, height: 86 },
+  default: { width: 80, height: 80 },
 } as const;
 
 export type SponsorSlotFill = keyof typeof LOGO_FILL;
+
+/** Keeps floating-point noise out of the rendered style attribute. */
+const round = (value: number) => Math.round(value * 10) / 10;
 
 /**
  * A single compact logo slot (16:9). Stays an empty box until the sponsor has a
@@ -32,13 +36,19 @@ export function SponsorSlot({
     return <div className={box} aria-hidden="true" />;
   }
 
+  const budget = LOGO_FILL[fill];
+  const scale = sponsor.logoScale ?? 1;
   const logo = (
     <Image
       src={sponsor.logo}
       alt={sponsor.name}
       width={220}
       height={124}
-      className={`${LOGO_FILL[fill]} object-contain`}
+      className="object-contain"
+      style={{
+        maxWidth: `${round(budget.width * scale)}%`,
+        maxHeight: `${round(budget.height * scale)}%`,
+      }}
     />
   );
 

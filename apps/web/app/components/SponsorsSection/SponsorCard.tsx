@@ -77,13 +77,16 @@ export function SponsorCard({
     sns,
   } = sponsor;
 
+  // Same optical correction as the logo slots on the LP (see Sponsor.logoScale).
+  const logoScale = sponsor.logoScale ?? 1;
   const logoImage = logo ? (
     <Image
       src={logo}
       alt={name}
       width={300}
       height={169}
-      className="h-auto max-h-[180px] w-full rounded-[6px] object-contain sm:w-[300px]"
+      className="h-auto w-full rounded-[6px] object-contain sm:w-[300px]"
+      style={{ maxHeight: `${Math.round(180 * logoScale)}px` }}
     />
   ) : null;
 
