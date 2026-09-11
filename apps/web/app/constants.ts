@@ -121,7 +121,8 @@ export const sponsorTiers: SponsorTier[] = [
         sns: [{ platform: "x", url: "https://x.com/miidas_tech" }],
       },
       // ロゴ利用ガイドライン: https://www.coderabbit.ai/ja/brand
-      // オプションはブース出展のみ（サイト表記不要）。
+      // オプションはブース出展とスポンサーセッション。ブース出展はサイト表記不要
+      // のため、カードのバッジにはスポンサーセッションのみ表示する。
       {
         id: "coderabbit",
         name: "CodeRabbit",

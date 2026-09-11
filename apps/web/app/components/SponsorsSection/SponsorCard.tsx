@@ -78,6 +78,9 @@ export function SponsorCard({
   } = sponsor;
 
   // Same optical correction as the logo slots on the LP (see Sponsor.logoScale).
+  // It has to drive the width as well: the column is a fixed 300px, so a logo
+  // wider than 300/180 is width-bound and a max-height alone would do nothing.
+  // The base is 92% of the column, which leaves room to scale up to max-w-full.
   const logoScale = sponsor.logoScale ?? 1;
   const logoImage = logo ? (
     <Image
@@ -85,8 +88,11 @@ export function SponsorCard({
       alt={name}
       width={300}
       height={169}
-      className="h-auto w-full rounded-[6px] object-contain sm:w-[300px]"
-      style={{ maxHeight: `${Math.round(180 * logoScale)}px` }}
+      className="h-auto max-w-full rounded-[6px] object-contain"
+      style={{
+        width: `${Math.round(92 * logoScale * 10) / 10}%`,
+        maxHeight: `${Math.round(180 * logoScale)}px`,
+      }}
     />
   ) : null;
 
