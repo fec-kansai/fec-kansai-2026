@@ -77,13 +77,22 @@ export function SponsorCard({
     sns,
   } = sponsor;
 
+  // Same optical correction as the logo slots on the LP (see Sponsor.logoScale).
+  // It has to drive the width as well: the column is a fixed 300px, so a logo
+  // wider than 300/180 is width-bound and a max-height alone would do nothing.
+  // The base is 92% of the column, which leaves room to scale up to max-w-full.
+  const logoScale = sponsor.logoScale ?? 1;
   const logoImage = logo ? (
     <Image
       src={logo}
       alt={name}
       width={300}
       height={169}
-      className="h-auto max-h-[180px] w-full rounded-[6px] object-contain sm:w-[300px]"
+      className="h-auto max-w-full rounded-[6px] object-contain"
+      style={{
+        width: `${Math.round(92 * logoScale * 10) / 10}%`,
+        maxHeight: `${Math.round(180 * logoScale)}px`,
+      }}
     />
   ) : null;
 
@@ -91,7 +100,13 @@ export function SponsorCard({
     // Spacing between the logo and the text lives on the logo column as a
     // margin (see below), not as a flex gap — a gap would stack with whatever
     // whitespace each logo file already carries.
-    <article className="relative flex flex-col rounded-[20px] bg-fk-white p-5 sm:flex-row sm:p-8 font-sans">
+    // `id` is the anchor target for /sponsors#<id> — the LP logos link here and
+    // the same URL is shared on social media. scroll-mt keeps the card from
+    // landing flush against the top of the viewport.
+    <article
+      id={sponsor.id}
+      className="relative flex scroll-mt-24 flex-col rounded-[20px] bg-fk-white p-5 sm:flex-row sm:p-8 font-sans"
+    >
       {/* Decorative tech-logo icons, attached via ::before like the side events.
           Hidden below lg where there's no room beside the card. */}
       {decorations.map((decoration) => (
