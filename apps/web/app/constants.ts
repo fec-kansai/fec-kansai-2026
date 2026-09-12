@@ -13,13 +13,13 @@ export const navItems: NavLink[] = [
   // Anchor entries are absolute (/#…) so the menu also works from other routes
   // (/side-events, /timetable), where these sections don't exist — clicking
   // jumps back to the section on the LP. Page entries are plain routes.
+  // 「スポンサー募集」は募集終了に伴いメニューから削除（セクション自体は残る）。
   { name: "開催日・アクセス", url: "/#access" },
-  { name: "スポンサー募集", url: "/#sponsor" },
   { name: "チケット情報", url: "/#ticket" },
   { name: "タイムテーブル", url: "/timetable" },
+  { name: "スポンサー", url: "/sponsors" },
   { name: "公式キャラクター", url: "/#character" },
   { name: "サイドイベント", url: "/side-events" },
-  { name: "スポンサー", url: "/sponsors" },
 ];
 
 export type FooterLink = {
@@ -109,6 +109,8 @@ export const sponsorTiers: SponsorTier[] = [
         id: "miidas",
         name: "ミイダス株式会社",
         logo: "/miidas.png",
+        // ロゴ周囲に余白がある分、他社と同じ見た目の大きさになるよう拡大。
+        logoScale: 1.08,
         websiteUrl: "https://miidas.co.jp/",
         description: [
           "ミイダスは、世界初※1の採用・転職におけるミスマッチを減らしながら、入社後の活躍までを支援する採用・転職サービスです。人口減少による人材不足が深刻化する中、主に中小企業を対象に「採用力」の向上を支援。AIや独自のビッグデータを活用し、採用課題の可視化から応募獲得、定着・活躍支援までを一気通貫で提供し、企業価値向上に貢献しています。",
@@ -119,7 +121,8 @@ export const sponsorTiers: SponsorTier[] = [
         sns: [{ platform: "x", url: "https://x.com/miidas_tech" }],
       },
       // ロゴ利用ガイドライン: https://www.coderabbit.ai/ja/brand
-      // オプションはブース出展のみ（サイト表記不要）。
+      // オプションはブース出展とスポンサーセッション。ブース出展はサイト表記不要
+      // のため、カードのバッジにはスポンサーセッションのみ表示する。
       {
         id: "coderabbit",
         name: "CodeRabbit",
@@ -172,6 +175,8 @@ export const sponsorTiers: SponsorTier[] = [
         id: "sakura-internet",
         name: "さくらインターネット株式会社",
         logo: "/sakurainternet.png",
+        // 他社より大きく見えるため微調整。
+        logoScale: 0.95,
         websiteUrl: "https://www.sakura.ad.jp/",
         description: [
           "さくらインターネットは、1996年創業のデジタルインフラ企業です。信頼性の高いクラウドおよび計算基盤を国内の自社データセンターから提供しています。「『やりたいこと』を『できる』に変える」を企業理念に掲げ、安心して利用できるデジタルインフラの提供を通じ、多様な取り組みを支援しています。「さくらのクラウド」や「さくらのAI Engine」など、開発を支援するサービスも多数提供しています。",
@@ -210,6 +215,8 @@ export const sponsorTiers: SponsorTier[] = [
         id: "teamlab",
         name: "チームラボ",
         logo: "/teamlab.png",
+        // 正方形に近く大きく見えるため、同グレード内で揃うよう縮小。
+        logoScale: 0.81,
         websiteUrl: "https://www.team-lab.com/",
         description: [
           "最新のテクノロジーを活用したソリューション、大規模システム、都市計画やICT空間設計を行う。エンジニア、デザイナー、カタリスト等各分野のスペシャリストが共創。設計から実装まで一貫して追求し、前例のない価値を共に生み出す。",
@@ -224,6 +231,8 @@ export const sponsorTiers: SponsorTier[] = [
         id: "line-yahoo",
         name: "LINEヤフー株式会社",
         logo: "/line-yahoo.png",
+        // ファイル内の余白が大きく小さく見えるため拡大。
+        logoScale: 1.25,
         websiteUrl: "https://www.lycorp.co.jp/ja/technology-design/",
         description: [
           "LINEヤフー株式会社は、2023年10月に、LINE株式会社やヤフー株式会社などのグループ会社による再編を経て誕生した日本最大級のテックカンパニーです。",
@@ -245,6 +254,8 @@ export const sponsorTiers: SponsorTier[] = [
         id: "novelty",
         name: "株式会社ノベルティ",
         logo: "/novelty.png",
+        // 同上。
+        logoScale: 1.16,
         websiteUrl: "https://noveltyinc.jp/",
         description: [
           "株式会社ノベルティは、ウェブサイトの制作・開発にとどまらず、集客・ブランディング・運用改善まで、事業成果に直結するウェブプロモーションを総合的に支援する会社です。",
@@ -259,6 +270,8 @@ export const sponsorTiers: SponsorTier[] = [
         id: "joint-crew",
         name: "株式会社JOINT CREW",
         logo: "/joint-crew.png",
+        // 他社より大きく見えるため微調整。
+        logoScale: 0.88,
         // 提出は http だが https でも同じサイトが開くため https を使用。
         websiteUrl: "https://www.jointcrew.co.jp/",
         description: [

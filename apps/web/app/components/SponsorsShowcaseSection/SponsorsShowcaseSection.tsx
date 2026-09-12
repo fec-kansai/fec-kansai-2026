@@ -2,7 +2,10 @@ import { Button } from "@workspace/ui/components/button";
 import Link from "next/link";
 import { JobBoardSection } from "../JobBoardSection/JobBoardSection";
 import type { SponsorMascot } from "../SponsorsSection/ColoredTakoyan";
-import { SponsorSlotRow } from "../SponsorsSection/SponsorLogoGrid";
+import {
+  type SponsorSlotFill,
+  SponsorSlotRow,
+} from "../SponsorsSection/SponsorLogoGrid";
 import { SponsorTierHeader } from "../SponsorsSection/SponsorTierHeader";
 import type {
   IndividualSponsor,
@@ -17,8 +20,13 @@ const sponsorListLink = "/sponsors";
 // メインスポンサー: 表示順とマスコット。列幅（＝1行あたりの最大枚数）は variant で
 // 決まる（TIER_CARD_BASIS）— ゴールドほど大きく、1行に少なく。データ側に style は
 // 持たせない。
-const tierSections: { id: SponsorTierId; variant: SponsorMascot }[] = [
-  { id: "gold", variant: "gold" },
+const tierSections: {
+  id: SponsorTierId;
+  variant: SponsorMascot;
+  // ゴールドは枠が大きいぶん、同じ比率だとロゴが小さく見えるので広めに使う。
+  fill?: SponsorSlotFill;
+}[] = [
+  { id: "gold", variant: "gold", fill: "large" },
   { id: "silver", variant: "silver" },
   { id: "bronze", variant: "bronze" },
 ];
@@ -72,7 +80,7 @@ export function SponsorsShowcaseSection({
         {/* Tiers nobody has taken yet are skipped. */}
         {tierSections
           .filter(({ id }) => (tierById.get(id)?.sponsors.length ?? 0) > 0)
-          .map(({ id, variant }) => {
+          .map(({ id, variant, fill }) => {
             const tier = tierById.get(id);
             return (
               <div key={id}>
@@ -84,6 +92,7 @@ export function SponsorsShowcaseSection({
                   <SponsorSlotRow
                     sponsors={tier?.sponsors ?? []}
                     basis={TIER_CARD_BASIS[variant]}
+                    fill={fill}
                   />
                 </div>
               </div>

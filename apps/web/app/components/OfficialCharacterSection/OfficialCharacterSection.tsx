@@ -37,7 +37,7 @@ export function OfficialCharacterSection() {
             たまにたこ焼きをかぶっていたり、虹色だったり、
           </p>
           <p className="m-0 text-[14px] sm:text-base leading-[1.65] sm:leading-[1.75] font-bold">
-            レアなすがたもあるとかないとか。ライバルは Claude Code のタコ。
+            レアなすがたもあるとかないとか。ライバルは Claude Code のカニ。
           </p>
         </div>
       </div>

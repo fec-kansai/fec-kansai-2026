@@ -267,7 +267,7 @@ export const timetableSlots: TimetableSlot[] = [
       b: {
         category: REGULAR,
         title:
-          "V8のArray.prototype.flatを最大約5倍速くするまでと、巨大OSSへの大規模コミットの道のり",
+          "V8のArray.prototype.flatを最大約20倍速くするまでと、巨大OSSへの大規模コミットの道のり",
         speaker: "西 悠太",
         speakerImage: `${AVATAR}/74590631-8f95-4739-81fc-7e011523b935.jpg`,
         url: `${PROPOSAL}/ca09b1d6-23b9-4e0e-886e-b0800f20fde5`,
