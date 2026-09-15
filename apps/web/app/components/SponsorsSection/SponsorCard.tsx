@@ -66,16 +66,7 @@ export function SponsorCard({
   badgeLabel,
   decorations = [],
 }: SponsorCardProps) {
-  const {
-    name,
-    logo,
-    websiteUrl,
-    badges,
-    description,
-    techBlogUrl,
-    recruitUrl,
-    sns,
-  } = sponsor;
+  const { name, logo, websiteUrl, badges, description, links, sns } = sponsor;
 
   // Same optical correction as the logo slots on the LP (see Sponsor.logoScale).
   // It has to drive the width as well: the column is a fixed 300px, so a logo
@@ -181,31 +172,21 @@ export function SponsorCard({
           ))}
         </div>
 
-        {/* Tech Blog / 採用ページ links */}
-        {(techBlogUrl || recruitUrl) && (
+        {/* Sponsor links. Labels and order come from the sponsor data. */}
+        {links && links.length > 0 && (
           <div className="mt-4 grid gap-1">
-            {techBlogUrl && (
+            {links.map((link) => (
               <Link
-                href={techBlogUrl}
+                key={link.url}
+                href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex w-fit items-center gap-1 font-sans text-[14px] font-normal text-fk-green no-underline transition-opacity duration-200 ease-in-out hover:opacity-70 sm:text-[16px] sm:font-bold"
               >
-                Tech Blog
+                {link.label}
                 <ExternalLinkIcon />
               </Link>
-            )}
-            {recruitUrl && (
-              <Link
-                href={recruitUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-fit items-center gap-1 font-sans text-[14px] font-normal text-fk-green no-underline transition-opacity duration-200 ease-in-out hover:opacity-70 sm:text-[16px] sm:font-bold"
-              >
-                採用ページ
-                <ExternalLinkIcon />
-              </Link>
-            )}
+            ))}
           </div>
         )}
 

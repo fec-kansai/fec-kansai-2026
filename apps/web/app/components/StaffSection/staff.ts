@@ -79,8 +79,9 @@ export const staffList: Staff[] = [
     icon: "お茶.jpg",
   },
   {
-    displayName: "outoffuel",
-    icon: "outoffuel.jpg",
+    displayName: "おおたさん",
+    x: "otasanhb",
+    icon: "otasanhb.png",
   },
   {
     displayName: "Melonps",

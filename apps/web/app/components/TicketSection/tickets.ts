@@ -49,7 +49,7 @@ export const TICKETS: Ticket[] = [
     image: "/takoyan-with-drink.svg",
     benefits: ["session", "social-gathering"],
     color: "green",
-    soldOut: false,
+    soldOut: true,
   },
   {
     type: "personal-sponsor",

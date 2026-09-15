@@ -13,6 +13,16 @@ export type SponsorBadge = {
   variant: "student" | "option";
 };
 
+/**
+ * A link shown on a sponsor card. Both the label and the order come from the
+ * sponsor: they submit them as "ラベル：URL", and "Tech Blog" / "採用ページ" are
+ * only examples — anything they ask for is listed as-is.
+ */
+export type SponsorLink = {
+  label: string;
+  url: string;
+};
+
 /** Official SNS link on a card. Currently only X is used in the design. */
 export type SponsorSns = {
   platform: "x";
@@ -47,10 +57,8 @@ export type Sponsor = {
   badges?: SponsorBadge[];
   /** Body paragraphs. Each entry becomes its own <p>. */
   description: string[];
-  /** Tech blog link. When omitted, the row is hidden. */
-  techBlogUrl?: string;
-  /** Recruitment page link. When omitted, the row is hidden. */
-  recruitUrl?: string;
+  /** Labelled links, rendered in the order the sponsor submitted them. */
+  links?: SponsorLink[];
   /** Official SNS links. When empty/omitted, the 公式SNS block is hidden. */
   sns?: SponsorSns[];
 };

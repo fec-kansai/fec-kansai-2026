@@ -16,8 +16,10 @@ const baseSponsor: Sponsor = {
     "紹介テキスト入ります。紹介テキスト入ります。紹介テキスト入ります。",
     "紹介テキスト入ります。紹介テキスト入ります。",
   ],
-  techBlogUrl: "#",
-  recruitUrl: "#",
+  links: [
+    { label: "TechBlog", url: "#" },
+    { label: "採用ページ", url: "#" },
+  ],
   sns: [{ platform: "x", url: "https://x.com/fec_kansai" }],
 };
 
