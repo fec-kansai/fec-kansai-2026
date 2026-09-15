@@ -44,6 +44,9 @@ export function SponsorSlot({
       alt={sponsor.name}
       width={220}
       height={124}
+      // max-*, not width/height: this keeps the logo at its natural size and
+      // only caps it against the slot. Filling the box outright made the logos
+      // look stretched, so the budget stays an upper bound.
       className="object-contain"
       style={{
         maxWidth: `${round(budget.width * scale)}%`,
