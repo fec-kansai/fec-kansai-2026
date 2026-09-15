@@ -376,8 +376,8 @@ export const sponsorTiers: SponsorTier[] = [
 
 export const individualSponsors: IndividualSponsor[] = [];
 
-// ジョブボード。ジョブボードのオプションを取ったスポンサーのみを、スポンサーの
-// 一覧と同じく登録順に並べる。
+// ジョブボード。ジョブボードのオプションを取ったスポンサーのみを、グレード順
+// （Gold → Silver）、同じグレード内では登録順に並べる。
 export const jobBoardEntries: JobBoardEntry[] = [
   {
     id: "kakehashi",
@@ -392,6 +392,12 @@ export const jobBoardEntries: JobBoardEntry[] = [
     url: "https://recruit.chot-inc.com/",
   },
   {
+    id: "sakura-internet",
+    name: "さくらインターネット株式会社",
+    image: "/sakurainternet-job-board.png",
+    url: "https://www.sakura.ad.jp/recruit/",
+  },
+  {
     id: "teamlab",
     name: "チームラボ",
     image: "/teamlab-job-board.png",
@@ -399,12 +405,6 @@ export const jobBoardEntries: JobBoardEntry[] = [
     // 切り取り位置を右に寄せてロゴが欠けないようにする。
     imagePosition: "65% center",
     url: "https://www.team-lab.com/engineering/",
-  },
-  {
-    id: "sakura-internet",
-    name: "さくらインターネット株式会社",
-    image: "/sakurainternet-job-board.png",
-    url: "https://www.sakura.ad.jp/recruit/",
   },
   {
     id: "line-yahoo",
