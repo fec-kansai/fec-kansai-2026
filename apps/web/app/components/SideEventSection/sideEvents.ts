@@ -2,6 +2,23 @@ import type { SideEvent } from "./types";
 
 export const sideEvents: SideEvent[] = [
   {
+    id: "kansai-frontend-meetup-3",
+    endsAt: "2026-09-30T21:30:00+09:00",
+    title: "Kansai Frontend Meetup #3—デザイナー×エンジニア大集合！LT大会",
+    hosts: "主催：フロントエンドカンファレンス関西",
+    image: "/side-meetup-event-3.png",
+    description: [
+      "Kansai Frontend Meetup は、フロントエンドカンファレンス関西のスタッフが立ち上げた、関西のフロントエンド好きが気軽に集まれるコミュニティイベントです。",
+      "第3回目のテーマは『デザイン×フロントエンド開発』。デザインシステムの構築・運用、Figma とコードの連携、UI/UX デザイン、アクセシビリティ、最新 CSS・アニメーション表現など、デザインとフロントエンドの交差点にあるあらゆるテーマを語り合います。今回は「デザイナー登壇枠」と「エンジニア登壇枠」をご用意しています！",
+      "「全ての人が自分なりにフロントエンドを楽しめる場」を目指しています。初参加の方も、ひとりで来る方も大歓迎です！気軽においでや〜。",
+    ],
+    tags: ["LT大会", "デザイン", "fec_kansai_meetup"],
+    link: {
+      url: "https://fec-kansai.connpass.com/event/404459/",
+      label: "詳細・参加申し込みはこちら",
+    },
+  },
+  {
     id: "kansai-frontend-meetup-2",
     endsAt: "2026-07-29T21:00:00+09:00",
     title: "Kansai Frontend Meetup #2—フロントエンド何でもLT大会",
