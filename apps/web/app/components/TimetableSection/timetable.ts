@@ -1,11 +1,5 @@
 import { SESSION_CATEGORIES } from "./types";
-import type {
-  Session,
-  SessionCategory,
-  TimetableSlot,
-  Track,
-  TrackId,
-} from "./types";
+import type { TimetableSlot, Track } from "./types";
 
 /**
  * Sessions extracted from https://fortee.jp/fec-kansai-2026/timetable .
@@ -32,24 +26,8 @@ export const forteeLink = {
   label: "タイムテーブルを見る (Fortee)",
 };
 
-const FORTEE_TIMETABLE = forteeLink.url;
 const PROPOSAL = "https://fortee.jp/fec-kansai-2026/proposal";
 const AVATAR = "https://fortee.jp/files/fec-kansai-2026/speaker";
-
-/** Dummy talk shown in the sponsor cells until the real programme lands. */
-const dummySession = (category: SessionCategory): Session => ({
-  category,
-  title: "セッションタイトルは後日公開予定です",
-  url: FORTEE_TIMETABLE,
-});
-
-/** Both tracks filled with the same dummy talk. */
-const dummySessions = (
-  category: SessionCategory,
-): Record<TrackId, Session | null> => ({
-  a: dummySession(category),
-  b: dummySession(category),
-});
 
 const ORGANIZER = SESSION_CATEGORIES.organizer;
 const REGULAR = SESSION_CATEGORIES.regular;
@@ -143,21 +121,31 @@ export const timetableSlots: TimetableSlot[] = [
     kind: "sessions",
     startsAt: "12:10",
     endsAt: "12:30",
-    sessions: dummySessions(SPONSOR),
+    sessions: {
+      a: {
+        category: SPONSOR,
+        title:
+          "開発を高速化。AIコーディングエージェントとCodeRabbitでループエンジニアリング",
+        speaker: "中津川篤司",
+        speakerImage:
+          "https://ca.slack-edge.com/T08V6NHP9KJ-U0BR8C5R1RS-9cb48942cc0f-512",
+      },
+      b: {
+        category: SPONSOR,
+        title:
+          "開発を高速化。AIコーディングエージェントとCodeRabbitでループエンジニアリング(ミラー)",
+        speaker: "中津川篤司",
+        speakerImage:
+          "https://ca.slack-edge.com/T08V6NHP9KJ-U0BR8C5R1RS-9cb48942cc0f-512",
+      },
+    },
   },
   {
-    id: "sponsor-2",
-    kind: "sessions",
+    id: "lunch-break-2",
+    kind: "break",
     startsAt: "12:30",
-    endsAt: "12:50",
-    sessions: dummySessions(SPONSOR),
-  },
-  {
-    id: "sponsor-3",
-    kind: "sessions",
-    startsAt: "12:50",
     endsAt: "13:20",
-    sessions: dummySessions(SPONSOR),
+    label: "休憩・移動時間",
   },
   {
     id: "regular-3",
