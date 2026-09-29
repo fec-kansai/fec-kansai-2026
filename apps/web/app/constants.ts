@@ -1,3 +1,6 @@
+import ippeySIcon from "../assets/individual-sponsor-img/ippey_s.jpg";
+import nyapanMohyIcon from "../assets/individual-sponsor-img/nyapan_mohy.jpg";
+import sumireGrarecoIcon from "../assets/individual-sponsor-img/sumire_grareco.jpg";
 import type {
   IndividualSponsor,
   JobBoardEntry,
@@ -374,25 +377,26 @@ export const sponsorTiers: SponsorTier[] = [
   { id: "student", heading: "学生支援", badgeLabel: "学生支援", sponsors: [] },
 ];
 
-// 個人スポンサー。申込順に並べる。icon は public/individual-sponsor-img/ 配下の
-// ファイル名で、未設定の場合はたこやんのプレースホルダーが表示される。
+// 個人スポンサー。申込順に並べる。icon は assets/individual-sponsor-img/ の画像を
+// import したもの（public/ ではなくビルドに取り込ませて、ファイル欠けをビルドエラー
+// にするため）で、未設定の場合はたこやんのプレースホルダーが表示される。
 export const individualSponsors: IndividualSponsor[] = [
   {
     id: "ippey-s",
     name: "SUMIDA, Ippei",
-    icon: "ippey_s.jpg",
+    icon: ippeySIcon,
     url: "https://x.com/ippey_s",
   },
   {
     id: "nyapan-mohy",
     name: "モヒにゃぱん",
-    icon: "nyapan_mohy.jpg",
+    icon: nyapanMohyIcon,
     url: "https://x.com/nyapan_mohy",
   },
   {
     id: "sumire-grareco",
     name: "スミレ@グラフィックレコーダー",
-    icon: "sumire_grareco.jpg",
+    icon: sumireGrarecoIcon,
     url: "https://x.com/sumire_grareco",
   },
 ];

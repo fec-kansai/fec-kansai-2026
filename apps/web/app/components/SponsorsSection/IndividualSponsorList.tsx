@@ -45,12 +45,10 @@ export function IndividualSponsorList({
         <li key={sponsor.id} className="list-none">
           <ItemWrapper href={sponsor.url}>
             <Image
-              src={
-                sponsor.icon
-                  ? `/individual-sponsor-img/${sponsor.icon}`
-                  : FALLBACK_ICON
-              }
-              alt={sponsor.name}
+              src={sponsor.icon ?? FALLBACK_ICON}
+              // The name is already rendered as text right below, inside the
+              // same link — a copy of it here would be announced twice.
+              alt=""
               width={96}
               height={96}
               className="aspect-square w-[72px] rounded-full border-2 border-fk-white object-cover sm:w-20"

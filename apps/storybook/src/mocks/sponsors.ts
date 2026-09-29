@@ -102,8 +102,9 @@ export const jobBoardEntries: JobBoardEntry[] = [
 ];
 
 /**
- * アイコン未設定（プレースホルダー表示）とリンクありの両方を含めて、
- * 個人スポンサー一覧の見た目を確認できるようにしている。
+ * リンクあり / なしの両方を含むプレースホルダー。icon は未設定なので、
+ * どのエントリもたこやんのフォールバックで描画される。実アイコンの表示は
+ * SponsorsShowcaseSection の RealData ストーリーで確認する。
  */
 export const individualSponsors: IndividualSponsor[] = [
   { id: "individual-1", name: "スポンサー名入ります", url: "#" },
