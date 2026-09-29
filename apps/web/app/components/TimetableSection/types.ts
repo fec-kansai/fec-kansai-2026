@@ -6,7 +6,7 @@ export type TrackId = "a" | "b";
 
 export type Track = {
   id: TrackId;
-  /** Track label, e.g. "トラックA". */
+  /** Track label, e.g. "まいどルーム". */
   name: string;
   /** Room the track runs in, e.g. "グランホール1". */
   hall: string;
