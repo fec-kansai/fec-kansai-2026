@@ -101,10 +101,14 @@ export const jobBoardEntries: JobBoardEntry[] = [
   { id: "job-board-5", name: "企業名が入ります", url: "#" },
 ];
 
+/**
+ * アイコン未設定（プレースホルダー表示）とリンクありの両方を含めて、
+ * 個人スポンサー一覧の見た目を確認できるようにしている。
+ */
 export const individualSponsors: IndividualSponsor[] = [
-  { id: "individual-1", name: "スポンサー名入ります" },
-  { id: "individual-2", name: "スポンサー名入ります" },
+  { id: "individual-1", name: "スポンサー名入ります", url: "#" },
+  { id: "individual-2", name: "スポンサー名入ります", url: "#" },
   { id: "individual-3", name: "スポンサー名入ります" },
-  { id: "individual-4", name: "スポンサー名入ります" },
+  { id: "individual-4", name: "スポンサー名入ります", url: "#" },
   { id: "individual-5", name: "スポンサー名入ります" },
 ];

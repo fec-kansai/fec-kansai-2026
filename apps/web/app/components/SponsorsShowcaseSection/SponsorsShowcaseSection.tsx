@@ -2,6 +2,7 @@ import { Button } from "@workspace/ui/components/button";
 import Link from "next/link";
 import { JobBoardSection } from "../JobBoardSection/JobBoardSection";
 import type { SponsorMascot } from "../SponsorsSection/ColoredTakoyan";
+import { IndividualSponsorList } from "../SponsorsSection/IndividualSponsorList";
 import {
   type SponsorSlotFill,
   SponsorSlotRow,
@@ -106,16 +107,9 @@ export function SponsorsShowcaseSection({
           <>
             <SponsorTierHeader heading="個人スポンサー" variant="red" />
 
-            <ul className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 p-0">
-              {individualSponsors.map((sponsor) => (
-                <li
-                  key={sponsor.id}
-                  className="list-none font-montserrat text-[16px] font-bold text-fk-text-main sm:text-[18px]"
-                >
-                  {sponsor.name}
-                </li>
-              ))}
-            </ul>
+            <div className="mt-8">
+              <IndividualSponsorList sponsors={individualSponsors} />
+            </div>
           </>
         )}
 

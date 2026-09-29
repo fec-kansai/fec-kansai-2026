@@ -374,7 +374,28 @@ export const sponsorTiers: SponsorTier[] = [
   { id: "student", heading: "学生支援", badgeLabel: "学生支援", sponsors: [] },
 ];
 
-export const individualSponsors: IndividualSponsor[] = [];
+// 個人スポンサー。申込順に並べる。icon は public/individual-sponsor-img/ 配下の
+// ファイル名で、未設定の場合はたこやんのプレースホルダーが表示される。
+export const individualSponsors: IndividualSponsor[] = [
+  {
+    id: "ippey-s",
+    name: "SUMIDA, Ippei",
+    icon: "ippey_s.jpg",
+    url: "https://x.com/ippey_s",
+  },
+  {
+    id: "nyapan-mohy",
+    name: "モヒにゃぱん",
+    icon: "nyapan_mohy.jpg",
+    url: "https://x.com/nyapan_mohy",
+  },
+  {
+    id: "sumire-grareco",
+    name: "スミレ@グラフィックレコーダー",
+    icon: "sumire_grareco.jpg",
+    url: "https://x.com/sumire_grareco",
+  },
+];
 
 // ジョブボード。ジョブボードのオプションを取ったスポンサーのみを、グレード順
 // （Gold → Silver）、同じグレード内では登録順に並べる。
