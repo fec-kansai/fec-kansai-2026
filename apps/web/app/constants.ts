@@ -380,6 +380,12 @@ export const individualSponsors: IndividualSponsor[] = [];
 // （Gold → Silver）、同じグレード内では登録順に並べる。
 export const jobBoardEntries: JobBoardEntry[] = [
   {
+    id: "miidas",
+    name: "ミイダス株式会社",
+    image: "/miidas-job-board.png",
+    url: "https://careers.miidas.co.jp/tech/",
+  },
+  {
     id: "kakehashi",
     name: "株式会社カケハシ",
     image: "/kakehashi-job-board.jpg",
