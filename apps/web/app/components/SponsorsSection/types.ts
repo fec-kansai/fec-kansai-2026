@@ -102,8 +102,18 @@ export type JobBoardEntry = {
   url: string;
 };
 
-/** A personal (個人) sponsor — only the name is shown; `id` is the React key. */
+/**
+ * A personal (個人) sponsor. `id` is the React key; the name is always shown,
+ * and the icon / link are optional because a sponsor may submit neither.
+ */
 export type IndividualSponsor = {
   id: string;
   name: string;
+  /**
+   * File name inside public/individual-sponsor-img/ (e.g. "ippey_s.jpg").
+   * When omitted, the shared たこやん placeholder is shown instead.
+   */
+  icon?: string;
+  /** Profile link (usually X). When set, the icon + name become a link. */
+  url?: string;
 };
