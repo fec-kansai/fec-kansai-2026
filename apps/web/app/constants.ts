@@ -1,3 +1,6 @@
+import ippeySIcon from "../assets/individual-sponsor-img/ippey_s.jpg";
+import nyapanMohyIcon from "../assets/individual-sponsor-img/nyapan_mohy.jpg";
+import sumireGrarecoIcon from "../assets/individual-sponsor-img/sumire_grareco.jpg";
 import type {
   IndividualSponsor,
   JobBoardEntry,
@@ -374,7 +377,29 @@ export const sponsorTiers: SponsorTier[] = [
   { id: "student", heading: "学生支援", badgeLabel: "学生支援", sponsors: [] },
 ];
 
-export const individualSponsors: IndividualSponsor[] = [];
+// 個人スポンサー。申込順に並べる。icon は assets/individual-sponsor-img/ の画像を
+// import したもの（public/ ではなくビルドに取り込ませて、ファイル欠けをビルドエラー
+// にするため）で、未設定の場合はたこやんのプレースホルダーが表示される。
+export const individualSponsors: IndividualSponsor[] = [
+  {
+    id: "ippey-s",
+    name: "SUMIDA, Ippei",
+    icon: ippeySIcon,
+    url: "https://x.com/ippey_s",
+  },
+  {
+    id: "nyapan-mohy",
+    name: "モヒにゃぱん",
+    icon: nyapanMohyIcon,
+    url: "https://x.com/nyapan_mohy",
+  },
+  {
+    id: "sumire-grareco",
+    name: "スミレ@グラフィックレコーダー",
+    icon: sumireGrarecoIcon,
+    url: "https://x.com/sumire_grareco",
+  },
+];
 
 // ジョブボード。ジョブボードのオプションを取ったスポンサーのみを、グレード順
 // （Gold → Silver）、同じグレード内では登録順に並べる。

@@ -16,8 +16,8 @@ export const timetableIntro: string[] = [
 
 /** Column order on desktop and legend order on mobile. */
 export const tracks: Track[] = [
-  { id: "a", name: "トラックA", hall: "グランホール1" },
-  { id: "b", name: "トラックB", hall: "グランホール2" },
+  { id: "a", name: "まいどルーム", hall: "グランホール1" },
+  { id: "b", name: "おおきにルーム", hall: "グランホール2" },
 ];
 
 /** Full-programme link shown as the CTA under the timetable. */

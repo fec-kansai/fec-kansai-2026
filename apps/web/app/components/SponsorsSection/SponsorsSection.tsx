@@ -1,4 +1,5 @@
 import type { SponsorMascot } from "./ColoredTakoyan";
+import { IndividualSponsorList } from "./IndividualSponsorList";
 import { SponsorCard } from "./SponsorCard";
 import { SponsorTierHeader } from "./SponsorTierHeader";
 import type { IndividualSponsor, SponsorTier, SponsorTierId } from "./types";
@@ -84,16 +85,7 @@ export function SponsorsSection({
         {individualSponsors.length > 0 && (
           <div className="flex flex-col gap-8 sm:gap-10">
             <SponsorTierHeader heading="個人スポンサー" variant="red" />
-            <ul className="flex flex-wrap justify-center gap-y-2 p-0">
-              {individualSponsors.map((sponsor) => (
-                <li
-                  key={sponsor.id}
-                  className="mx-[6px] list-none font-montserrat text-[16px] font-bold text-fk-text-main sm:text-[18px]"
-                >
-                  {sponsor.name}
-                </li>
-              ))}
-            </ul>
+            <IndividualSponsorList sponsors={individualSponsors} />
           </div>
         )}
       </div>

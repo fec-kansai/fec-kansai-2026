@@ -1,3 +1,5 @@
+import type { StaticImageData } from "next/image";
+
 /**
  * Sponsor tier id. Drives the tier badge colour on each card (see SponsorCard)
  * and groups sponsors into sections (see SponsorsSection).
@@ -102,8 +104,20 @@ export type JobBoardEntry = {
   url: string;
 };
 
-/** A personal (個人) sponsor — only the name is shown; `id` is the React key. */
+/**
+ * A personal (個人) sponsor. `id` is the React key; the name is always shown,
+ * and the icon / link are optional because a sponsor may submit neither.
+ */
 export type IndividualSponsor = {
   id: string;
   name: string;
+  /**
+   * Statically imported icon from apps/web/assets (see constants.ts). It is an import rather than a
+   * path string so that a missing or renamed file fails the build instead of
+   * rendering a broken image — `output: "export"` never checks public/.
+   * When omitted, the shared たこやん placeholder is shown instead.
+   */
+  icon?: StaticImageData;
+  /** Profile link (usually X). When set, the icon + name become a link. */
+  url?: string;
 };

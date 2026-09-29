@@ -101,10 +101,15 @@ export const jobBoardEntries: JobBoardEntry[] = [
   { id: "job-board-5", name: "企業名が入ります", url: "#" },
 ];
 
+/**
+ * リンクあり / なしの両方を含むプレースホルダー。icon は未設定なので、
+ * どのエントリもたこやんのフォールバックで描画される。実アイコンの表示は
+ * SponsorsShowcaseSection の RealData ストーリーで確認する。
+ */
 export const individualSponsors: IndividualSponsor[] = [
-  { id: "individual-1", name: "スポンサー名入ります" },
-  { id: "individual-2", name: "スポンサー名入ります" },
+  { id: "individual-1", name: "スポンサー名入ります", url: "#" },
+  { id: "individual-2", name: "スポンサー名入ります", url: "#" },
   { id: "individual-3", name: "スポンサー名入ります" },
-  { id: "individual-4", name: "スポンサー名入ります" },
+  { id: "individual-4", name: "スポンサー名入ります", url: "#" },
   { id: "individual-5", name: "スポンサー名入ります" },
 ];
