@@ -2,6 +2,11 @@ import type { Staff } from "./types";
 
 export const staffList: Staff[] = [
   {
+    displayName: "いずりょー",
+    x: "is_ryo",
+    icon: "is_ryo.png",
+  },
+  {
     displayName: "Keisuke Ikeda",
     x: "ike_keichan",
     icon: "ike_keichan.png",
@@ -29,11 +34,6 @@ export const staffList: Staff[] = [
     displayName: "zonoryo",
     x: "zonoryo03",
     icon: "zonoryo03.jpg",
-  },
-  {
-    displayName: "いずりょー",
-    x: "is_ryo",
-    icon: "is_ryo.png",
   },
   {
     displayName: "Hoshi",
@@ -71,10 +71,6 @@ export const staffList: Staff[] = [
     icon: "Kaho-Michimae.jpeg",
   },
   {
-    displayName: "堀内亮",
-    icon: "堀内亮.jpg",
-  },
-  {
     displayName: "お茶",
     icon: "お茶.jpg",
   },
@@ -102,11 +98,6 @@ export const staffList: Staff[] = [
     displayName: "273*",
     x: "273Do",
     icon: "273Do.png",
-  },
-  {
-    displayName: "にこやか",
-    x: "nikoyaka_com",
-    icon: "nikoyaka_com.png",
   },
   {
     displayName: "R-524",
