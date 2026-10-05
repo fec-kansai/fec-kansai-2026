@@ -429,6 +429,12 @@ export const jobBoardEntries: JobBoardEntry[] = [
     url: "https://www.sakura.ad.jp/recruit/",
   },
   {
+    id: "kaonavi",
+    name: "カオナビ",
+    image: "/kaonavi-job-board.png",
+    url: "https://www.team-lab.com/engineering/",
+  },
+  {
     id: "teamlab",
     name: "チームラボ",
     image: "/teamlab-job-board.png",
