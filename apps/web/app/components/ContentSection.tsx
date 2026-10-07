@@ -8,6 +8,7 @@ import { OfficialCharacterSection } from "./OfficialCharacterSection/OfficialCha
 import { ProposalSection } from "./ProposalSection/ProposalSection";
 import { SponsorSection } from "./SponsorSection/SponsorSection";
 import { SponsorsShowcaseSection } from "./SponsorsShowcaseSection/SponsorsShowcaseSection";
+import { EventDayStaffSection } from "./StaffSection/EventDayStaffSection";
 import { StaffSection } from "./StaffSection/StaffSection";
 import { TicketSection } from "./TicketSection/TicketSection";
 import { UnboundedSection } from "./UnboundedSection/UnboundedSection";
@@ -44,6 +45,9 @@ export function ContentSection() {
 
         <div className="flex-1 relative">
           <StaffSection />
+        </div>
+        <div className="flex-1 relative">
+          <EventDayStaffSection />
         </div>
 
         {/* TODO: Uncomment this when the official character section is ready */}
