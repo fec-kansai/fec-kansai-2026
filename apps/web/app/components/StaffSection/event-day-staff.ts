@@ -16,4 +16,9 @@ export const eventDayStaffList: Staff[] = [
     x: "aieuo421",
     icon: "aieuo421.png",
   },
+  {
+    displayName: "fkuMnk",
+    x: "fku_mnk",
+    icon: "fku_mnk.png",
+  },
 ];
