@@ -21,4 +21,9 @@ export const eventDayStaffList: Staff[] = [
     x: "fku_mnk",
     icon: "fku_mnk.png",
   },
+  {
+    displayName: "locol23",
+    x: "locol23",
+    icon: "locol23.png",
+  },
 ];
