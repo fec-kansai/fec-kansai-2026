@@ -432,7 +432,7 @@ export const jobBoardEntries: JobBoardEntry[] = [
     id: "kaonavi",
     name: "カオナビ",
     image: "/kaonavi-job-board.png",
-    url: "https://www.team-lab.com/engineering/",
+    url: "http://recruit.kaonavi.jp/engineer",
   },
   {
     id: "teamlab",
